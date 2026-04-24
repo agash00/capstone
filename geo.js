@@ -43,6 +43,8 @@ map.on('load', () => {
             [-175.40189848,-20.54957904]
         ]
     });
+});
+
 map.addLayer({
         'id': 'HungaTonga-layer',
         'source': 'HungaTonga',
