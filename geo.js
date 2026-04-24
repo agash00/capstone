@@ -3,9 +3,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYWdhc2gyOCIsImEiOiJjbW9haTVmaHowNzc1MnFwenA4M
   // creates the map, setting the container to the id of the div you added in step 2, and setting the initial center and zoom level of the map
 const map = new mapboxgl.Map({
     container: 'map', // container ID
-    style: 'mapbox://styles/agash28/cmoaiha48000001s9808i2sl9',
-    center: [2.1545867, 41.3825309],
-    zoom: 18
+    style: 'mapbox://styles/agash28/cmoaiha48000001s9808i2sl9'
 });
 
 // map.on('load', () => {
@@ -103,3 +101,4 @@ map.addLayer({
         }
     });
 });
+

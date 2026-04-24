@@ -12,6 +12,38 @@
 <body>
 <div id="map" style="width: 1920px; height: 1080px;"></div>
 <script src="geo.js"></script>
+<button id="Alvernia">Alvernia Planet</button>
+<script>
+    document.getElementById('Alvernia').addEventListener('click', () => {
+        map.flyTo({
+            center: [19.5475044, 50.1026258],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+</script>
+
+<button id="Eixample">Exiample</button>
+<script>
+    document.getElementById('Eixample').addEventListener('click', () => {
+        map.flyTo({
+            center: [2.154456,41.382745],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+</script>
+
+<button id="Hunga">Hunga Tonga</button>
+<script>
+    document.getElementById('Hunga').addEventListener('click', () => {
+        map.flyTo({
+            center: [-175.391831,-20.543253],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+</script>
 </body>
 
 </html>
