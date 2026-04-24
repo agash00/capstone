@@ -8,29 +8,29 @@ const map = new mapboxgl.Map({
     zoom: 18
 });
 
-map.on('load', () => {
-    map.addSource('test', {
-        'type': 'raster',
-        'url': 'mapbox://agash28.18ffs00h'
-    });
-map.addLayer({
-        'id': 'agash28.18ffs00h',
-        'source': 'test',
-        'type': 'raster'
-    });
-});
+// map.on('load', () => {
+//     map.addSource('test', {
+//         'type': 'raster',
+//         'url': 'mapbox://agash28.18ffs00h'
+//     });
+// map.addLayer({
+//         'id': 'agash28.18ffs00h',
+//         'source': 'test',
+//         'type': 'raster'
+//     });
+// });
 
-map.on('load', () => {
-    map.addSource('test1', {
-        'type': 'raster',
-        'url': 'mapbox://agash28.capstone'
-    });
-map.addLayer({
-        'id': 'agash28.capstone',
-        'source': 'test1',
-        'type': 'raster'
-    });
-});
+// map.on('load', () => {
+//     map.addSource('test1', {
+//         'type': 'raster',
+//         'url': 'mapbox://agash28.capstone'
+//     });
+// map.addLayer({
+//         'id': 'agash28.capstone',
+//         'source': 'test1',
+//         'type': 'raster'
+//     });
+// });
 
 map.on('load', () => {
     map.addSource('HungaTonga', {
@@ -46,6 +46,27 @@ map.on('load', () => {
 map.addLayer({
         'id': 'HungaTonga-layer',
         'source': 'HungaTonga',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+    
+map.on('load', () => {
+    map.addSource('Eixample', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/Eixample+Barcelona+50cm.jpg',
+        'coordinates': [
+            [2.1449299, 41.3898145],
+            [2.1449299, 41.3752472],
+            [2.1642436, 41.3898145],
+            [2.1642436, 41.3752472]
+        ]
+    });
+map.addLayer({
+        'id': 'Exiample-layer',
+        'source': 'Exiample',
         'type': 'raster',
         'paint': {
             'raster-fade-duration': 0,
