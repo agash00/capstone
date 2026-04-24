@@ -6,30 +6,7 @@ const map = new mapboxgl.Map({
     style: 'mapbox://styles/agash28/cmoaiha48000001s9808i2sl9'
 });
 
-// map.on('load', () => {
-//     map.addSource('test', {
-//         'type': 'raster',
-//         'url': 'mapbox://agash28.18ffs00h'
-//     });
-// map.addLayer({
-//         'id': 'agash28.18ffs00h',
-//         'source': 'test',
-//         'type': 'raster'
-//     });
-// });
-
-// map.on('load', () => {
-//     map.addSource('test1', {
-//         'type': 'raster',
-//         'url': 'mapbox://agash28.capstone'
-//     });
-// map.addLayer({
-//         'id': 'agash28.capstone',
-//         'source': 'test1',
-//         'type': 'raster'
-//     });
-// });
-
+//Add Hunga Tonga image
 map.on('load', () => {
     map.addSource('HungaTonga', {
         'type': 'image',
@@ -52,7 +29,8 @@ map.addLayer({
         }
     });
 });
-    
+
+//Add Eixample image
 map.on('load', () => {
     map.addSource('Eixample', {
         'type': 'image',
@@ -77,7 +55,7 @@ map.addLayer({
     });
 });
 
-
+//Add Alvernia Planet image
 map.on('load', () => {
     map.addSource('AlverniaPlanet', {
         'type': 'image',
