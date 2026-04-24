@@ -4,7 +4,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYWdhc2gyOCIsImEiOiJjbW9haTVmaHowNzc1MnFwenA4M
 const map = new mapboxgl.Map({
     container: 'map', // container ID
     style: 'mapbox://styles/agash28/cmoaiha48000001s9808i2sl9',
-    center: [-175.391644,-20.543546],
+    center: [2.1545867, 41.3825309],
     zoom: 18
 });
 
@@ -43,7 +43,6 @@ map.on('load', () => {
             [-175.40189848,-20.54957904]
         ]
     });
-});
 
 map.addLayer({
         'id': 'HungaTonga-layer',
@@ -54,6 +53,7 @@ map.addLayer({
             'raster-emissive-strength': 1
         }
     });
+});
     
 map.on('load', () => {
     map.addSource('Eixample', {
@@ -66,9 +66,11 @@ map.on('load', () => {
             [2.1642436, 41.3752472]
         ]
     });
+
+
 map.addLayer({
-        'id': 'Exiample-layer',
-        'source': 'Exiample',
+        'id': 'Eixample-layer',
+        'source': 'Eixample',
         'type': 'raster',
         'paint': {
             'raster-fade-duration': 0,
