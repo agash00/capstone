@@ -78,3 +78,28 @@ map.addLayer({
         }
     });
 });
+
+
+map.on('load', () => {
+    map.addSource('AlverniaPlanet', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/Alvernia+Planet+2021-10-25+50cm.jpg',
+        'coordinates': [
+            [19.5439031, 50.1047289],
+            [19.5511056, 50.1047289],
+            [19.5511056, 50.1005226],
+            [19.5439031, 50.1005226]
+        ]
+    });
+
+
+map.addLayer({
+        'id': 'AlverniaPlanet-layer',
+        'source': 'AlverniaPlanet',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+});
