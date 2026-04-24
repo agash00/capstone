@@ -1,4 +1,4 @@
-<script src="https://api.mapbox.com/mapbox-gl-js/v3.21.0/mapbox-gl.js"></script>
+import "https://api.mapbox.com/mapbox-gl-js/v3.21.0/mapbox-gl.js";
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWdhc2gyOCIsImEiOiJjbW9haTVmaHowNzc1MnFwenA4MGRqYjNjIn0.EmsXtKTofPNUU_D-kM61CA';
 
