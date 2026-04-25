@@ -104,3 +104,26 @@ map.addLayer({
     });
 });
 
+//Add Golden Gate image
+map.on('load', () => {
+    map.addSource('GoldenGate', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/GoldenGate.png',
+        'coordinates': [
+            [-122.4830624, 37.8276392],
+            [-122.4748248, 37.8276392],
+            [-122.4748248, 37.8090037],
+            [-122.4830624, 37.8090037]
+        ]
+    });
+
+map.addLayer({
+        'id': 'GoldenGate-layer',
+        'source': 'GoldenGate',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+});

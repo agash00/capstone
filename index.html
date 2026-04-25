@@ -60,6 +60,18 @@
         });
     });
 </script>
+
+<!--GoldenGate button flyout-->
+<button id="GoldenGate">Golden Gate</button>
+<script>
+    document.getElementById('GoldenGate').addEventListener('click', () => {
+        map.flyTo({
+            center: [-122.4789436, 37.8183215],
+            zoom: 16,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+</script>
 </body>
 
 </html>
