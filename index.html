@@ -26,12 +26,12 @@
 </script>
 
 <!--Exiample button flyout-->
-<button id="Eixample">Exiample</button>
+<button id="Eixample">Eixample</button>
 <script>
     document.getElementById('Eixample').addEventListener('click', () => {
         map.flyTo({
             center: [2.154456,41.382745],
-            zoom: 15,
+            zoom: 16,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
     });
@@ -44,6 +44,18 @@
         map.flyTo({
             center: [-175.391831,-20.543253],
             zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+</script>
+
+<!--DallolEthiopia button flyout-->
+<button id="DallolEthiopia">Dallol, Ethiopia</button>
+<script>
+    document.getElementById('DallolEthiopia').addEventListener('click', () => {
+        map.flyTo({
+            center: [40.2986674, 14.2399987],
+            zoom: 14,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
     });

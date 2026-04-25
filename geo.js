@@ -80,3 +80,27 @@ map.addLayer({
     });
 });
 
+//Add Dallol Ethiopia image
+map.on('load', () => {
+    map.addSource('DallolEthiopia', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/DallolEthiopia.png',
+        'coordinates': [
+            [40.2925530, 14.2456428],
+            [40.3047819, 14.2456428],
+            [40.3047819, 14.2343546],
+            [40.2925530, 14.2343546]
+        ]
+    });
+
+map.addLayer({
+        'id': 'DallolEthiopia-layer',
+        'source': 'DallolEthiopia',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+});
+
