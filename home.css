@@ -1,3 +1,15 @@
 html {
     background-color: black;
 }
+
+
+#map {
+    width: 95vw; 
+    height: 90vh;
+    margin: auto;
+}
+
+#flyout {
+    margin-bottom: 1%;
+    margin-left: 2%;
+}
