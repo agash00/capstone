@@ -127,3 +127,27 @@ map.addLayer({
         }
     });
 });
+
+//Add North Sentinel image
+map.on('load', () => {
+    map.addSource('NorthSentinel', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/NorthSentinel.png',
+        'coordinates': [
+            [92.2098629, 11.5957307],
+            [92.2149598, 11.5957307],
+            [92.2149598, 11.5919797],
+            [92.2098629, 11.5919797]
+        ]
+    });
+
+map.addLayer({
+        'id': 'NorthSentinel-layer',
+        'source': 'NorthSentinel',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+});
