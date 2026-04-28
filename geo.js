@@ -151,3 +151,51 @@ map.addLayer({
         }
     });
 });
+
+//Add Arctowski Station image
+map.on('load', () => {
+    map.addSource('ArctowskiStation', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/ArctowskiStation.png',
+        'coordinates': [
+            [-58.4778433, -62.1571386],
+            [-58.4631916, -62.1571386],
+            [-58.4631916, -62.1613135],
+            [-58.4778433, -62.1613135]
+        ]
+    });
+
+map.addLayer({
+        'id': 'ArctowskiStation-layer',
+        'source': 'ArctowskiStation',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+});
+
+//Add Beijing Daxing image
+map.on('load', () => {
+    map.addSource('BeijingDaxing', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/BeijingDaxing.png',
+        'coordinates': [
+            [116.4018903, 39.5170206],
+            [116.4202720, 39.5170206],
+            [116.4202720, 39.5029632],
+            [116.4018903, 39.5029632]
+        ]
+    });
+
+map.addLayer({
+        'id': 'BeijingDaxing-layer',
+        'source': 'BeijingDaxing',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+});
