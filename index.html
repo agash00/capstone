@@ -121,6 +121,78 @@
     });
 </script>
 
+<!--HeydarAliyevAirport button flyout-->
+<button id="HeydarAliyevAirport" class="flyoutBtn">HeydarAliyevAirport</button>
+<script>
+    document.getElementById('HeydarAliyevAirport').addEventListener('click', () => {
+        map.flyTo({
+            center: [ 50.0525381,  40.4657394],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+</script>
+
+<!--MumbaiAirport button flyout-->
+<button id="MumbaiAirport" class="flyoutBtn">MumbaiAirport</button>
+<script>
+    document.getElementById('MumbaiAirport').addEventListener('click', () => {
+        map.flyTo({
+            center: [ 72.8741491,  19.0964905],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+</script>
+
+<!--CuatroTorres button flyout-->
+<button id="CuatroTorres" class="flyoutBtn">CuatroTorres</button>
+<script>
+    document.getElementById('CuatroTorres').addEventListener('click', () => {
+        map.flyTo({
+            center: [ -3.6882077,  40.4797432],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+</script>
+
+<!--Alumbrera button flyout-->
+<button id="Alumbrera" class="flyoutBtn">Alumbrera</button>
+<script>
+    document.getElementById('Alumbrera').addEventListener('click', () => {
+        map.flyTo({
+            center: [-67.3714800, -26.2135743],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+</script>
+
+<!--Petronas button flyout-->
+<button id="Petronas" class="flyoutBtn">Petronas</button>
+<script>
+    document.getElementById('Petronas').addEventListener('click', () => {
+        map.flyTo({
+            center: [101.7130903,   3.1565901],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+</script>
+
+<!--VolcanPoruñita button flyout-->
+<button id="VolcanPoruñita" class="flyoutBtn">VolcanPoruñita</button>
+<script>
+    document.getElementById('VolcanPoruñita').addEventListener('click', () => {
+        map.flyTo({
+            center: [-68.2934697, -21.3179863],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+</script>
+
 </div>
 
 <div id="map"></div>
