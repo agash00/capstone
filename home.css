@@ -2,7 +2,6 @@ html {
     background-color: black;
 }
 
-
 #map {
     width: 95vw; 
     height: 90vh;
@@ -12,4 +11,11 @@ html {
 #flyout {
     margin-bottom: 1%;
     margin-left: 2%;
+}
+
+.marker {
+    width: 38px;
+    height: 50px;
+    background-image: url("images/marker.png");
+    background-size: 100%;
 }

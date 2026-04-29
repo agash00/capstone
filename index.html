@@ -11,6 +11,8 @@
 
 <body>
 <div id="flyout">
+
+
 <!--Alvernia button flyout-->
 <button id="Alvernia" class="flyoutBtn">Alvernia Planet</button>
 <script>
@@ -59,7 +61,7 @@
     });
 </script>
 
-<!--GoldenGate button flyout-->
+<!--Golden Gate button flyout-->
 <button id="GoldenGate" class="flyoutBtn">Golden Gate</button>
 <script>
     document.getElementById('GoldenGate').addEventListener('click', () => {
@@ -71,7 +73,7 @@
     });
 </script>
 
-<!--GoldenGate button flyout-->
+<!--North Sentinel button flyout-->
 <button id="NorthSentinel" class="flyoutBtn">North Sentinel</button>
 <script>
     document.getElementById('NorthSentinel').addEventListener('click', () => {
@@ -101,6 +103,18 @@
     document.getElementById('BeijingDaxing').addEventListener('click', () => {
         map.flyTo({
             center: [116.4110812, 39.5099919],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+</script>
+
+<!--Volcan Jote button flyout-->
+<button id="VolcanJote" class="flyoutBtn">Volcan Jote</button>
+<script>
+    document.getElementById('VolcanJote').addEventListener('click', () => {
+        map.flyTo({
+            center: [-67.3292962, -26.2955358],
             zoom: 15,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
