@@ -378,6 +378,78 @@ function addAdditionalSourceAndLayer() {
             }
         });
     });
+
+    //Add SantaCruzdeIslote image
+    map.on('load', () => {
+            map.addSource('SantaCruzdeIslote', {
+                'type': 'image',
+                'url': 'https://photos.agash.ca/SantaCruzdeIslote.png',
+                'coordinates': [
+                    [-75.8611806,   9.7877409],
+                    [-75.8569911,   9.7877409],
+                    [-75.8569911,   9.7839457],
+                    [-75.8611806,   9.7839457]
+                ]
+            });
+
+    map.addLayer({
+            'id': 'SantaCruzdeIslote-layer',
+            'source': 'SantaCruzdeIslote',
+            'type': 'raster',
+            'paint': {
+                'raster-fade-duration': 0,
+                'raster-emissive-strength': 1
+            }
+        });
+    });
+    
+    //Add HuntsvilleAlabama image
+    map.on('load', () => {
+            map.addSource('HuntsvilleAlabama', {
+                'type': 'image',
+                'url': 'https://photos.agash.ca/HuntsvilleAlabama.png',
+                'coordinates': [
+                    [-86.6578632,  34.7129592],
+                    [-86.6537464,  34.7129592],
+                    [-86.6537464,  34.7094368],
+                    [-86.6578632,  34.7094368]
+                ]
+            });
+
+    map.addLayer({
+            'id': 'HuntsvilleAlabama-layer',
+            'source': 'HuntsvilleAlabama',
+            'type': 'raster',
+            'paint': {
+                'raster-fade-duration': 0,
+                'raster-emissive-strength': 1
+            }
+        });
+    });
+    
+    //Add DongdaemunDesignPlaza image
+    map.on('load', () => {
+            map.addSource('DongdaemunDesignPlaza', {
+                'type': 'image',
+                'url': 'https://photos.agash.ca/DongdaemunDesignPlaza.png',
+                'coordinates': [
+                    [127.0069694,  37.5695652],
+                    [127.0136913,  37.5695652],
+                    [127.0136913,  37.5644117],
+                    [127.0069694,  37.5644117]
+                ]
+            });
+
+    map.addLayer({
+            'id': 'DongdaemunDesignPlaza-layer',
+            'source': 'DongdaemunDesignPlaza',
+            'type': 'raster',
+            'paint': {
+                'raster-fade-duration': 0,
+                'raster-emissive-strength': 1
+            }
+        });
+    });
 }
 
 //add markers
@@ -524,7 +596,7 @@ function addMarkers() {
                 essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
     });
-    
+
     const EixampleDiv = document.createElement('div');
     EixampleDiv.className = "marker";
     const EixampleMarker = new mapboxgl.Marker(EixampleDiv)
@@ -576,6 +648,45 @@ function addMarkers() {
                 essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
     });
+
+    const SantaCruzdeIsloteDiv = document.createElement('div');
+    SantaCruzdeIsloteDiv.className = "marker";
+    const SantaCruzdeIsloteMarker = new mapboxgl.Marker(SantaCruzdeIsloteDiv)
+        .setLngLat([-75.8611806,   9.7877409])
+        .addTo(map);
+    SantaCruzdeIsloteDiv.addEventListener('click', () => {
+            map.flyTo({
+                center: [-75.8590859,   9.7858433],
+                zoom: 16,
+                essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            });
+    });
+
+    const HuntsvilleAlabamaDiv = document.createElement('div');
+    HuntsvilleAlabamaDiv.className = "marker";
+    const HuntsvilleAlabamaMarker = new mapboxgl.Marker(HuntsvilleAlabamaDiv)
+        .setLngLat([-86.6578632,  34.7129592])
+        .addTo(map);
+    HuntsvilleAlabamaDiv.addEventListener('click', () => {
+            map.flyTo({
+                center: [-86.6558048,  34.7111980],
+                zoom: 16,
+                essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            });
+    });
+
+    const DongdaemunDesignPlazaDiv = document.createElement('div');
+    DongdaemunDesignPlazaDiv.className = "marker";
+    const DongdaemunDesignPlazaMarker = new mapboxgl.Marker(DongdaemunDesignPlazaDiv)
+        .setLngLat([127.0069694,  37.5695652])
+        .addTo(map);
+    DongdaemunDesignPlazaDiv.addEventListener('click', () => {
+            map.flyTo({
+                center: [127.0103303,  37.5669884],
+                zoom: 16,
+                essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            });
+    });    
 }
 
 map.on('style.load', () => {
