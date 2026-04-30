@@ -12,6 +12,8 @@
 <body>
 <div id="flyout">
 
+<button id="sat">Satellite View</button>
+<button id="stand" style="display: none;">Standard Map View</button>
 
 <!--Alvernia button flyout-->
 <button id="Alvernia" class="flyoutBtn">Alvernia Planet</button>
@@ -229,8 +231,47 @@
     });
 </script>
 
-</div>
+<!--CostaConcordia20130917 button flyout-->
+<button id="CostaConcordia20130917" class="flyoutBtn">CostaConcordia20130917</button>
+<script>
+    document.getElementById('CostaConcordia20130917').addEventListener('click', () => {
+        map.setLayoutProperty('CostaConcordia20130712-layer', 'visibility', 'none');
+        map.setLayoutProperty('CostaConcordia20130917-layer', 'visibility', 'visible');
+        map.flyTo({
+            center: [ 10.9214388,  42.3658301],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+</script>
 
+<!--CostaConcordia20130712 button flyout-->
+<button id="CostaConcordia20130712" class="flyoutBtn">CostaConcordia20130712</button>
+<script>
+    document.getElementById('CostaConcordia20130712').addEventListener('click', () => {
+        map.setLayoutProperty('CostaConcordia20130917-layer', 'visibility', 'none');
+        map.setLayoutProperty('CostaConcordia20130712-layer', 'visibility', 'visible');
+        map.flyTo({
+            center: [ 10.9215582,  42.3657894],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+</script>
+
+<!--GreatBlueHole button flyout-->
+<button id="GreatBlueHole" class="flyoutBtn">GreatBlueHole</button>
+<script>
+    document.getElementById('GreatBlueHole').addEventListener('click', () => {
+        map.flyTo({
+            center: [-87.5345375,  17.3158507],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+</script>
+
+</div>
 <div id="map"></div>
 <script src="geo.js"></script>
 

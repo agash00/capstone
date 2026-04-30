@@ -4,6 +4,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYWdhc2gyOCIsImEiOiJjbW9haTVmaHowNzc1MnFwenA4M
 const map = new mapboxgl.Map({
     container: 'map', // container ID
     style: 'mapbox://styles/agash28/cmoaiha48000001s9808i2sl9'
+    //style: 'mapbox://styles/agash28/cmoj53vb5002l01s45wgy4s2s'
 });
 
 map.addControl(new mapboxgl.FullscreenControl());
@@ -14,59 +15,55 @@ const nav = new mapboxgl.NavigationControl({
 
 map.addControl(nav, 'bottom-right');
 
+
 function addAdditionalSourceAndLayer() {
 
 //Add Hunga Tonga image
-    map.on('load', () => {
-        map.addSource('HungaTonga', {
-            'type': 'image',
-            'url': 'https://photos.agash.ca/Hunga+Tonga+2021-04-10+50cm2.jpg',
-            'coordinates': [
-                [-175.4003680,-20.5354617],
-                [-175.38133144,-20.53723930],
-                [-175.38284828,-20.55136838],
-                [-175.40189848,-20.54957904]
-            ]
-        });
+
+    map.addSource('HungaTonga', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/Hunga+Tonga+2021-04-10+50cm2.jpg',
+        'coordinates': [
+            [-175.4003680,-20.5354617],
+            [-175.38133144,-20.53723930],
+            [-175.38284828,-20.55136838],
+            [-175.40189848,-20.54957904]
+        ]
+    });
 
     map.addLayer({
-            'id': 'HungaTonga-layer',
-            'source': 'HungaTonga',
-            'type': 'raster',
-            'paint': {
-                'raster-fade-duration': 0,
-                'raster-emissive-strength': 1
-            }
-        });
+        'id': 'HungaTonga-layer',
+        'source': 'HungaTonga',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
     });
 
     //Add Eixample image
-    map.on('load', () => {
-        map.addSource('Eixample', {
-            'type': 'image',
-            'url': 'https://photos.agash.ca/Eixample+Barcelona+50cm.jpg',
-            'coordinates': [
-                [2.152970736, 41.389813995],
-                [2.164239010, 41.381105396],
-                [2.156200608, 41.375247328],
-                [2.144930709,41.383959081]
-            ]
-        });
-
+    map.addSource('Eixample', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/Eixample+Barcelona+50cm.jpg',
+        'coordinates': [
+            [2.152970736, 41.389813995],
+            [2.164239010, 41.381105396],
+            [2.156200608, 41.375247328],
+            [2.144930709,41.383959081]
+        ]
+    });
 
     map.addLayer({
-            'id': 'Eixample-layer',
-            'source': 'Eixample',
-            'type': 'raster',
-            'paint': {
-                'raster-fade-duration': 0,
-                'raster-emissive-strength': 1
-            }
-        });
+        'id': 'Eixample-layer',
+        'source': 'Eixample',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
     });
 
     //Add Alvernia Planet image
-    map.on('load', () => {
         map.addSource('AlverniaPlanet', {
             'type': 'image',
             'url': 'https://photos.agash.ca/Alvernia+Planet+2021-10-25+50cm.jpg',
@@ -78,20 +75,17 @@ function addAdditionalSourceAndLayer() {
             ]
         });
 
-
     map.addLayer({
-            'id': 'AlverniaPlanet-layer',
-            'source': 'AlverniaPlanet',
-            'type': 'raster',
-            'paint': {
-                'raster-fade-duration': 0,
-                'raster-emissive-strength': 1
-            }
-        });
+        'id': 'AlverniaPlanet-layer',
+        'source': 'AlverniaPlanet',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
     });
 
     //Add Dallol Ethiopia image
-    map.on('load', () => {
         map.addSource('DallolEthiopia', {
             'type': 'image',
             'url': 'https://photos.agash.ca/DallolEthiopia.png',
@@ -104,351 +98,387 @@ function addAdditionalSourceAndLayer() {
         });
 
     map.addLayer({
-            'id': 'DallolEthiopia-layer',
-            'source': 'DallolEthiopia',
-            'type': 'raster',
-            'paint': {
-                'raster-fade-duration': 0,
-                'raster-emissive-strength': 1
-            }
-        });
+        'id': 'DallolEthiopia-layer',
+        'source': 'DallolEthiopia',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
     });
 
     //Add Golden Gate image
-
-    map.on('load', () => {
-        map.addSource('GoldenGate', {
-            'type': 'image',
-            'url': 'https://photos.agash.ca/GoldenGate.png',
-            'coordinates': [
-                [-122.4830624, 37.8276392],
-                [-122.4748248, 37.8276392],
-                [-122.4748248, 37.8090037],
-                [-122.4830624, 37.8090037]
-            ]
-        });
+    map.addSource('GoldenGate', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/GoldenGate.png',
+        'coordinates': [
+            [-122.4830624, 37.8276392],
+            [-122.4748248, 37.8276392],
+            [-122.4748248, 37.8090037],
+            [-122.4830624, 37.8090037]
+        ]
+    });
 
     map.addLayer({
-            'id': 'GoldenGate-layer',
-            'source': 'GoldenGate',
-            'type': 'raster',
-            'paint': {
-                'raster-fade-duration': 0,
-                'raster-emissive-strength': 1
-            }
-        });
+        'id': 'GoldenGate-layer',
+        'source': 'GoldenGate',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
     });
 
     //Add North Sentinel image
-    map.on('load', () => {
-        map.addSource('NorthSentinel', {
-            'type': 'image',
-            'url': 'https://photos.agash.ca/NorthSentinel.png',
-            'coordinates': [
-                [92.2098629, 11.5957307],
-                [92.2149598, 11.5957307],
-                [92.2149598, 11.5919797],
-                [92.2098629, 11.5919797]
-            ]
-        });
+    map.addSource('NorthSentinel', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/NorthSentinel.png',
+        'coordinates': [
+            [92.2098629, 11.5957307],
+            [92.2149598, 11.5957307],
+            [92.2149598, 11.5919797],
+            [92.2098629, 11.5919797]
+        ]
+    });
 
     map.addLayer({
-            'id': 'NorthSentinel-layer',
-            'source': 'NorthSentinel',
-            'type': 'raster',
-            'paint': {
-                'raster-fade-duration': 0,
-                'raster-emissive-strength': 1
-            }
-        });
+        'id': 'NorthSentinel-layer',
+        'source': 'NorthSentinel',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
     });
 
     //Add Arctowski Station image
-    map.on('load', () => {
-        map.addSource('ArctowskiStation', {
-            'type': 'image',
-            'url': 'https://photos.agash.ca/ArctowskiStation.png',
-            'coordinates': [
-                [-58.4778433, -62.1571386],
-                [-58.4631916, -62.1571386],
-                [-58.4631916, -62.1613135],
-                [-58.4778433, -62.1613135]
-            ]
-        });
+    map.addSource('ArctowskiStation', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/ArctowskiStation.png',
+        'coordinates': [
+            [-58.4778433, -62.1571386],
+            [-58.4631916, -62.1571386],
+            [-58.4631916, -62.1613135],
+            [-58.4778433, -62.1613135]
+        ]
+    });
 
     map.addLayer({
-            'id': 'ArctowskiStation-layer',
-            'source': 'ArctowskiStation',
-            'type': 'raster',
-            'paint': {
-                'raster-fade-duration': 0,
-                'raster-emissive-strength': 1
-            }
-        });
+        'id': 'ArctowskiStation-layer',
+        'source': 'ArctowskiStation',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
     });
 
     //Add Beijing Daxing image
-    map.on('load', () => {
-        map.addSource('BeijingDaxing', {
-            'type': 'image',
-            'url': 'https://photos.agash.ca/BeijingDaxing.png',
-            'coordinates': [
-                [116.4018903, 39.5170206],
-                [116.4202720, 39.5170206],
-                [116.4202720, 39.5029632],
-                [116.4018903, 39.5029632]
-            ]
-        });
+    map.addSource('BeijingDaxing', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/BeijingDaxing.png',
+        'coordinates': [
+            [116.4018903, 39.5170206],
+            [116.4202720, 39.5170206],
+            [116.4202720, 39.5029632],
+            [116.4018903, 39.5029632]
+        ]
+    });
 
     map.addLayer({
-            'id': 'BeijingDaxing-layer',
-            'source': 'BeijingDaxing',
-            'type': 'raster',
-            'paint': {
-                'raster-fade-duration': 0,
-                'raster-emissive-strength': 1
-            }
-        });
+        'id': 'BeijingDaxing-layer',
+        'source': 'BeijingDaxing',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
     });
 
     //Add Volcan Jote image
-    map.on('load', () => {
-        map.addSource('VolcanJote', {
-            'type': 'image',
-            'url': 'https://photos.agash.ca/VolcanJote.png',
-            'coordinates': [
-                [-67.3390564, -26.2892999],
-                [-67.3195360, -26.2892999],
-                [-67.3195360, -26.3017716],
-                [-67.3390564, -26.3017716]
-            ]
-        });
+    map.addSource('VolcanJote', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/VolcanJote.png',
+        'coordinates': [
+            [-67.3390564, -26.2892999],
+            [-67.3195360, -26.2892999],
+            [-67.3195360, -26.3017716],
+            [-67.3390564, -26.3017716]
+        ]
+    });
 
     map.addLayer({
-            'id': 'VolcanJote-layer',
-            'source': 'VolcanJote',
-            'type': 'raster',
-            'paint': {
-                'raster-fade-duration': 0,
-                'raster-emissive-strength': 1
-            }
-        });
+        'id': 'VolcanJote-layer',
+        'source': 'VolcanJote',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
     });
 
     //Add HeydarAliyevAirport image
-    map.on('load', () => {
-            map.addSource('HeydarAliyevAirport', {
-                'type': 'image',
-                'url': 'https://photos.agash.ca/HeydarAliyevAirport.png',
-                'coordinates': [
-                    [ 50.0460162,  40.4684786],
-                    [ 50.0590599,  40.4684786],
-                    [ 50.0590599,  40.4630003],
-                    [ 50.0460162,  40.4630003]
-                ]
-            });
+    map.addSource('HeydarAliyevAirport', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/HeydarAliyevAirport.png',
+        'coordinates': [
+            [ 50.0460162,  40.4684786],
+            [ 50.0590599,  40.4684786],
+            [ 50.0590599,  40.4630003],
+            [ 50.0460162,  40.4630003]
+        ]
+    });
 
     map.addLayer({
-            'id': 'HeydarAliyevAirport-layer',
-            'source': 'HeydarAliyevAirport',
-            'type': 'raster',
-            'paint': {
-                'raster-fade-duration': 0,
-                'raster-emissive-strength': 1
-            }
-        });
+        'id': 'HeydarAliyevAirport-layer',
+        'source': 'HeydarAliyevAirport',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
     });
     
     //Add MumbaiAirport image
-    map.on('load', () => {
-            map.addSource('MumbaiAirport', {
-                'type': 'image',
-                'url': 'https://photos.agash.ca/MumbaiAirport.png',
-                'coordinates': [
-                    [ 72.8689918,  19.1004393],
-                    [ 72.8793063,  19.1004393],
-                    [ 72.8793063,  19.0925417],
-                    [ 72.8689918,  19.0925417]
-                ]
-            });
+    map.addSource('MumbaiAirport', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/MumbaiAirport.png',
+        'coordinates': [
+            [ 72.8689918,  19.1004393],
+            [ 72.8793063,  19.1004393],
+            [ 72.8793063,  19.0925417],
+            [ 72.8689918,  19.0925417]
+        ]
+    });
 
     map.addLayer({
-            'id': 'MumbaiAirport-layer',
-            'source': 'MumbaiAirport',
-            'type': 'raster',
-            'paint': {
-                'raster-fade-duration': 0,
-                'raster-emissive-strength': 1
-            }
-        });
+        'id': 'MumbaiAirport-layer',
+        'source': 'MumbaiAirport',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
     });
     
     //Add CuatroTorres image
-    map.on('load', () => {
-            map.addSource('CuatroTorres', {
-                'type': 'image',
-                'url': 'https://photos.agash.ca/CuatroTorres.png',
-                'coordinates': [
-                    [ -3.6939235,  40.4842540],
-                    [ -3.6824920,  40.4842540],
-                    [ -3.6824920,  40.4752324],
-                    [ -3.6939235,  40.4752324]
-                ]
-            });
+    map.addSource('CuatroTorres', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/CuatroTorres.png',
+        'coordinates': [
+            [ -3.6939235,  40.4842540],
+            [ -3.6824920,  40.4842540],
+            [ -3.6824920,  40.4752324],
+            [ -3.6939235,  40.4752324]
+        ]
+    });
 
     map.addLayer({
-            'id': 'CuatroTorres-layer',
-            'source': 'CuatroTorres',
-            'type': 'raster',
-            'paint': {
-                'raster-fade-duration': 0,
-                'raster-emissive-strength': 1
-            }
-        });
+        'id': 'CuatroTorres-layer',
+        'source': 'CuatroTorres',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
     });
     
     //Add Alumbrera image
-    map.on('load', () => {
-            map.addSource('Alumbrera', {
-                'type': 'image',
-                'url': 'https://photos.agash.ca/Alumbrera.png',
-                'coordinates': [
-                    [-67.3785227, -26.2072537],
-                    [-67.3644373, -26.2072537],
-                    [-67.3644373, -26.2198949],
-                    [-67.3785227, -26.2198949]
-                ]
-            });
+    map.addSource('Alumbrera', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/Alumbrera.png',
+        'coordinates': [
+            [-67.3785227, -26.2072537],
+            [-67.3644373, -26.2072537],
+            [-67.3644373, -26.2198949],
+            [-67.3785227, -26.2198949]
+        ]
+    });
 
     map.addLayer({
-            'id': 'Alumbrera-layer',
-            'source': 'Alumbrera',
-            'type': 'raster',
-            'paint': {
-                'raster-fade-duration': 0,
-                'raster-emissive-strength': 1
-            }
-        });
+        'id': 'Alumbrera-layer',
+        'source': 'Alumbrera',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
     });
     
     //Add Petronas image
-    map.on('load', () => {
-            map.addSource('Petronas', {
-                'type': 'image',
-                'url': 'https://photos.agash.ca/Petronas.png',
-                'coordinates': [
-                    [101.7080049,   3.1611789],
-                    [101.7181758,   3.1611789],
-                    [101.7181758,   3.1520013],
-                    [101.7080049,   3.1520013]
-                ]
-            });
+    map.addSource('Petronas', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/Petronas.png',
+        'coordinates': [
+            [101.7080049,   3.1611789],
+            [101.7181758,   3.1611789],
+            [101.7181758,   3.1520013],
+            [101.7080049,   3.1520013]
+        ]
+    });
 
     map.addLayer({
-            'id': 'Petronas-layer',
-            'source': 'Petronas',
-            'type': 'raster',
-            'paint': {
-                'raster-fade-duration': 0,
-                'raster-emissive-strength': 1
-            }
-        });
+        'id': 'Petronas-layer',
+        'source': 'Petronas',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
     });
     
     //Add VolcanPoruñita image
-    map.on('load', () => {
-            map.addSource('VolcanPoruñita', {
-                'type': 'image',
-                'url': 'https://photos.agash.ca/VolcanPoruñita.png',
-                'coordinates': [
-                    [-68.3014837, -21.3113368],
-                    [-68.2854558, -21.3113368],
-                    [-68.2854558, -21.3246358],
-                    [-68.3014837, -21.3246358]
-                ]
-            });
+    map.addSource('VolcanPoruñita', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/VolcanPoruñita.png',
+        'coordinates': [
+            [-68.3014837, -21.3113368],
+            [-68.2854558, -21.3113368],
+            [-68.2854558, -21.3246358],
+            [-68.3014837, -21.3246358]
+        ]
+    });
 
     map.addLayer({
-            'id': 'VolcanPoruñita-layer',
-            'source': 'VolcanPoruñita',
-            'type': 'raster',
-            'paint': {
-                'raster-fade-duration': 0,
-                'raster-emissive-strength': 1
-            }
-        });
+        'id': 'VolcanPoruñita-layer',
+        'source': 'VolcanPoruñita',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
     });
 
     //Add SantaCruzdeIslote image
-    map.on('load', () => {
-            map.addSource('SantaCruzdeIslote', {
-                'type': 'image',
-                'url': 'https://photos.agash.ca/SantaCruzdeIslote.png',
-                'coordinates': [
-                    [-75.8611806,   9.7877409],
-                    [-75.8569911,   9.7877409],
-                    [-75.8569911,   9.7839457],
-                    [-75.8611806,   9.7839457]
-                ]
-            });
+    map.addSource('SantaCruzdeIslote', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/SantaCruzdeIslote.png',
+        'coordinates': [
+            [-75.8611806,   9.7877409],
+            [-75.8569911,   9.7877409],
+            [-75.8569911,   9.7839457],
+            [-75.8611806,   9.7839457]
+        ]
+    });
 
     map.addLayer({
-            'id': 'SantaCruzdeIslote-layer',
-            'source': 'SantaCruzdeIslote',
-            'type': 'raster',
-            'paint': {
-                'raster-fade-duration': 0,
-                'raster-emissive-strength': 1
-            }
-        });
+        'id': 'SantaCruzdeIslote-layer',
+        'source': 'SantaCruzdeIslote',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
     });
     
     //Add HuntsvilleAlabama image
-    map.on('load', () => {
-            map.addSource('HuntsvilleAlabama', {
-                'type': 'image',
-                'url': 'https://photos.agash.ca/HuntsvilleAlabama.png',
-                'coordinates': [
-                    [-86.6578632,  34.7129592],
-                    [-86.6537464,  34.7129592],
-                    [-86.6537464,  34.7094368],
-                    [-86.6578632,  34.7094368]
-                ]
-            });
+    map.addSource('HuntsvilleAlabama', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/HuntsvilleAlabama.png',
+        'coordinates': [
+            [-86.6578632,  34.7129592],
+            [-86.6537464,  34.7129592],
+            [-86.6537464,  34.7094368],
+            [-86.6578632,  34.7094368]
+        ]
+    });
 
     map.addLayer({
-            'id': 'HuntsvilleAlabama-layer',
-            'source': 'HuntsvilleAlabama',
-            'type': 'raster',
-            'paint': {
-                'raster-fade-duration': 0,
-                'raster-emissive-strength': 1
-            }
-        });
+        'id': 'HuntsvilleAlabama-layer',
+        'source': 'HuntsvilleAlabama',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
     });
     
     //Add DongdaemunDesignPlaza image
-    map.on('load', () => {
-            map.addSource('DongdaemunDesignPlaza', {
-                'type': 'image',
-                'url': 'https://photos.agash.ca/DongdaemunDesignPlaza.png',
-                'coordinates': [
-                    [127.0069694,  37.5695652],
-                    [127.0136913,  37.5695652],
-                    [127.0136913,  37.5644117],
-                    [127.0069694,  37.5644117]
-                ]
-            });
+    map.addSource('DongdaemunDesignPlaza', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/DongdaemunDesignPlaza.png',
+        'coordinates': [
+            [127.0069694,  37.5695652],
+            [127.0136913,  37.5695652],
+            [127.0136913,  37.5644117],
+            [127.0069694,  37.5644117]
+        ]
+    });
 
     map.addLayer({
-            'id': 'DongdaemunDesignPlaza-layer',
-            'source': 'DongdaemunDesignPlaza',
-            'type': 'raster',
-            'paint': {
-                'raster-fade-duration': 0,
-                'raster-emissive-strength': 1
-            }
-        });
+        'id': 'DongdaemunDesignPlaza-layer',
+        'source': 'DongdaemunDesignPlaza',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+
+    //Add CostaConcordia20130917 image
+    map.addSource('CostaConcordia20130917', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/CostaConcordia20130917.png',
+        'coordinates': [
+            [ 10.9174804,  42.3686645],
+            [ 10.9253973,  42.3686645],
+            [ 10.9253973,  42.3629957],
+            [ 10.9174804,  42.3629957]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'CostaConcordia20130917-layer',
+        'source': 'CostaConcordia20130917',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+    
+    //Add CostaConcordia20130712 image
+    map.addSource('CostaConcordia20130712', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/CostaConcordia20130712.png',
+        'coordinates': [
+            [ 10.9175219,  42.3686443],
+            [ 10.9255946,  42.3686443],
+            [ 10.9255946,  42.3629345],
+            [ 10.9175219,  42.3629345]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'CostaConcordia20130712-layer',
+        'source': 'CostaConcordia20130712',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+    
+    //Add GreatBlueHole image
+    map.addSource('GreatBlueHole', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/GreatBlueHole.png',
+        'coordinates': [
+            [-87.5392281,  17.3202921],
+            [-87.5298469,  17.3202921],
+            [-87.5298469,  17.3114092],
+            [-87.5392281,  17.3114092]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'GreatBlueHole-layer',
+        'source': 'GreatBlueHole',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
     });
 }
 
@@ -686,10 +716,64 @@ function addMarkers() {
                 zoom: 16,
                 essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
-    });    
+    });
+    
+        const CostaConcordia20130917Div = document.createElement('div');
+    CostaConcordia20130917Div.className = "marker";
+    const CostaConcordia20130917Marker = new mapboxgl.Marker(CostaConcordia20130917Div)
+        .setLngLat([ 10.9174804,  42.3686645])
+        .addTo(map);
+    CostaConcordia20130917Div.addEventListener('click', () => {
+            map.flyTo({
+                center: [ 10.9214388,  42.3658301],
+                zoom: 16,
+                essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            });
+    });
+
+    const CostaConcordia20130712Div = document.createElement('div');
+    CostaConcordia20130712Div.className = "marker";
+    const CostaConcordia20130712Marker = new mapboxgl.Marker(CostaConcordia20130712Div)
+        .setLngLat([ 10.9175219,  42.3686443])
+        .addTo(map);
+    CostaConcordia20130712Div.addEventListener('click', () => {
+            map.flyTo({
+                center: [ 10.9215582,  42.3657894],
+                zoom: 16,
+                essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            });
+    });
+
+    const GreatBlueHoleDiv = document.createElement('div');
+    GreatBlueHoleDiv.className = "marker";
+    const GreatBlueHoleMarker = new mapboxgl.Marker(GreatBlueHoleDiv)
+        .setLngLat([-87.5392281,  17.3202921])
+        .addTo(map);
+    GreatBlueHoleDiv.addEventListener('click', () => {
+            map.flyTo({
+                center: [-87.5345375,  17.3158507],
+                zoom: 16,
+                essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            });
+    });
 }
 
 map.on('style.load', () => {
     addAdditionalSourceAndLayer();
     addMarkers();
+});
+
+satBtn = document.getElementById('sat')
+standBtn = document.getElementById('stand')
+standBtn.addEventListener('click', () => {
+    map.setStyle('mapbox://styles/agash28/cmoaiha48000001s9808i2sl9');
+    satBtn.style.display = 'inline-block';
+    standBtn.style.display = 'none';
+});
+
+satBtn = document.getElementById('sat')
+satBtn.addEventListener('click', () => {
+    map.setStyle('mapbox://styles/agash28/cmoj53vb5002l01s45wgy4s2s');
+    satBtn.style.display = 'none';
+    standBtn.style.display = 'inline-block';
 });
