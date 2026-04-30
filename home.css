@@ -19,3 +19,7 @@ html {
     background-image: url("images/marker.png");
     background-size: 100%;
 }
+
+.marker:hover {
+    background-image: url("images/markerHover.png");
+}
