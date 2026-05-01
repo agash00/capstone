@@ -374,12 +374,16 @@ function addAdditionalSourceAndLayer() {
     //Add HuntsvilleAlabama image
     map.addSource('HuntsvilleAlabama', {
         'type': 'image',
-        'url': 'https://photos.agash.ca/HuntsvilleAlabama.png',
+        'url': 'https://photos.agash.ca/HuntsvilleAlabama1.png',
         'coordinates': [
-            [-86.6578632,  34.7129592],
-            [-86.6537464,  34.7129592],
-            [-86.6537464,  34.7094368],
-            [-86.6578632,  34.7094368]
+            // [-86.6578632,  34.7129592],
+            // [-86.6537464,  34.7129592],
+            // [-86.6537464,  34.7094368],
+            // [-86.6578632,  34.7094368]
+            [-86.6579534,  34.7128656],
+            [-86.6537377,  34.7128656],
+            [-86.6537377,  34.7095405],
+            [-86.6579534,  34.7095405]
         ]
     });
 
@@ -700,7 +704,7 @@ function addMarkers() {
     HuntsvilleAlabamaDiv.addEventListener('click', () => {
             map.flyTo({
                 center: [-86.6558048,  34.7111980],
-                zoom: 16,
+                zoom: 17,
                 essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
     });
