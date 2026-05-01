@@ -232,11 +232,9 @@
 </script>
 
 <!--CostaConcordia20130917 button flyout-->
-<button id="CostaConcordia20130917" class="flyoutBtn">CostaConcordia20130917</button>
+<button id="CostaConcordia20130917" class="flyoutBtn">CostaConcordia</button>
 <script>
     document.getElementById('CostaConcordia20130917').addEventListener('click', () => {
-        map.setLayoutProperty('CostaConcordia20130712-layer', 'visibility', 'none');
-        map.setLayoutProperty('CostaConcordia20130917-layer', 'visibility', 'visible');
         map.flyTo({
             center: [ 10.9214388,  42.3658301],
             zoom: 15,
@@ -246,18 +244,16 @@
 </script>
 
 <!--CostaConcordia20130712 button flyout-->
-<button id="CostaConcordia20130712" class="flyoutBtn">CostaConcordia20130712</button>
+<!-- <button id="CostaConcordia20130712" class="flyoutBtn">CostaConcordia20130712</button>
 <script>
     document.getElementById('CostaConcordia20130712').addEventListener('click', () => {
-        map.setLayoutProperty('CostaConcordia20130917-layer', 'visibility', 'none');
-        map.setLayoutProperty('CostaConcordia20130712-layer', 'visibility', 'visible');
         map.flyTo({
             center: [ 10.9215582,  42.3657894],
             zoom: 15,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
     });
-</script>
+</script> -->
 
 <!--GreatBlueHole button flyout-->
 <button id="GreatBlueHole" class="flyoutBtn">GreatBlueHole</button>

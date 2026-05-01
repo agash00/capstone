@@ -539,11 +539,15 @@ function addMarkers() {
                 essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
     });
-		
+	
+    const AlverniaPopup = new mapboxgl.Popup({ offset: 25 }).setText(
+        'Test popup'
+    );
     const AlverniaMarkerDiv = document.createElement('div');
     AlverniaMarkerDiv.className = "marker";
     const AlverniaMarker = new mapboxgl.Marker(AlverniaMarkerDiv)
         .setLngLat([19.5439031, 50.1047289])
+        .setPopup(AlverniaPopup)
         .addTo(map);
     AlverniaMarkerDiv.addEventListener('click', () => {
             map.flyTo({
@@ -551,6 +555,7 @@ function addMarkers() {
                 zoom: 15,
                 essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
+            
     });
 
     const HeydarAliyevAirportDiv = document.createElement('div');
@@ -722,31 +727,47 @@ function addMarkers() {
             });
     });
     
-        const CostaConcordia20130917Div = document.createElement('div');
+    let costaSwitch = 0;
+    const CostaPopup = new mapboxgl.Popup({ offset: 25 }).setText(
+        'Click this pin to toggle between 2013-07-12 and 2013-09-17 (testing)'
+    );
+    const CostaConcordia20130917Div = document.createElement('div');
     CostaConcordia20130917Div.className = "marker";
     const CostaConcordia20130917Marker = new mapboxgl.Marker(CostaConcordia20130917Div)
         .setLngLat([ 10.9174804,  42.3686645])
+        .setPopup(CostaPopup)
         .addTo(map);
     CostaConcordia20130917Div.addEventListener('click', () => {
-            map.flyTo({
-                center: [ 10.9214388,  42.3658301],
-                zoom: 16,
-                essential: true // this animation is considered essential with respect to prefers-reduced-motion
-            });
+        map.flyTo({
+            center: [ 10.9214388,  42.3658301],
+            zoom: 16,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+
+        if (costaSwitch == 0) {
+            map.setLayoutProperty('CostaConcordia20130917-layer', 'visibility', 'none');
+            map.setLayoutProperty('CostaConcordia20130712-layer', 'visibility', 'visible');
+            costaSwitch = 1
+        }
+        else {
+            map.setLayoutProperty('CostaConcordia20130917-layer', 'visibility', 'visible');
+            map.setLayoutProperty('CostaConcordia20130712-layer', 'visibility', 'none');
+            costaSwitch = 0
+        }
     });
 
-    const CostaConcordia20130712Div = document.createElement('div');
-    CostaConcordia20130712Div.className = "marker";
-    const CostaConcordia20130712Marker = new mapboxgl.Marker(CostaConcordia20130712Div)
-        .setLngLat([ 10.9175219,  42.3686443])
-        .addTo(map);
-    CostaConcordia20130712Div.addEventListener('click', () => {
-            map.flyTo({
-                center: [ 10.9215582,  42.3657894],
-                zoom: 16,
-                essential: true // this animation is considered essential with respect to prefers-reduced-motion
-            });
-    });
+    // const CostaConcordia20130712Div = document.createElement('div');
+    // CostaConcordia20130712Div.className = "marker";
+    // const CostaConcordia20130712Marker = new mapboxgl.Marker(CostaConcordia20130712Div)
+    //     .setLngLat([ 10.9175219,  42.3686443])
+    //     .addTo(map);
+    // CostaConcordia20130712Div.addEventListener('click', () => {
+    //         map.flyTo({
+    //             center: [ 10.9215582,  42.3657894],
+    //             zoom: 16,
+    //             essential: true // this animation is considered essential with respect to prefers-reduced-motion
+    //         });
+    // });
 
     const GreatBlueHoleDiv = document.createElement('div');
     GreatBlueHoleDiv.className = "marker";
