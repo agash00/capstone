@@ -267,6 +267,78 @@
     });
 </script>
 
+<!--Goma button flyout-->
+<button id="Goma" class="flyoutBtn">Goma</button>
+<script>
+    document.getElementById('Goma').addEventListener('click', () => {
+        map.flyTo({
+            center: [ 29.2397031,  -1.6408191],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+</script>
+
+<!--DowntownDubai button flyout-->
+<button id="DowntownDubai" class="flyoutBtn">DowntownDubai</button>
+<script>
+    document.getElementById('DowntownDubai').addEventListener('click', () => {
+        map.flyTo({
+            center: [ 55.2744506,  25.1969560],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+</script>
+
+<!--HotelRyugyongPyongyang button flyout-->
+<button id="HotelRyugyongPyongyang" class="flyoutBtn">HotelRyugyongPyongyang</button>
+<script>
+    document.getElementById('HotelRyugyongPyongyang').addEventListener('click', () => {
+        map.flyTo({
+            center: [125.7311787,  39.0363540],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+</script>
+
+<!--JudgeHarryPregersonInterchange button flyout-->
+<button id="JudgeHarryPregersonInterchange" class="flyoutBtn">JudgeHarryPregersonInterchange</button>
+<script>
+    document.getElementById('JudgeHarryPregersonInterchange').addEventListener('click', () => {
+        map.flyTo({
+            center: [-118.2806319,  33.9285273],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+</script>
+
+<!--BarringerCrater button flyout-->
+<button id="BarringerCrater" class="flyoutBtn">BarringerCrater</button>
+<script>
+    document.getElementById('BarringerCrater').addEventListener('click', () => {
+        map.flyTo({
+            center: [-111.0227980,  35.0272428],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+</script>
+
+<!--EritreaHalaba button flyout-->
+<button id="EritreaHalaba" class="flyoutBtn">EritreaHalaba</button>
+<script>
+    document.getElementById('EritreaHalaba').addEventListener('click', () => {
+        map.flyTo({
+            center: [ 41.7996784,  13.9120866],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+</script>
+
 </div>
 <div id="map"></div>
 <script src="geo.js"></script>

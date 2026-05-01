@@ -484,6 +484,170 @@ function addAdditionalSourceAndLayer() {
             'raster-emissive-strength': 1
         }
     });
+    //Add Goma image
+
+    map.addSource('Goma', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/Goma.png',
+        'coordinates': [
+            [ 29.2362327,  -1.6336956],
+            [ 29.2431734,  -1.6336956],
+            [ 29.2431734,  -1.6479425],
+            [ 29.2362327,  -1.6479425]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'Goma-layer',
+        'source': 'Goma',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+    
+    //Add GomaNIR image
+
+    map.addSource('GomaNIR', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/GomaNIR.png',
+        'coordinates': [
+            [ 29.2362574,  -1.6337058],
+            [ 29.2431397,  -1.6337058],
+            [ 29.2431397,  -1.6481668],
+            [ 29.2362574,  -1.6481668]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'GomaNIR-layer',
+        'source': 'GomaNIR',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        },
+        'layout': {
+            'visibility': 'none'
+        }
+    });
+    
+    //Add DowntownDubai image
+
+    map.addSource('DowntownDubai', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/DowntownDubai.png',
+        'coordinates': [
+            [ 55.2652644,  25.2052848],
+            [ 55.2836368,  25.2052848],
+            [ 55.2836368,  25.1886272],
+            [ 55.2652644,  25.1886272]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'DowntownDubai-layer',
+        'source': 'DowntownDubai',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+    
+    //Add HotelRyugyongPyongyang image
+
+    map.addSource('HotelRyugyongPyongyang', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/HotelRyugyongPyongyang.png',
+        'coordinates': [
+            [125.7243704,  39.0426505],
+            [125.7379870,  39.0426505],
+            [125.7379870,  39.0300574],
+            [125.7243704,  39.0300574]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'HotelRyugyongPyongyang-layer',
+        'source': 'HotelRyugyongPyongyang',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+    
+    //Add JudgeHarryPregersonInterchange image
+
+    map.addSource('JudgeHarryPregersonInterchange', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/JudgeHarryPregersonInterchange.png',
+        'coordinates': [
+            [-118.2849491,  33.9317151],
+            [-118.2763147,  33.9317151],
+            [-118.2763147,  33.9253396],
+            [-118.2849491,  33.9253396]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'JudgeHarryPregersonInterchange-layer',
+        'source': 'JudgeHarryPregersonInterchange',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+    
+    //Add BarringerCrater image
+
+    map.addSource('BarringerCrater', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/BarringerCrater.png',
+        'coordinates': [
+            [-111.0319917,  35.0347428],
+            [-111.0136043,  35.0347428],
+            [-111.0136043,  35.0197428],
+            [-111.0319917,  35.0197428]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'BarringerCrater-layer',
+        'source': 'BarringerCrater',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+    
+    //Add EritreaHalaba image
+
+    map.addSource('EritreaHalaba', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/EritreaHalaba.png',
+        'coordinates': [
+            [ 41.7936167,  13.9189114],
+            [ 41.8057402,  13.9189114],
+            [ 41.8057402,  13.9052619],
+            [ 41.7936167,  13.9052619]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'EritreaHalaba-layer',
+        'source': 'EritreaHalaba',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+
 }
 
 //add markers
@@ -777,6 +941,112 @@ function addMarkers() {
     GreatBlueHoleDiv.addEventListener('click', () => {
             map.flyTo({
                 center: [-87.5345375,  17.3158507],
+                zoom: 16,
+                essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            });
+    });
+
+    let GomaSwitch = 0;
+    const GomaDiv = document.createElement('div');
+    GomaDiv.className = "marker";
+    const GomaPopup = new mapboxgl.Popup({ offset: 25 }).setText(
+        'Click this pin to toggle between natural colour and NIR (testing)'
+    );
+    const GomaMarker = new mapboxgl.Marker(GomaDiv)
+        .setLngLat([ 29.2362327,  -1.6336956])
+        .setPopup(GomaPopup)
+        .addTo(map);
+    GomaDiv.addEventListener('click', () => {
+        map.flyTo({
+            center: [ 29.2397031,  -1.6408191],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+        if (GomaSwitch == 0) {
+            map.setLayoutProperty('GomaNIR-layer', 'visibility', 'none');
+            map.setLayoutProperty('Goma-layer', 'visibility', 'visible');
+            GomaSwitch = 1
+        }
+        else {
+            map.setLayoutProperty('GomaNIR-layer', 'visibility', 'visible');
+            map.setLayoutProperty('Goma-layer', 'visibility', 'none');
+            GomaSwitch = 0
+        }
+    });
+
+    // const GomaNIRDiv = document.createElement('div');
+    // GomaNIRDiv.className = "marker";
+    // const GomaNIRMarker = new mapboxgl.Marker(GomaNIRDiv)
+    //     .setLngLat([ 29.2362574,  -1.6337058])
+    //     .addTo(map);
+    // GomaNIRDiv.addEventListener('click', () => {
+    //         map.flyTo({
+    //             center: [ 29.2396986,  -1.6409363],
+    //             zoom: 16,
+    //             essential: true // this animation is considered essential with respect to prefers-reduced-motion
+    //         });
+    // });
+
+    const DowntownDubaiDiv = document.createElement('div');
+    DowntownDubaiDiv.className = "marker";
+    const DowntownDubaiMarker = new mapboxgl.Marker(DowntownDubaiDiv)
+        .setLngLat([ 55.2652644,  25.2052848])
+        .addTo(map);
+    DowntownDubaiDiv.addEventListener('click', () => {
+            map.flyTo({
+                center: [ 55.2744506,  25.1969560],
+                zoom: 16,
+                essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            });
+    });
+
+    const HotelRyugyongPyongyangDiv = document.createElement('div');
+    HotelRyugyongPyongyangDiv.className = "marker";
+    const HotelRyugyongPyongyangMarker = new mapboxgl.Marker(HotelRyugyongPyongyangDiv)
+        .setLngLat([125.7243704,  39.0426505])
+        .addTo(map);
+    HotelRyugyongPyongyangDiv.addEventListener('click', () => {
+            map.flyTo({
+                center: [125.7311787,  39.0363540],
+                zoom: 16,
+                essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            });
+    });
+
+    const JudgeHarryPregersonInterchangeDiv = document.createElement('div');
+    JudgeHarryPregersonInterchangeDiv.className = "marker";
+    const JudgeHarryPregersonInterchangeMarker = new mapboxgl.Marker(JudgeHarryPregersonInterchangeDiv)
+        .setLngLat([-118.2849491,  33.9317151])
+        .addTo(map);
+    JudgeHarryPregersonInterchangeDiv.addEventListener('click', () => {
+            map.flyTo({
+                center: [-118.2806319,  33.9285273],
+                zoom: 16,
+                essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            });
+    });
+
+    const BarringerCraterDiv = document.createElement('div');
+    BarringerCraterDiv.className = "marker";
+    const BarringerCraterMarker = new mapboxgl.Marker(BarringerCraterDiv)
+        .setLngLat([-111.0319917,  35.0347428])
+        .addTo(map);
+    BarringerCraterDiv.addEventListener('click', () => {
+            map.flyTo({
+                center: [-111.0227980,  35.0272428],
+                zoom: 16,
+                essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            });
+    });
+
+    const EritreaHalabaDiv = document.createElement('div');
+    EritreaHalabaDiv.className = "marker";
+    const EritreaHalabaMarker = new mapboxgl.Marker(EritreaHalabaDiv)
+        .setLngLat([ 41.7936167,  13.9189114])
+        .addTo(map);
+    EritreaHalabaDiv.addEventListener('click', () => {
+            map.flyTo({
+                center: [ 41.7996784,  13.9120866],
                 zoom: 16,
                 essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
