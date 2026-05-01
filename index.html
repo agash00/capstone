@@ -339,6 +339,42 @@
     });
 </script>
 
+<!--MalborkCastle button flyout-->
+<button id="MalborkCastle" class="flyoutBtn">MalborkCastle</button>
+<script>
+    document.getElementById('MalborkCastle').addEventListener('click', () => {
+        map.flyTo({
+            center: [ 19.0293384,  54.0407455],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+</script>
+
+<!--LuboszówPoland button flyout-->
+<button id="LuboszówPoland" class="flyoutBtn">LuboszówPoland</button>
+<script>
+    document.getElementById('LuboszówPoland').addEventListener('click', () => {
+        map.flyTo({
+            center: [ 15.3952125,  51.4262891],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+</script>
+
+<!--KuwaitAirport button flyout-->
+<button id="KuwaitAirport" class="flyoutBtn">KuwaitAirport</button>
+<script>
+    document.getElementById('KuwaitAirport').addEventListener('click', () => {
+        map.flyTo({
+            center: [ 47.9875710,  29.2142234],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+</script>
+
 </div>
 <div id="map"></div>
 <script src="geo.js"></script>

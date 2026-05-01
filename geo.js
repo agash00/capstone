@@ -648,6 +648,75 @@ function addAdditionalSourceAndLayer() {
         }
     });
 
+        //Add MalborkCastle image
+
+    map.addSource('MalborkCastle', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/MalborkCastle.png',
+        'coordinates': [
+            [ 19.0248672,  54.0436092],
+            [ 19.0338096,  54.0436092],
+            [ 19.0338096,  54.0378817],
+            [ 19.0248672,  54.0378817]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'MalborkCastle-layer',
+        'source': 'MalborkCastle',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+    
+    //Add LuboszówPoland image
+
+    map.addSource('LuboszówPoland', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/LuboszówPoland.png',
+        'coordinates': [
+            [ 15.3913811,  51.4283021],
+            [ 15.3990438,  51.4283021],
+            [ 15.3990438,  51.4242761],
+            [ 15.3913811,  51.4242761]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'LuboszówPoland-layer',
+        'source': 'LuboszówPoland',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+    
+    //Add KuwaitAirport image
+
+    map.addSource('KuwaitAirport', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/KuwaitAirport.png',
+        'coordinates': [
+            [ 47.9809110,  29.2203451],
+            [ 47.9942310,  29.2203451],
+            [ 47.9942310,  29.2081018],
+            [ 47.9809110,  29.2081018]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'KuwaitAirport-layer',
+        'source': 'KuwaitAirport',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+
 }
 
 //add markers
@@ -1047,6 +1116,45 @@ function addMarkers() {
     EritreaHalabaDiv.addEventListener('click', () => {
             map.flyTo({
                 center: [ 41.7996784,  13.9120866],
+                zoom: 16,
+                essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            });
+    });
+
+        const MalborkCastleDiv = document.createElement('div');
+    MalborkCastleDiv.className = "marker";
+    const MalborkCastleMarker = new mapboxgl.Marker(MalborkCastleDiv)
+        .setLngLat([ 19.0248672,  54.0436092])
+        .addTo(map);
+    MalborkCastleDiv.addEventListener('click', () => {
+            map.flyTo({
+                center: [ 19.0293384,  54.0407455],
+                zoom: 16,
+                essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            });
+    });
+
+    const LuboszówPolandDiv = document.createElement('div');
+    LuboszówPolandDiv.className = "marker";
+    const LuboszówPolandMarker = new mapboxgl.Marker(LuboszówPolandDiv)
+        .setLngLat([ 15.3913811,  51.4283021])
+        .addTo(map);
+    LuboszówPolandDiv.addEventListener('click', () => {
+            map.flyTo({
+                center: [ 15.3952125,  51.4262891],
+                zoom: 16,
+                essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            });
+    });
+
+    const KuwaitAirportDiv = document.createElement('div');
+    KuwaitAirportDiv.className = "marker";
+    const KuwaitAirportMarker = new mapboxgl.Marker(KuwaitAirportDiv)
+        .setLngLat([ 47.9809110,  29.2203451])
+        .addTo(map);
+    KuwaitAirportDiv.addEventListener('click', () => {
+            map.flyTo({
+                center: [ 47.9875710,  29.2142234],
                 zoom: 16,
                 essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
