@@ -44,12 +44,12 @@ function addAdditionalSourceAndLayer() {
     //Add Eixample image
     map.addSource('Eixample', {
         'type': 'image',
-        'url': 'https://photos.agash.ca/Eixample+Barcelona+50cm.jpg',
+        'url': 'https://photos.agash.ca/EixampleBarcelona1.png',
         'coordinates': [
-            [2.152970736, 41.389813995],
-            [2.164239010, 41.381105396],
-            [2.156200608, 41.375247328],
-            [2.144930709,41.383959081]
+            [2.1448189, 41.3891015],
+            [2.1632097, 41.3891015],
+            [2.1632097, 41.3752473],
+            [2.1448189, 41.3752473]
         ]
     });
 
@@ -872,12 +872,12 @@ function addMarkers() {
     const EixampleDiv = document.createElement('div');
     EixampleDiv.className = "marker";
     const EixampleMarker = new mapboxgl.Marker(EixampleDiv)
-        .setLngLat([2.152970736, 41.389813995])
+        .setLngLat([2.1516329, 41.3890737])
         .addTo(map);
     EixampleDiv.addEventListener('click', () => {
             map.flyTo({
-                center: [2.154456,41.382745],
-                zoom: 16,
+                center: [2.1540143, 41.3821744],
+                zoom: 15,
                 essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
     });
