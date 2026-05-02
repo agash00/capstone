@@ -1300,6 +1300,11 @@ function addMarkers() {
     KuwaitAirportDiv.addEventListener('mouseover', () => {
         KuwaitAirportName.textContent = 'Kuwait Airport';
     });
+
+    const AlverniaMarkerName = document.getElementById('placeName');
+    AlverniaMarkerDiv.addEventListener('mouseover', () => {
+        AlverniaMarkerName.textContent = 'Alvernia';
+    });
 }
 
 map.on('style.load', () => {
