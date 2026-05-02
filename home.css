@@ -2,15 +2,52 @@ html {
     background-color: black;
 }
 
+#content {
+    display: block;
+    margin-left: 2%;
+}
+
+#main {
+    color: white;
+}
+
+#placeName {
+    font-size: 3vh;
+}
+
 #map {
     width: 95vw; 
-    height: 90vh;
+    height: 85vh;
     margin: auto;
 }
 
-#flyout {
-    margin-bottom: 1%;
-    margin-left: 2%;
+
+#mapBtnsOutline {
+    display: flex;
+    margin-bottom: 2%;
+}
+
+.mapBtns {
+    margin-right: 5px;
+    font-size: 1vw;
+}
+
+.flyoutBtn {
+    font-size: 0.8vw;
+}
+
+#dropdown-content {
+    height: 5vh;
+    width: 80%;
+    display: none;
+    position: absolute;
+    overflow-x: scroll;
+    white-space: nowrap;
+    scrollbar-width: thin;
+}
+
+.dropdown:hover #dropdown-content {
+    display: inline-block;
 }
 
 .marker {

@@ -15,6 +15,7 @@ const nav = new mapboxgl.NavigationControl({
 
 map.addControl(nav, 'bottom-right');
 
+let defaultText = 'Hover or click a pin on the map';
 
 function addAdditionalSourceAndLayer() {
 
@@ -871,7 +872,7 @@ function addMarkers() {
 
     const EixampleDiv = document.createElement('div');
     EixampleDiv.className = "marker";
-    const EixampleMarker = new mapboxgl.Marker(EixampleDiv)
+    const EixampleMarker = new mapboxgl.Marker(EixampleDiv, {anchor: 'bottom'})
         .setLngLat([2.1516329, 41.3890737])
         .addTo(map);
     EixampleDiv.addEventListener('click', () => {
@@ -1088,11 +1089,11 @@ function addMarkers() {
         .setLngLat([-118.2849491,  33.9317151])
         .addTo(map);
     JudgeHarryPregersonInterchangeDiv.addEventListener('click', () => {
-            map.flyTo({
-                center: [-118.2806319,  33.9285273],
-                zoom: 16,
-                essential: true // this animation is considered essential with respect to prefers-reduced-motion
-            });
+        map.flyTo({
+            center: [-118.2806319,  33.9285273],
+            zoom: 16,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
     });
 
     const BarringerCraterDiv = document.createElement('div');
@@ -1158,6 +1159,146 @@ function addMarkers() {
                 zoom: 16,
                 essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
+    });
+
+    const ArctowskiName = document.getElementById('placeName');
+    ArctowskiDiv.addEventListener('mouseover', () => {
+        ArctowskiName.textContent = 'Arctowski';
+    });
+        
+    const NorthSentinelName = document.getElementById('placeName');
+    NorthSentinelDiv.addEventListener('mouseover', () => {
+        NorthSentinelName.textContent = 'North Sentinel';
+    });
+        
+    const GoldenGateName = document.getElementById('placeName');
+    GoldenGateDiv.addEventListener('mouseover', () => {
+        GoldenGateName.textContent = 'Golden Gate';
+    });
+        
+    const DallolEthiopiaName = document.getElementById('placeName');
+    DallolEthiopiaDiv.addEventListener('mouseover', () => {
+        DallolEthiopiaName.textContent = 'Dallol Ethiopia';
+    });
+        
+    const HeydarAliyevAirportName = document.getElementById('placeName');
+    HeydarAliyevAirportDiv.addEventListener('mouseover', () => {
+        HeydarAliyevAirportName.textContent = 'Heydar Aliyev Airport';
+    });
+        
+    const MumbaiAirportName = document.getElementById('placeName');
+    MumbaiAirportDiv.addEventListener('mouseover', () => {
+        MumbaiAirportName.textContent = 'Mumbai Airport';
+    });
+        
+    const CuatroTorresName = document.getElementById('placeName');
+    CuatroTorresDiv.addEventListener('mouseover', () => {
+        CuatroTorresName.textContent = 'Cuatro Torres';
+    });
+        
+    const AlumbreraName = document.getElementById('placeName');
+    AlumbreraDiv.addEventListener('mouseover', () => {
+        AlumbreraName.textContent = 'Alumbrera';
+    });
+        
+    const PetronasName = document.getElementById('placeName');
+    PetronasDiv.addEventListener('mouseover', () => {
+        PetronasName.textContent = 'Petronas';
+    });
+        
+    const VolcanPoruñitaName = document.getElementById('placeName');
+    VolcanPoruñitaDiv.addEventListener('mouseover', () => {
+        VolcanPoruñitaName.textContent = 'Volcan Poru ñita';
+    });
+        
+    const EixampleName = document.getElementById('placeName');
+    EixampleDiv.addEventListener('mouseover', () => {
+        EixampleName.textContent = 'Eixample';
+    });
+        
+    const HungaTongaName = document.getElementById('placeName');
+    HungaTongaDiv.addEventListener('mouseover', () => {
+        HungaTongaName.textContent = 'Hunga Tonga';
+    });
+        
+    const BeijingDaxingName = document.getElementById('placeName');
+    BeijingDaxingDiv.addEventListener('mouseover', () => {
+        BeijingDaxingName.textContent = 'Beijing Daxing';
+    });
+        
+    const VolcanJoteName = document.getElementById('placeName');
+    VolcanJoteDiv.addEventListener('mouseover', () => {
+        VolcanJoteName.textContent = 'Volcan Jote';
+    });
+        
+    const SantaCruzdeIsloteName = document.getElementById('placeName');
+    SantaCruzdeIsloteDiv.addEventListener('mouseover', () => {
+        SantaCruzdeIsloteName.textContent = 'Santa Cruzde Islote';
+    });
+        
+    const HuntsvilleAlabamaName = document.getElementById('placeName');
+    HuntsvilleAlabamaDiv.addEventListener('mouseover', () => {
+        HuntsvilleAlabamaName.textContent = 'Huntsville Alabama';
+    });
+        
+    const DongdaemunDesignPlazaName = document.getElementById('placeName');
+    DongdaemunDesignPlazaDiv.addEventListener('mouseover', () => {
+        DongdaemunDesignPlazaName.textContent = 'Dongdaemun Design Plaza';
+    });
+        
+    const CostaConcordia20130712Name = document.getElementById('placeName');
+    CostaConcordia20130917Div.addEventListener('mouseover', () => {
+        CostaConcordia20130712Name.textContent = 'Costa Concordia';
+    });
+        
+    const GreatBlueHoleName = document.getElementById('placeName');
+    GreatBlueHoleDiv.addEventListener('mouseover', () => {
+        GreatBlueHoleName.textContent = 'Great Blue Hole';
+    });
+        
+    const GomaName = document.getElementById('placeName');
+    GomaDiv.addEventListener('mouseover', () => {
+        GomaName.textContent = 'Goma';
+    });
+        
+    const DowntownDubaiName = document.getElementById('placeName');
+    DowntownDubaiDiv.addEventListener('mouseover', () => {
+        DowntownDubaiName.textContent = 'Downtown Dubai';
+    });
+        
+    const HotelRyugyongPyongyangName = document.getElementById('placeName');
+    HotelRyugyongPyongyangDiv.addEventListener('mouseover', () => {
+        HotelRyugyongPyongyangName.textContent = 'Hotel Ryugyong Pyongyang';
+    });
+        
+    const JudgeHarryPregersonInterchangeName = document.getElementById('placeName');
+    JudgeHarryPregersonInterchangeDiv.addEventListener('mouseover', () => {
+        JudgeHarryPregersonInterchangeName.textContent = 'Judge Harry Pregerson Interchange';
+    });
+        
+    const BarringerCraterName = document.getElementById('placeName');
+    BarringerCraterDiv.addEventListener('mouseover', () => {
+        BarringerCraterName.textContent = 'Barringer Crater';
+    });
+        
+    const EritreaHalabaName = document.getElementById('placeName');
+    EritreaHalabaDiv.addEventListener('mouseover', () => {
+        EritreaHalabaName.textContent = 'Eritrea Halaba';
+    });
+        
+    const MalborkCastleName = document.getElementById('placeName');
+    MalborkCastleDiv.addEventListener('mouseover', () => {
+        MalborkCastleName.textContent = 'Malbork Castle';
+    });
+        
+    const LuboszówPolandName = document.getElementById('placeName');
+    LuboszówPolandDiv.addEventListener('mouseover', () => {
+        LuboszówPolandName.textContent = 'Luboszów Poland';
+    });
+        
+    const KuwaitAirportName = document.getElementById('placeName');
+    KuwaitAirportDiv.addEventListener('mouseover', () => {
+        KuwaitAirportName.textContent = 'Kuwait Airport';
     });
 }
 

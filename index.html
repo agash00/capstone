@@ -10,10 +10,20 @@
 
 
 <body>
-<div id="flyout">
 
-<button id="sat">Satellite View</button>
-<button id="stand" style="display: none;">Standard Map View</button>
+<div id="content">
+<div id ="main">
+
+<h1 id="placeName">Hover or click a pin on the map</h1>
+    
+<div id="mapBtnsOutline">
+
+<button id="sat" class="mapBtns">Satellite View</button>
+<button id="stand" class="mapBtns" style="display: none;">Standard Map View</button>
+
+<div class="dropdown">
+<button id="dropbtn" class="mapBtns">Places</button>
+<div id="dropdown-content">
 
 <!--Alvernia button flyout-->
 <button id="Alvernia" class="flyoutBtn">Alvernia Planet</button>
@@ -375,6 +385,10 @@
     });
 </script>
 
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="map"></div>
 <script src="geo.js"></script>
