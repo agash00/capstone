@@ -1161,6 +1161,8 @@ function addMarkers() {
             });
     });
 
+
+    //hover pin place text
     const ArctowskiName = document.getElementById('placeName');
     ArctowskiDiv.addEventListener('mouseover', () => {
         ArctowskiName.textContent = 'Arctowski';
