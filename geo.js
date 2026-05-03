@@ -962,14 +962,14 @@ function addMarkers() {
     });
     
     let costaSwitch = 0;
-    const CostaPopup = new mapboxgl.Popup({ offset: 25 }).setText(
-        'Click this pin to toggle between 2013-07-12 and 2013-09-17 (testing)'
-    );
+    // const CostaPopup = new mapboxgl.Popup({ offset: 25 }).setText(
+    //     'Click this pin to toggle between 2013-07-12 and 2013-09-17 (testing)'
+    // );
     const CostaConcordia20130917Div = document.createElement('div');
     CostaConcordia20130917Div.className = "marker";
     const CostaConcordia20130917Marker = new mapboxgl.Marker(CostaConcordia20130917Div)
         .setLngLat([ 10.9174804,  42.3686645])
-        .setPopup(CostaPopup)
+        //.setPopup(CostaPopup)
         .addTo(map);
     CostaConcordia20130917Div.addEventListener('click', () => {
         map.flyTo({
@@ -1019,12 +1019,12 @@ function addMarkers() {
     let GomaSwitch = 0;
     const GomaDiv = document.createElement('div');
     GomaDiv.className = "marker";
-    const GomaPopup = new mapboxgl.Popup({ offset: 25 }).setText(
-        'Click this pin to toggle between natural colour and NIR (testing)'
-    );
+    // const GomaPopup = new mapboxgl.Popup({ offset: 25 }).setText(
+    //     'Click this pin to toggle between natural colour and NIR (testing)'
+    // );
     const GomaMarker = new mapboxgl.Marker(GomaDiv)
         .setLngLat([ 29.2362327,  -1.6336956])
-        .setPopup(GomaPopup)
+        //.setPopup(GomaPopup)
         .addTo(map);
     GomaDiv.addEventListener('click', () => {
         map.flyTo({
@@ -1122,7 +1122,7 @@ function addMarkers() {
             });
     });
 
-        const MalborkCastleDiv = document.createElement('div');
+    const MalborkCastleDiv = document.createElement('div');
     MalborkCastleDiv.className = "marker";
     const MalborkCastleMarker = new mapboxgl.Marker(MalborkCastleDiv)
         .setLngLat([ 19.0248672,  54.0436092])
@@ -1249,8 +1249,12 @@ function addMarkers() {
     });
         
     const CostaConcordia20130712Name = document.getElementById('placeName');
+    const CostaConcordiaSwitchText = document.createElement('p');
+    CostaConcordiaSwitchText.className = 'switchText';
+    CostaConcordiaSwitchText.textContent = "Click this pin to toggle between 2013-07-12 and 2013-09-17 (testing)";
     CostaConcordia20130917Div.addEventListener('mouseover', () => {
         CostaConcordia20130712Name.textContent = 'Costa Concordia';
+        CostaConcordia20130712Name.appendChild(CostaConcordiaSwitchText);
     });
         
     const GreatBlueHoleName = document.getElementById('placeName');
@@ -1259,8 +1263,12 @@ function addMarkers() {
     });
         
     const GomaName = document.getElementById('placeName');
+    const GomaSwitchText = document.createElement('p');
+    GomaSwitchText.className = 'switchText';
+    GomaSwitchText.textContent = "Click this pin to toggle between natural colour and NIR (testing)";
     GomaDiv.addEventListener('mouseover', () => {
         GomaName.textContent = 'Goma';
+        GomaName.appendChild(GomaSwitchText);
     });
         
     const DowntownDubaiName = document.getElementById('placeName');

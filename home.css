@@ -3,8 +3,10 @@ html {
 }
 
 #content {
+    height: 9.5vh;
     display: block;
     margin-left: 2%;
+    margin-bottom: 1%;
 }
 
 #main {
@@ -13,18 +15,19 @@ html {
 
 #placeName {
     font-size: 3vh;
+    margin-bottom: 0.5%;
 }
 
 #map {
     width: 95vw; 
     height: 85vh;
-    margin: auto;
+    margin-left: 2%;
+    margin-bottom: 0%;
 }
 
 
 #mapBtnsOutline {
     display: flex;
-    margin-bottom: 2%;
 }
 
 .mapBtns {
@@ -33,11 +36,11 @@ html {
 }
 
 .flyoutBtn {
-    font-size: 0.8vw;
+    font-size: 0.5vw;
 }
 
 #dropdown-content {
-    height: 5vh;
+    height: 4vh;
     width: 80%;
     display: none;
     position: absolute;
@@ -59,4 +62,9 @@ html {
 
 .marker:hover {
     background-image: url("images/markerHover.png");
+}
+
+.switchText {
+    font-size: 1.5vh;
+    margin: 0;
 }
