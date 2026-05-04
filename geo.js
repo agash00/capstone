@@ -1,23 +1,52 @@
+//let defaultText = 'Hover or click a pin on the map';
+
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWdhc2gyOCIsImEiOiJjbW9haTVmaHowNzc1MnFwenA4MGRqYjNjIn0.EmsXtKTofPNUU_D-kM61CA';
 
-  // creates the map, setting the container to the id of the div you added in step 2, and setting the initial center and zoom level of the map
-const map = new mapboxgl.Map({
-    container: 'map', // container ID
-    style: 'mapbox://styles/agash28/cmoaiha48000001s9808i2sl9'
-    //style: 'mapbox://styles/agash28/cmoj53vb5002l01s45wgy4s2s'
+// creates the map, setting the container to the id of the div you added in step 2, and setting the initial center and zoom level of the map
+function addMap() {
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/agash28/cmoaiha48000001s9808i2sl9'
+        //style: 'mapbox://styles/agash28/cmoj53vb5002l01s45wgy4s2s'
+    });
+
+    map.addControl(new mapboxgl.FullscreenControl());
+
+    const nav = new mapboxgl.NavigationControl({
+        visualizePitch: true
+    });
+
+    map.addControl(nav, 'bottom-right');
+    map.on('style.load', () => {
+        addAdditionalSourceAndLayer(map);
+        addMarkers(map);
+    });
+
+    satBtn = document.getElementById('sat')
+    standBtn = document.getElementById('stand')
+    standBtn.addEventListener('click', () => {
+        map.setStyle('mapbox://styles/agash28/cmoaiha48000001s9808i2sl9');
+        satBtn.style.display = 'inline-block';
+        standBtn.style.display = 'none';
+    });
+
+    satBtn = document.getElementById('sat')
+    satBtn.addEventListener('click', () => {
+        map.setStyle('mapbox://styles/agash28/cmoj53vb5002l01s45wgy4s2s');
+        satBtn.style.display = 'none';
+        standBtn.style.display = 'inline-block';
+    });
+    return map;
+}
+
+//added button to start the map instead of auto load at each refresh
+document.getElementById('startBtn').addEventListener('click', () => {
+    map = addMap();
+    document.getElementById('startBtn').style.display = 'none';
 });
 
-map.addControl(new mapboxgl.FullscreenControl());
 
-const nav = new mapboxgl.NavigationControl({
-    visualizePitch: true
-});
-
-map.addControl(nav, 'bottom-right');
-
-let defaultText = 'Hover or click a pin on the map';
-
-function addAdditionalSourceAndLayer() {
+function addAdditionalSourceAndLayer(map) {
 
 //Add Hunga Tonga image
 
@@ -721,7 +750,7 @@ function addAdditionalSourceAndLayer() {
 }
 
 //add markers
-function addMarkers() {
+function addMarkers(map) {
     const ArctowskiDiv = document.createElement('div');
     ArctowskiDiv.className = "marker";
     const ArctowskiMarker = new mapboxgl.Marker(ArctowskiDiv)
@@ -1316,23 +1345,3 @@ function addMarkers() {
         AlverniaMarkerName.textContent = 'Alvernia';
     });
 }
-
-map.on('style.load', () => {
-    addAdditionalSourceAndLayer();
-    addMarkers();
-});
-
-satBtn = document.getElementById('sat')
-standBtn = document.getElementById('stand')
-standBtn.addEventListener('click', () => {
-    map.setStyle('mapbox://styles/agash28/cmoaiha48000001s9808i2sl9');
-    satBtn.style.display = 'inline-block';
-    standBtn.style.display = 'none';
-});
-
-satBtn = document.getElementById('sat')
-satBtn.addEventListener('click', () => {
-    map.setStyle('mapbox://styles/agash28/cmoj53vb5002l01s45wgy4s2s');
-    satBtn.style.display = 'none';
-    standBtn.style.display = 'inline-block';
-});
