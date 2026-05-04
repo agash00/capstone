@@ -103,6 +103,10 @@ html {
 
 .flyoutBtn {
     font-size: 0.5vw;
+    color: white;
+    background-color: black;
+    text-align: center;
+    width: auto;
 }
 
 #dropbtn {
@@ -111,13 +115,14 @@ html {
 }
 
 #dropdown-content {
-    height: 5vh;
-    width: 80%;
+    height: 3.5vh;
+    width: 90%;
     display: none;
     position: absolute;
     overflow-x: scroll;
     white-space: nowrap;
     scrollbar-width: thin;
+    background-color: darkblue;
 }
 
 .dropdown:hover #dropdown-content {
