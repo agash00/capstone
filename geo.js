@@ -43,7 +43,7 @@ function addMap() {
 document.getElementById('startBtn').addEventListener('click', () => {
     map = addMap();
     document.getElementById('startBtn').style.display = 'none';
-    document.getElementById('mapBtnsOutline').style.display = '';
+    document.getElementById('content').style.display = '';
 });
 
 
