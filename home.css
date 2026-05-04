@@ -44,12 +44,69 @@ html {
 }
 
 .mapBtns {
+    width: 2vw;
+    height: 2vw;
+    background-color: black;
     margin-right: 5px;
-    font-size: 0.8vw;
+}
+
+#satBtn {
+    position: relative;
+}
+
+#sat {
+    background-image: url("images/satellite.png");
+    background-size: 1.9vw;
+}
+
+#satTip {
+    position: absolute;
+    visibility: hidden;
+    text-align: center;
+    color: white;
+    background-color: darkblue;
+    width: 5vw;
+    font-size: 0.7vw;
+    top: -2vh;
+    left: -0.5vw;
+}
+
+#satBtn:hover #satTip {
+    visibility: visible;
+}
+
+#standBtn {
+    position: relative;
+}
+
+#stand {
+    background-image: url("images/standard.png");
+    background-size: 1.9vw;
+}
+
+#standTip {
+    position: absolute;
+    visibility: hidden;
+    text-align: center;
+    color: white;
+    background-color: darkblue;
+    width: 6vw;
+    font-size: 0.7vw;
+    top: -2vh;
+    left: -0.5vw;
+}
+
+#standBtn:hover #standTip {
+    visibility: visible;
 }
 
 .flyoutBtn {
     font-size: 0.5vw;
+}
+
+#dropbtn {
+    background-image: url("images/marker.png");
+    background-size: 1.8vw;
 }
 
 #dropdown-content {
