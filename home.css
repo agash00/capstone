@@ -4,14 +4,10 @@ html {
 
 
 #content {
-    height: 9.5vh;
     display: block;
+    height: 18vh;
     margin-left: 2%;
     margin-right: 2%;
-    margin-bottom: 1%;
-}
-
-#main {
     color: white;
     position: relative;
 }
@@ -35,11 +31,12 @@ html {
 }
 
 #map {
-    width: 95vw; 
-    height: 85vh;
-    margin-top: 1.5vw;
-    margin-left: 2%;
-    margin-bottom: 0%;
+    position: fixed;
+    bottom: 0;
+    border-top: 2px solid white;
+    width: 99vw; 
+    height: 80vh;
+    z-index: -1;
 }
 
 
@@ -47,6 +44,10 @@ html {
     display: flex;
     border-top: 2px solid white;
     padding-top: 0.5%;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0.5%;
+    width: 95vw;
 }
 
 .mapBtns {
@@ -59,6 +60,18 @@ html {
     background-size: cover;
 }
 
+.tooltip {
+    position: absolute;
+    visibility: hidden;
+    text-align: center;
+    color: white;
+    background-color: darkblue;
+    width: 6vw;
+    font-size: 0.7vw;
+    bottom: -2vh;
+    left: -0.5vw;
+}
+
 #satBtn {
     position: relative;
 }
@@ -67,19 +80,8 @@ html {
     background-image: url("images/satellite.png");
 }
 
-#satTip {
-    position: absolute;
-    visibility: hidden;
-    text-align: center;
-    color: white;
-    background-color: darkblue;
-    width: 5vw;
-    font-size: 0.7vw;
-    top: -2vh;
-    left: -0.5vw;
-}
 
-#satBtn:hover #satTip {
+#satBtn:hover .tooltip {
     visibility: visible;
 }
 
@@ -91,19 +93,9 @@ html {
     background-image: url("images/standard.png");
 }
 
-#standTip {
-    position: absolute;
-    visibility: hidden;
-    text-align: center;
-    color: white;
-    background-color: darkblue;
-    width: 6vw;
-    font-size: 0.7vw;
-    top: -2vh;
-    left: -0.5vw;
-}
 
-#standBtn:hover #standTip {
+
+#standBtn:hover .tooltip {
     visibility: visible;
 }
 
@@ -117,19 +109,20 @@ html {
     pointer-events: none;
 }
 
-#switchTip {
-    position: absolute;
-    visibility: hidden;
-    text-align: center;
-    color: white;
-    background-color: darkblue;
-    width: 6vw;
-    font-size: 0.7vw;
-    top: -2vh;
-    left: -0.5vw;
+#switchBtn:hover .tooltip {
+    visibility: visible;
 }
 
-#switchBtn:hover #switchTip {
+#toggleView {
+    position: relative;
+}
+
+#toggleViewBtn {
+    background-image: url("images/view.png");
+    background-color: white;
+}
+
+#toggleView:hover .tooltip {
     visibility: visible;
 }
 
@@ -143,25 +136,35 @@ html {
     margin-right: 5px;
 }
 
+#dropdown {
+    position: relative;
+}
+
 #dropbtn {
     background-image: url("images/marker.png");
     background-position: top;
 }
 
+#dropdown:hover .tooltip {
+    visibility: visible;
+    width: 3vw;
+}
+
 #dropdown-content {
     height: 2vw;
-    width: 90%;
+    width: 85vw;
     display: none;
     position: absolute;
     overflow-x: scroll;
     white-space: nowrap;
     scrollbar-width: thin;
     background-color: darkblue;
+    bottom: 0;
+    left: 2.2vw;
+    margin-right: 2%;
 }
 
-.dropdown:hover #dropdown-content {
-    display: inline-block;
-}
+
 
 .marker {
     width: 38px;

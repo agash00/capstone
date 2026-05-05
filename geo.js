@@ -1,10 +1,17 @@
 //let defaultText = 'Hover or click a pin on the map';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWdhc2gyOCIsImEiOiJjbW9haTVmaHowNzc1MnFwenA4MGRqYjNjIn0.EmsXtKTofPNUU_D-kM61CA';
-
+let viewNum = 0;
+let switchLayerNum = 0;
+let layerName1 = '';
+let layerName2 = '';
+let trueName = '';
+let oldLayerName = '';
 let dropdown = document.getElementById('dropdown-content');
 let dropdownBtns = Array.from(dropdown.children);
 let newDropdownBtns = [];
+const switchBtn = document.getElementById('switch');
+const toggleViewBtn = document.getElementById('toggleViewBtn');
 for (i = 0; i < dropdownBtns.length; i++){
     if (i % 2 == 0){
         newDropdownBtns.push(dropdownBtns[i]);
@@ -26,6 +33,16 @@ for (i = 0; i < newDropdownBtns.length; i++){
     dropdown.appendChild(newDropdownBtns[i]);
 }
 
+const placesBtn = document.getElementById('dropbtn');
+placesBtn.addEventListener('click', () => {
+    if (dropdown.style.display == 'block'){
+        dropdown.style.display = 'none';
+    }
+    else {
+        dropdown.style.display = 'block';
+    }
+});
+
 
 // creates the map, setting the container to the id of the div you added in step 2, and setting the initial center and zoom level of the map
 function addMap() {
@@ -45,6 +62,12 @@ function addMap() {
     map.on('style.load', () => {
         addAdditionalSourceAndLayer(map);
         addMarkers(map);
+        viewNum = 0;
+        switchLayerNum = 0;
+        toggleViewBtn.style.backgroundImage = 'url("images/view.png")';
+        if (layerName1 != ''){
+            viewLayer(layerName1.replace("-layer", "").concat("Marker"), 1);
+        }
     });
 
     satBtn = document.getElementById('sat')
@@ -60,6 +83,28 @@ function addMap() {
         map.setStyle('mapbox://styles/agash28/cmoj53vb5002l01s45wgy4s2s');
         satBtn.style.display = 'none';
         standBtn.style.display = 'inline-block';
+    });
+    toggleViewBtn.addEventListener('click', () => {
+        if (viewNum == 0){
+            map.setLayoutProperty(viewLayer('get'), 'visibility', 'none');
+            viewNum = 1;
+            toggleViewBtn.style.backgroundImage = 'url("images/hide.png")';
+        }
+        else {
+            map.setLayoutProperty(viewLayer('get'), 'visibility', 'visible');
+            viewNum = 0;
+            toggleViewBtn.style.backgroundImage = 'url("images/view.png")';
+        }
+    });
+    switchBtn.addEventListener('click', () => {
+        if (switchLayerNum == 0) {
+            switchLayer('off', 'on');
+            switchLayerNum = 1;
+        }
+        else {
+            switchLayer('on', 'off');
+            switchLayerNum = 0;
+        }
     });
     return map;
 }
@@ -474,28 +519,6 @@ function addAdditionalSourceAndLayer(map) {
             'raster-emissive-strength': 1
         }
     });
-
-    //Add CostaConcordia20130917 image
-    map.addSource('CostaConcordia20130917', {
-        'type': 'image',
-        'url': 'https://photos.agash.ca/CostaConcordia20130917.png',
-        'coordinates': [
-            [ 10.9174804,  42.3686645],
-            [ 10.9253973,  42.3686645],
-            [ 10.9253973,  42.3629957],
-            [ 10.9174804,  42.3629957]
-        ]
-    });
-
-    map.addLayer({
-        'id': 'CostaConcordia20130917-layer',
-        'source': 'CostaConcordia20130917',
-        'type': 'raster',
-        'paint': {
-            'raster-fade-duration': 0,
-            'raster-emissive-strength': 1
-        }
-    });
     
     //Add CostaConcordia20130712 image
     map.addSource('CostaConcordia20130712', {
@@ -516,6 +539,31 @@ function addAdditionalSourceAndLayer(map) {
         'paint': {
             'raster-fade-duration': 0,
             'raster-emissive-strength': 1
+        }
+    });
+
+    //Add CostaConcordia20130917 image
+    map.addSource('CostaConcordia20130917', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/CostaConcordia20130917.png',
+        'coordinates': [
+            [ 10.9174804,  42.3686645],
+            [ 10.9253973,  42.3686645],
+            [ 10.9253973,  42.3629957],
+            [ 10.9174804,  42.3629957]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'CostaConcordia20130917-layer',
+        'source': 'CostaConcordia20130917',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        },
+        'layout': {
+            'visibility': 'none'
         }
     });
     
@@ -774,18 +822,51 @@ function addAdditionalSourceAndLayer(map) {
     });
 
 }
+function viewLayer(layerName, num){
+    if (layerName != 'get'){
+        trueName = layerName.replace("Marker", "-layer");
+        if (trueName != oldLayerName && oldLayerName != '' && num != 1){
+            map.setLayoutProperty(oldLayerName, 'visibility', 'visible');
+            viewNum = 0;
+            switchLayerNum = 0;
+        }
+    }
+    else {
+        return trueName;
+    }
+    oldLayerName = trueName;
+    
+}
 
 function switchBtnPower(switchNum){
-    const switchBtn = document.getElementById('switch');
     if (switchNum == 1) {
         switchBtn.style.backgroundColor = 'white';
         switchBtn.style.pointerEvents = 'auto';
         document.getElementById('switchTip').textContent = "Alternate image";
     }
     else {
-    switchBtn.style.backgroundColor = 'gray';
+        switchBtn.style.backgroundColor = 'gray';
         switchBtn.style.pointerEvents = 'none';
         document.getElementById('switchTip').textContent = "No alternate image";
+    }
+}
+function switchLayer(layer1, layer2){
+    if (layer1 != 'on' && layer1 != 'off'){
+        layerName1 = layer1;
+        layerName2 = layer2;
+        viewLayerName1 = layerName1.replace("-layer", "").concat("Marker");
+        viewLayerName2 = layerName2.replace("-layer", "").concat("Marker");
+        viewLayer(viewLayerName1);
+    }
+    if (layer1 == 'off') {
+        viewLayer(viewLayerName2);
+        map.setLayoutProperty(layerName1, 'visibility', 'none');
+        map.setLayoutProperty(layerName2, 'visibility', 'visible');
+    }
+    else if (layer1 == 'on') {
+        viewLayer(viewLayerName1);
+        map.setLayoutProperty(layerName1, 'visibility', 'visible');
+        map.setLayoutProperty(layerName2, 'visibility', 'none');
     }
 }
 
@@ -797,13 +878,14 @@ function addMarkers(map) {
     const ArctowskiMarker = new mapboxgl.Marker(ArctowskiDiv)
         .setLngLat([-58.4778433, -62.1571386])
         .addTo(map);
-    ArctowskiDiv.addEventListener('click', () => {
+    ArctowskiDiv.addEventListener('click', (e) => {
         switchBtnPower(0);
         map.flyTo({
             center: [-58.4705175, -62.1592260],
             zoom: 16,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        viewLayer(e.srcElement.id);
     });
 	
 	const NorthSentinelDiv = document.createElement('div');
@@ -812,13 +894,14 @@ function addMarkers(map) {
     const NorthSentinelMarker = new mapboxgl.Marker(NorthSentinelDiv)
         .setLngLat([92.2098629, 11.5957307])
         .addTo(map);
-    NorthSentinelDiv.addEventListener('click', () => {
+    NorthSentinelDiv.addEventListener('click', (e) => {
         switchBtnPower(0);
         map.flyTo({
             center: [92.2124113, 11.5938552],
             zoom: 16,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        viewLayer(e.srcElement.id);
     });
 	
 	const GoldenGateDiv = document.createElement('div');
@@ -827,13 +910,14 @@ function addMarkers(map) {
     const GoldenGateMarker = new mapboxgl.Marker(GoldenGateDiv)
         .setLngLat([-122.4830624, 37.8276392])
         .addTo(map);
-    GoldenGateDiv.addEventListener('click', () => {
+    GoldenGateDiv.addEventListener('click', (e) => {
         switchBtnPower(0);
         map.flyTo({
             center: [-122.4789436, 37.8183215],
             zoom: 14,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        viewLayer(e.srcElement.id);
     });
 	
 	const DallolEthiopiaDiv = document.createElement('div');
@@ -842,32 +926,30 @@ function addMarkers(map) {
     const DallolEthiopiaMarker = new mapboxgl.Marker(DallolEthiopiaDiv)
         .setLngLat([40.2925530, 14.2456428])
         .addTo(map);
-    DallolEthiopiaDiv.addEventListener('click', () => {
+    DallolEthiopiaDiv.addEventListener('click', (e) => {
         switchBtnPower(0);
         map.flyTo({
             center: [40.2986674, 14.2399987],
             zoom: 14,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        viewLayer(e.srcElement.id);
     });
 	
-    const AlverniaPopup = new mapboxgl.Popup({ offset: 25 }).setText(
-        'Test popup'
-    );
     const AlverniaMarkerDiv = document.createElement('div');
     AlverniaMarkerDiv.className = "marker";
-    AlverniaMarkerDiv.id = 'AlverniaMarker';
+    AlverniaMarkerDiv.id = 'AlverniaPlanetMarker';
     const AlverniaMarker = new mapboxgl.Marker(AlverniaMarkerDiv)
         .setLngLat([19.5439031, 50.1047289])
-        .setPopup(AlverniaPopup)
         .addTo(map);
-    AlverniaMarkerDiv.addEventListener('click', () => {
+    AlverniaMarkerDiv.addEventListener('click', (e) => {
         switchBtnPower(0);
         map.flyTo({
             center: [19.5475044, 50.1026258],
             zoom: 15,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        }); 
+        });
+        viewLayer(e.srcElement.id); 
     });
 
     const HeydarAliyevAirportDiv = document.createElement('div');
@@ -876,13 +958,14 @@ function addMarkers(map) {
     const HeydarAliyevAirportMarker = new mapboxgl.Marker(HeydarAliyevAirportDiv)
         .setLngLat([ 50.0460162,  40.4684786])
         .addTo(map);
-    HeydarAliyevAirportDiv.addEventListener('click', () => {
+    HeydarAliyevAirportDiv.addEventListener('click', (e) => {
         switchBtnPower(0);
         map.flyTo({
             center: [ 50.0525381,  40.4657394],
             zoom: 16,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        viewLayer(e.srcElement.id);
     });
 
     const MumbaiAirportDiv = document.createElement('div');
@@ -891,13 +974,14 @@ function addMarkers(map) {
     const MumbaiAirportMarker = new mapboxgl.Marker(MumbaiAirportDiv)
         .setLngLat([ 72.8689918,  19.1004393])
         .addTo(map);
-    MumbaiAirportDiv.addEventListener('click', () => {
+    MumbaiAirportDiv.addEventListener('click', (e) => {
         switchBtnPower(0);
         map.flyTo({
             center: [ 72.8741491,  19.0964905],
             zoom: 16,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        viewLayer(e.srcElement.id);
     });
 
     const CuatroTorresDiv = document.createElement('div');
@@ -906,13 +990,14 @@ function addMarkers(map) {
     const CuatroTorresMarker = new mapboxgl.Marker(CuatroTorresDiv)
         .setLngLat([ -3.6939235,  40.4842540])
         .addTo(map);
-    CuatroTorresDiv.addEventListener('click', () => {
+    CuatroTorresDiv.addEventListener('click', (e) => {
         switchBtnPower(0);
         map.flyTo({
             center: [ -3.6882077,  40.4797432],
             zoom: 16,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        viewLayer(e.srcElement.id);
     });
 
     const AlumbreraDiv = document.createElement('div');
@@ -921,13 +1006,14 @@ function addMarkers(map) {
     const AlumbreraMarker = new mapboxgl.Marker(AlumbreraDiv)
         .setLngLat([-67.3785227, -26.2072537])
         .addTo(map);
-    AlumbreraDiv.addEventListener('click', () => {
+    AlumbreraDiv.addEventListener('click', (e) => {
         switchBtnPower(0);
         map.flyTo({
             center: [-67.3714800, -26.2135743],
-            zoom: 16,
+            zoom: 15,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        viewLayer(e.srcElement.id);
     });
 
     const PetronasDiv = document.createElement('div');
@@ -936,13 +1022,14 @@ function addMarkers(map) {
     const PetronasMarker = new mapboxgl.Marker(PetronasDiv)
         .setLngLat([101.7080049,   3.1611789])
         .addTo(map);
-    PetronasDiv.addEventListener('click', () => {
+    PetronasDiv.addEventListener('click', (e) => {
         switchBtnPower(1);
         map.flyTo({
             center: [101.7130903,   3.1565901],
             zoom: 16,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        viewLayer(e.srcElement.id);
     });
 
     const VolcanPoruñitaDiv = document.createElement('div');
@@ -951,13 +1038,14 @@ function addMarkers(map) {
     const VolcanPoruñitaMarker = new mapboxgl.Marker(VolcanPoruñitaDiv)
         .setLngLat([-68.3014837, -21.3113368])
         .addTo(map);
-    VolcanPoruñitaDiv.addEventListener('click', () => {
+    VolcanPoruñitaDiv.addEventListener('click', (e) => {
         switchBtnPower(0);
         map.flyTo({
             center: [-68.2934697, -21.3179863],
             zoom: 16,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        viewLayer(e.srcElement.id);
     });
 
     const EixampleDiv = document.createElement('div');
@@ -966,13 +1054,14 @@ function addMarkers(map) {
     const EixampleMarker = new mapboxgl.Marker(EixampleDiv, {anchor: 'bottom'})
         .setLngLat([2.1516329, 41.3890737])
         .addTo(map);
-    EixampleDiv.addEventListener('click', () => {
+    EixampleDiv.addEventListener('click', (e) => {
         switchBtnPower(0);
         map.flyTo({
             center: [2.1540143, 41.3821744],
             zoom: 15,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        viewLayer(e.srcElement.id);
     });
 
     const HungaTongaDiv = document.createElement('div');
@@ -981,13 +1070,14 @@ function addMarkers(map) {
     const HungaTongaMarker = new mapboxgl.Marker(HungaTongaDiv)
         .setLngLat([-175.4003680,-20.5354617])
         .addTo(map);
-    HungaTongaDiv.addEventListener('click', () => {
+    HungaTongaDiv.addEventListener('click', (e) => {
         switchBtnPower(0);
         map.flyTo({
             center: [-175.391831,-20.543253],
             zoom: 16,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        viewLayer(e.srcElement.id);
     });
 
     const BeijingDaxingDiv = document.createElement('div');
@@ -996,13 +1086,14 @@ function addMarkers(map) {
     const BeijingDaxingMarker = new mapboxgl.Marker(BeijingDaxingDiv)
         .setLngLat([116.4018903, 39.5170206])
         .addTo(map);
-    BeijingDaxingDiv.addEventListener('click', () => {
+    BeijingDaxingDiv.addEventListener('click', (e) => {
         switchBtnPower(0);
         map.flyTo({
             center: [116.4110812, 39.5099919],
             zoom: 16,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        viewLayer(e.srcElement.id);
     });
 
     const VolcanJoteDiv = document.createElement('div');
@@ -1011,13 +1102,14 @@ function addMarkers(map) {
     const VolcanJoteMarker = new mapboxgl.Marker(VolcanJoteDiv)
         .setLngLat([-67.3390564, -26.2892999])
         .addTo(map);
-    VolcanJoteDiv.addEventListener('click', () => {
+    VolcanJoteDiv.addEventListener('click', (e) => {
         switchBtnPower(0);
         map.flyTo({
             center: [-67.3292962, -26.2955358],
             zoom: 16,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        viewLayer(e.srcElement.id);
     });
 
     const SantaCruzdeIsloteDiv = document.createElement('div');
@@ -1026,13 +1118,14 @@ function addMarkers(map) {
     const SantaCruzdeIsloteMarker = new mapboxgl.Marker(SantaCruzdeIsloteDiv)
         .setLngLat([-75.8611806,   9.7877409])
         .addTo(map);
-    SantaCruzdeIsloteDiv.addEventListener('click', () => {
+    SantaCruzdeIsloteDiv.addEventListener('click', (e) => {
         switchBtnPower(0);
         map.flyTo({
             center: [-75.8590859,   9.7858433],
             zoom: 16,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        viewLayer(e.srcElement.id);
     });
 
     const HuntsvilleAlabamaDiv = document.createElement('div');
@@ -1041,13 +1134,14 @@ function addMarkers(map) {
     const HuntsvilleAlabamaMarker = new mapboxgl.Marker(HuntsvilleAlabamaDiv)
         .setLngLat([-86.6578632,  34.7129592])
         .addTo(map);
-    HuntsvilleAlabamaDiv.addEventListener('click', () => {
+    HuntsvilleAlabamaDiv.addEventListener('click', (e) => {
         switchBtnPower(0);
         map.flyTo({
             center: [-86.6558048,  34.7111980],
             zoom: 17,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        viewLayer(e.srcElement.id);
     });
 
     const DongdaemunDesignPlazaDiv = document.createElement('div');
@@ -1056,23 +1150,25 @@ function addMarkers(map) {
     const DongdaemunDesignPlazaMarker = new mapboxgl.Marker(DongdaemunDesignPlazaDiv)
         .setLngLat([127.0069694,  37.5695652])
         .addTo(map);
-    DongdaemunDesignPlazaDiv.addEventListener('click', () => {
+    DongdaemunDesignPlazaDiv.addEventListener('click', (e) => {
         switchBtnPower(0);
         map.flyTo({
             center: [127.0103303,  37.5669884],
             zoom: 16,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        viewLayer(e.srcElement.id);
     });
     
     let costaSwitch = 0;
     const CostaConcordia20130917Div = document.createElement('div');
     CostaConcordia20130917Div.className = "marker";
-    CostaConcordia20130917Div.id = 'costaMarker';
+    CostaConcordia20130917Div.id = 'CostaConcordia20130917Marker';
     const CostaConcordia20130917Marker = new mapboxgl.Marker(CostaConcordia20130917Div)
         .setLngLat([ 10.9174804,  42.3686645])
         .addTo(map);
-    CostaConcordia20130917Div.addEventListener('click', () => {
+    CostaConcordia20130917Div.addEventListener('click', (e) => {
+        switchBtnPower(1);
         map.flyTo({
             center: [ 10.9214388,  42.3658301],
             zoom: 16,
@@ -1080,20 +1176,7 @@ function addMarkers(map) {
         });
         map.setLayoutProperty('CostaConcordia20130917-layer', 'visibility', 'none');
         map.setLayoutProperty('CostaConcordia20130712-layer', 'visibility', 'visible');
-        switchBtnPower(1);
-        let costaSwitch = 0;
-        switchBtn.addEventListener('click', () => {
-            if (costaSwitch == 0) {
-                map.setLayoutProperty('CostaConcordia20130917-layer', 'visibility', 'visible');
-                map.setLayoutProperty('CostaConcordia20130712-layer', 'visibility', 'none');
-                costaSwitch = 1
-            }
-            else {
-                map.setLayoutProperty('CostaConcordia20130917-layer', 'visibility', 'none');
-                map.setLayoutProperty('CostaConcordia20130712-layer', 'visibility', 'visible');
-                costaSwitch = 0
-            }
-        });
+        switchLayer('CostaConcordia20130712-layer', 'CostaConcordia20130917-layer');
     });
 
     // const CostaConcordia20130712Div = document.createElement('div');
@@ -1115,13 +1198,14 @@ function addMarkers(map) {
     const GreatBlueHoleMarker = new mapboxgl.Marker(GreatBlueHoleDiv)
         .setLngLat([-87.5392281,  17.3202921])
         .addTo(map);
-    GreatBlueHoleDiv.addEventListener('click', () => {
+    GreatBlueHoleDiv.addEventListener('click', (e) => {
         switchBtnPower(0);
         map.flyTo({
             center: [-87.5345375,  17.3158507],
             zoom: 16,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        viewLayer(e.srcElement.id);
     });
 
     const GomaDiv = document.createElement('div');
@@ -1130,7 +1214,8 @@ function addMarkers(map) {
     const GomaMarker = new mapboxgl.Marker(GomaDiv)
         .setLngLat([ 29.2362327,  -1.6336956])
         .addTo(map);
-    GomaDiv.addEventListener('click', () => {
+    GomaDiv.addEventListener('click', (e) => {
+        switchBtnPower(1);
         map.flyTo({
             center: [ 29.2397031,  -1.6408191],
             zoom: 15,
@@ -1138,20 +1223,7 @@ function addMarkers(map) {
         });
         map.setLayoutProperty('Goma-layer', 'visibility', 'visible');
         map.setLayoutProperty('GomaNIR-layer', 'visibility', 'none');
-        switchBtnPower(1);
-        let GomaSwitch = 0;
-        switchBtn.addEventListener('click', () => {
-            if (GomaSwitch == 0) {
-                map.setLayoutProperty('Goma-layer', 'visibility', 'none');
-                map.setLayoutProperty('GomaNIR-layer', 'visibility', 'visible');
-                GomaSwitch = 1
-            }
-            else {
-                map.setLayoutProperty('GomaNIR-layer', 'visibility', 'none');
-                map.setLayoutProperty('Goma-layer', 'visibility', 'visible');
-                GomaSwitch = 0
-            }
-        });
+        switchLayer('Goma-layer', 'GomaNIR-layer');
     });
 
     // const GomaNIRDiv = document.createElement('div');
@@ -1173,13 +1245,14 @@ function addMarkers(map) {
     const DowntownDubaiMarker = new mapboxgl.Marker(DowntownDubaiDiv)
         .setLngLat([ 55.2652644,  25.2052848])
         .addTo(map);
-    DowntownDubaiDiv.addEventListener('click', () => {
+    DowntownDubaiDiv.addEventListener('click', (e) => {
         switchBtnPower(0);
         map.flyTo({
             center: [ 55.2744506,  25.1969560],
             zoom: 16,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        viewLayer(e.srcElement.id);
     });
 
     const HotelRyugyongPyongyangDiv = document.createElement('div');
@@ -1188,13 +1261,14 @@ function addMarkers(map) {
     const HotelRyugyongPyongyangMarker = new mapboxgl.Marker(HotelRyugyongPyongyangDiv)
         .setLngLat([125.7243704,  39.0426505])
         .addTo(map);
-    HotelRyugyongPyongyangDiv.addEventListener('click', () => {
+    HotelRyugyongPyongyangDiv.addEventListener('click', (e) => {
         switchBtnPower(0);
         map.flyTo({
             center: [125.7311787,  39.0363540],
             zoom: 16,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        viewLayer(e.srcElement.id);
     });
 
     const JudgeHarryPregersonInterchangeDiv = document.createElement('div');
@@ -1203,13 +1277,14 @@ function addMarkers(map) {
     const JudgeHarryPregersonInterchangeMarker = new mapboxgl.Marker(JudgeHarryPregersonInterchangeDiv)
         .setLngLat([-118.2849491,  33.9317151])
         .addTo(map);
-    JudgeHarryPregersonInterchangeDiv.addEventListener('click', () => {
+    JudgeHarryPregersonInterchangeDiv.addEventListener('click', (e) => {
         switchBtnPower(0);
         map.flyTo({
             center: [-118.2806319,  33.9285273],
             zoom: 16,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        viewLayer(e.srcElement.id);
     });
 
     const BarringerCraterDiv = document.createElement('div');
@@ -1218,13 +1293,14 @@ function addMarkers(map) {
     const BarringerCraterMarker = new mapboxgl.Marker(BarringerCraterDiv)
         .setLngLat([-111.0319917,  35.0347428])
         .addTo(map);
-    BarringerCraterDiv.addEventListener('click', () => {
+    BarringerCraterDiv.addEventListener('click', (e) => {
         switchBtnPower(0);
         map.flyTo({
             center: [-111.0227980,  35.0272428],
             zoom: 16,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        viewLayer(e.srcElement.id);
     });
 
     const EritreaHalabaDiv = document.createElement('div');
@@ -1233,13 +1309,14 @@ function addMarkers(map) {
     const EritreaHalabaMarker = new mapboxgl.Marker(EritreaHalabaDiv)
         .setLngLat([ 41.7936167,  13.9189114])
         .addTo(map);
-    EritreaHalabaDiv.addEventListener('click', () => {
+    EritreaHalabaDiv.addEventListener('click', (e) => {
         switchBtnPower(0);
         map.flyTo({
             center: [ 41.7996784,  13.9120866],
             zoom: 16,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        viewLayer(e.srcElement.id);
     });
 
     const MalborkCastleDiv = document.createElement('div');
@@ -1248,13 +1325,14 @@ function addMarkers(map) {
     const MalborkCastleMarker = new mapboxgl.Marker(MalborkCastleDiv)
         .setLngLat([ 19.0248672,  54.0436092])
         .addTo(map);
-    MalborkCastleDiv.addEventListener('click', () => {
+    MalborkCastleDiv.addEventListener('click', (e) => {
         switchBtnPower(0);
         map.flyTo({
             center: [ 19.0293384,  54.0407455],
             zoom: 16,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        viewLayer(e.srcElement.id);
     });
 
     const LuboszówPolandDiv = document.createElement('div');
@@ -1263,13 +1341,14 @@ function addMarkers(map) {
     const LuboszówPolandMarker = new mapboxgl.Marker(LuboszówPolandDiv)
         .setLngLat([ 15.3913811,  51.4283021])
         .addTo(map);
-    LuboszówPolandDiv.addEventListener('click', () => {
+    LuboszówPolandDiv.addEventListener('click', (e) => {
         switchBtnPower(0);
         map.flyTo({
             center: [ 15.3952125,  51.4262891],
             zoom: 16,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        viewLayer(e.srcElement.id);
     });
 
     const KuwaitAirportDiv = document.createElement('div');
@@ -1278,13 +1357,14 @@ function addMarkers(map) {
     const KuwaitAirportMarker = new mapboxgl.Marker(KuwaitAirportDiv)
         .setLngLat([ 47.9809110,  29.2203451])
         .addTo(map);
-    KuwaitAirportDiv.addEventListener('click', () => {
+    KuwaitAirportDiv.addEventListener('click', (e) => {
         switchBtnPower(0);
         map.flyTo({
             center: [ 47.9875710,  29.2142234],
             zoom: 16,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        viewLayer(e.srcElement.id);
     });
 
 

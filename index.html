@@ -11,8 +11,8 @@
 
 <body>
 
-<div id="content" style="display: none;">
-<div id ="main">
+<div id="content">
+<!--style="display: none;"-->
 
 <h1 id="placeName">Hover or click a pin on the map</h1>
     
@@ -20,284 +20,288 @@
 
 <div id = "satBtn">
     <button id="sat" class="mapBtns"></button>
-    <span id ="satTip">Satellite basemap</span>
+    <span id ="satTip" class="tooltip">Satellite basemap</span>
 </div>
 <div id = "standBtn">
     <button id="stand" class="mapBtns" style="display: none;"></button>
-    <span id ="standTip">Standard basemap</span>
+    <span id ="standTip" class="tooltip">Standard basemap</span>
 </div>
 <div id = "switchBtn">
     <button id="switch" class="mapBtns"></button>
-    <span id ="switchTip">No alternate image</span>
+    <span id ="switchTip" class="tooltip">No alternate image</span>
 </div>
-<div class="dropdown">
-<button id="dropbtn" class="mapBtns"></button>
-<div id="dropdown-content">
-
-<!--Alvernia button flyout-->
-<button id="Alvernia" class="flyoutBtn">Alvernia Planet</button>
-<script>
-    document.getElementById('Alvernia').addEventListener('click', () => {
-        document.getElementById('AlverniaMarker').click();
-        document.getElementById('placeName').textContent = 'Alvernia Planet';
-    });
-</script>
-
-<!--Exiample button flyout-->
-<button id="Eixample" class="flyoutBtn">Eixample</button>
-<script>
-    document.getElementById('Eixample').addEventListener('click', () => {
-        document.getElementById('EixampleMarker').click();
-        document.getElementById('placeName').textContent = 'Eixample';
-    });
-</script>
-
-<!--Hunga Tonga button flyout-->
-<button id="Hunga" class="flyoutBtn">Hunga Tonga</button>
-<script>
-    document.getElementById('Hunga').addEventListener('click', () => {
-        document.getElementById('HungaTongaMarker').click();
-        document.getElementById('placeName').textContent = 'Hunga Tonga';
-    });
-</script>
-
-<!--DallolEthiopia button flyout-->
-<button id="DallolEthiopia" class="flyoutBtn">Dallol, Ethiopia</button>
-<script>
-    document.getElementById('DallolEthiopia').addEventListener('click', () => {
-        document.getElementById('DallolEthiopiaMarker').click();
-        document.getElementById('placeName').textContent = 'Dallol, Ethiopia';
-    });
-</script>
-
-<!--Golden Gate button flyout-->
-<button id="GoldenGate" class="flyoutBtn">Golden Gate Bridge</button>
-<script>
-    document.getElementById('GoldenGate').addEventListener('click', () => {
-        document.getElementById('GoldenGateMarker').click();
-        document.getElementById('placeName').textContent = 'Golden Gate Bridge';
-    });
-</script>
-
-<!--North Sentinel button flyout-->
-<button id="NorthSentinel" class="flyoutBtn">North Sentinel</button>
-<script>
-    document.getElementById('NorthSentinel').addEventListener('click', () => {
-        document.getElementById('NorthSentinelMarker').click();
-        document.getElementById('placeName').textContent = 'North Sentinel';
-    });
-</script>
-
-<!--Arctowski Station button flyout-->
-<button id="ArctowskiStation" class="flyoutBtn">Arctowski Station</button>
-<script>
-    document.getElementById('ArctowskiStation').addEventListener('click', () => {
-        document.getElementById('ArctowskiMarker').click();
-        document.getElementById('placeName').textContent = 'Arctowski Station';
-    });
-</script>
-
-<!--Beijing Daxing button flyout-->
-<button id="BeijingDaxing" class="flyoutBtn">Beijing Daxing Airport</button>
-<script>
-    document.getElementById('BeijingDaxing').addEventListener('click', () => {
-        document.getElementById('BeijingDaxingMarker').click();
-        document.getElementById('placeName').textContent = 'Beijing Daxing Airport';
-    });
-</script>
-
-<!--Volcan Jote button flyout-->
-<button id="VolcanJote" class="flyoutBtn">Volcan Jote</button>
-<script>
-    document.getElementById('VolcanJote').addEventListener('click', () => {
-        document.getElementById('VolcanJoteMarker').click();
-        document.getElementById('placeName').textContent = 'Volcan Jote';
-    });
-</script>
-
-<!--HeydarAliyevAirport button flyout-->
-<button id="HeydarAliyevAirport" class="flyoutBtn">Heydar Aliyev Airport</button>
-<script>
-    document.getElementById('HeydarAliyevAirport').addEventListener('click', () => {
-        document.getElementById('HeydarAliyevAirportMarker').click();
-        document.getElementById('placeName').textContent = 'Heydar Aliyev Airport';
-    });
-</script>
-
-<!--MumbaiAirport button flyout-->
-<button id="MumbaiAirport" class="flyoutBtn">Mumbai Airport</button>
-<script>
-    document.getElementById('MumbaiAirport').addEventListener('click', () => {
-        document.getElementById('MumbaiAirportMarker').click();
-        document.getElementById('placeName').textContent = 'Mumbai Airport';
-    });
-</script>
-
-<!--CuatroTorres button flyout-->
-<button id="CuatroTorres" class="flyoutBtn">Cuatro Torres</button>
-<script>
-    document.getElementById('CuatroTorres').addEventListener('click', () => {
-        document.getElementById('CuatroTorresMarker').click();
-        document.getElementById('placeName').textContent = 'Cuatro Torres';
-    });
-</script>
-
-<!--Alumbrera button flyout-->
-<button id="Alumbrera" class="flyoutBtn">Alumbrera</button>
-<script>
-    document.getElementById('Alumbrera').addEventListener('click', () => {
-        document.getElementById('AlumbreraMarker').click();
-        document.getElementById('placeName').textContent = 'Alumbrera';
-    });
-</script>
-
-<!--Petronas button flyout-->
-<button id="Petronas" class="flyoutBtn">Petronas</button>
-<script>
-    document.getElementById('Petronas').addEventListener('click', () => {
-        document.getElementById('PetronasMarker').click();
-        document.getElementById('placeName').textContent = 'Petronas';
-    });
-</script>
-
-<!--VolcanPoruñita button flyout-->
-<button id="VolcanPoruñita" class="flyoutBtn">Volcan Poruñita</button>
-<script>
-    document.getElementById('VolcanPoruñita').addEventListener('click', () => {
-        document.getElementById('VolcanPoruñitaMarker').click();
-        document.getElementById('placeName').textContent = 'Volcan Poruñita';
-    });
-</script>
-
-<!--SantaCruzdeIslote button flyout-->
-<button id="SantaCruzdeIslote" class="flyoutBtn">Santa Cruzde Islote</button>
-<script>
-    document.getElementById('SantaCruzdeIslote').addEventListener('click', () => {
-        document.getElementById('SantaCruzdeIsloteMarker').click();
-        document.getElementById('placeName').textContent = 'Santa Cruzde Islote';
-    });
-</script>
-
-<!--HuntsvilleAlabama button flyout-->
-<button id="HuntsvilleAlabama" class="flyoutBtn">Huntsville, Alabama</button>
-<script>
-    document.getElementById('HuntsvilleAlabama').addEventListener('click', () => {
-        document.getElementById('HuntsvilleAlabamaMarker').click();
-        document.getElementById('placeName').textContent = 'Huntsville, Alabama';
-    });
-</script>
-
-<!--DongdaemunDesignPlaza button flyout-->
-<button id="DongdaemunDesignPlaza" class="flyoutBtn">Dongdaemun Design Plaza</button>
-<script>
-    document.getElementById('DongdaemunDesignPlaza').addEventListener('click', () => {
-        document.getElementById('DongdaemunDesignPlazaMarker').click();
-        document.getElementById('placeName').textContent = 'Dongdaemun Design Plaza';
-    });
-</script>
-
-<!--CostaConcordia20130917 button flyout-->
-<button id="CostaConcordia20130917" class="flyoutBtn">Costa Concordia Ship</button>
-<script>
-    document.getElementById('CostaConcordia20130917').addEventListener('click', () => {
-        document.getElementById('costaMarker').click();
-        document.getElementById('placeName').textContent = 'Costa Concordia Ship';
-    });
-</script>
-
-
-<!--GreatBlueHole button flyout-->
-<button id="GreatBlueHole" class="flyoutBtn">Great Blue Hole</button>
-<script>
-    document.getElementById('GreatBlueHole').addEventListener('click', () => {
-        document.getElementById('GreatBlueHoleMarker').click();
-        document.getElementById('placeName').textContent = 'Great Blue Hole';
-    });
-</script>
-
-<!--Goma button flyout-->
-<button id="Goma" class="flyoutBtn">Goma</button>
-<script>
-    document.getElementById('Goma').addEventListener('click', () => {
-        document.getElementById('GomaMarker').click();
-        document.getElementById('placeName').textContent = 'Goma';
-    });
-</script>
-
-<!--DowntownDubai button flyout-->
-<button id="DowntownDubai" class="flyoutBtn">Downtown Dubai</button>
-<script>
-    document.getElementById('DowntownDubai').addEventListener('click', () => {
-        document.getElementById('DowntownDubaiMarker').click();
-        document.getElementById('placeName').textContent = 'Downtown Dubai';
-    });
-</script>
-
-<!--HotelRyugyongPyongyang button flyout-->
-<button id="HotelRyugyongPyongyang" class="flyoutBtn">Hotel Ryugyong Pyongyang</button>
-<script>
-    document.getElementById('HotelRyugyongPyongyang').addEventListener('click', () => {
-        document.getElementById('HotelRyugyongPyongyangMarker').click();
-        document.getElementById('placeName').textContent = 'Hotel Ryugyong Pyongyang';
-    });
-</script>
-
-<!--JudgeHarryPregersonInterchange button flyout-->
-<button id="JudgeHarryPregersonInterchange" class="flyoutBtn">Judge Harry Pregerson Interchange</button>
-<script>
-    document.getElementById('JudgeHarryPregersonInterchange').addEventListener('click', () => {
-        document.getElementById('JudgeHarryPregersonInterchangeMarker').click();
-        document.getElementById('placeName').textContent = 'Judge Harry Pregerson Interchange';
-    });
-</script>
-
-<!--BarringerCrater button flyout-->
-<button id="BarringerCrater" class="flyoutBtn">Barringer Crater</button>
-<script>
-    document.getElementById('BarringerCrater').addEventListener('click', () => {
-        document.getElementById('BarringerCraterMarker').click();
-        document.getElementById('placeName').textContent = 'Barringer Crater';
-    });
-</script>
-
-<!--EritreaHalaba button flyout-->
-<button id="EritreaHalaba" class="flyoutBtn">Eritrea Halaba</button>
-<script>
-    document.getElementById('EritreaHalaba').addEventListener('click', () => {
-        document.getElementById('EritreaHalabaMarker').click();
-        document.getElementById('placeName').textContent = 'Eritrea Halaba';
-    });
-</script>
-
-<!--MalborkCastle button flyout-->
-<button id="MalborkCastle" class="flyoutBtn">Malbork Castle</button>
-<script>
-    document.getElementById('MalborkCastle').addEventListener('click', () => {
-        document.getElementById('MalborkCastleMarker').click();
-        document.getElementById('placeName').textContent = 'Malbork Castle';
-    });
-</script>
-
-<!--LuboszówPoland button flyout-->
-<button id="LuboszówPoland" class="flyoutBtn">Luboszów, Poland</button>
-<script>
-    document.getElementById('LuboszówPoland').addEventListener('click', () => {
-        document.getElementById('LuboszówPolandMarker').click();
-        document.getElementById('placeName').textContent = 'Luboszów, Poland';
-    });
-</script>
-
-<!--KuwaitAirport button flyout-->
-<button id="KuwaitAirport" class="flyoutBtn">Kuwait Airport</button>
-<script>
-    document.getElementById('KuwaitAirport').addEventListener('click', () => {
-        document.getElementById('KuwaitAirportMarker').click();
-        document.getElementById('placeName').textContent = 'Kuwait Airport';
-    });
-</script>
-
+<div id = "toggleView">
+    <button id="toggleViewBtn" class="mapBtns"></button>
+    <span id ="toggleViewTip" class="tooltip">Toggle image view</span>
 </div>
-</div>
+<div id="dropdown">
+    <button id="dropbtn" class="mapBtns"></button>
+    <span id ="placesBtnTip" class="tooltip">Places</span>
+
+    <div id="dropdown-content">
+        <!--Alvernia button flyout-->
+        <button id="Alvernia" class="flyoutBtn">Alvernia Planet</button>
+        <script>
+            document.getElementById('Alvernia').addEventListener('click', () => {
+                document.getElementById('AlverniaPlanetMarker').click();
+                document.getElementById('placeName').textContent = 'Alvernia Planet';
+            });
+        </script>
+
+        <!--Exiample button flyout-->
+        <button id="Eixample" class="flyoutBtn">Eixample</button>
+        <script>
+            document.getElementById('Eixample').addEventListener('click', () => {
+                document.getElementById('EixampleMarker').click();
+                document.getElementById('placeName').textContent = 'Eixample';
+            });
+        </script>
+
+        <!--Hunga Tonga button flyout-->
+        <button id="Hunga" class="flyoutBtn">Hunga Tonga</button>
+        <script>
+            document.getElementById('Hunga').addEventListener('click', () => {
+                document.getElementById('HungaTongaMarker').click();
+                document.getElementById('placeName').textContent = 'Hunga Tonga';
+            });
+        </script>
+
+        <!--DallolEthiopia button flyout-->
+        <button id="DallolEthiopia" class="flyoutBtn">Dallol, Ethiopia</button>
+        <script>
+            document.getElementById('DallolEthiopia').addEventListener('click', () => {
+                document.getElementById('DallolEthiopiaMarker').click();
+                document.getElementById('placeName').textContent = 'Dallol, Ethiopia';
+            });
+        </script>
+
+        <!--Golden Gate button flyout-->
+        <button id="GoldenGate" class="flyoutBtn">Golden Gate Bridge</button>
+        <script>
+            document.getElementById('GoldenGate').addEventListener('click', () => {
+                document.getElementById('GoldenGateMarker').click();
+                document.getElementById('placeName').textContent = 'Golden Gate Bridge';
+            });
+        </script>
+
+        <!--North Sentinel button flyout-->
+        <button id="NorthSentinel" class="flyoutBtn">North Sentinel</button>
+        <script>
+            document.getElementById('NorthSentinel').addEventListener('click', () => {
+                document.getElementById('NorthSentinelMarker').click();
+                document.getElementById('placeName').textContent = 'North Sentinel';
+            });
+        </script>
+
+        <!--Arctowski Station button flyout-->
+        <button id="ArctowskiStation" class="flyoutBtn">Arctowski Station</button>
+        <script>
+            document.getElementById('ArctowskiStation').addEventListener('click', () => {
+                document.getElementById('ArctowskiMarker').click();
+                document.getElementById('placeName').textContent = 'Arctowski Station';
+            });
+        </script>
+
+        <!--Beijing Daxing button flyout-->
+        <button id="BeijingDaxing" class="flyoutBtn">Beijing Daxing Airport</button>
+        <script>
+            document.getElementById('BeijingDaxing').addEventListener('click', () => {
+                document.getElementById('BeijingDaxingMarker').click();
+                document.getElementById('placeName').textContent = 'Beijing Daxing Airport';
+            });
+        </script>
+
+        <!--Volcan Jote button flyout-->
+        <button id="VolcanJote" class="flyoutBtn">Volcan Jote</button>
+        <script>
+            document.getElementById('VolcanJote').addEventListener('click', () => {
+                document.getElementById('VolcanJoteMarker').click();
+                document.getElementById('placeName').textContent = 'Volcan Jote';
+            });
+        </script>
+
+        <!--HeydarAliyevAirport button flyout-->
+        <button id="HeydarAliyevAirport" class="flyoutBtn">Heydar Aliyev Airport</button>
+        <script>
+            document.getElementById('HeydarAliyevAirport').addEventListener('click', () => {
+                document.getElementById('HeydarAliyevAirportMarker').click();
+                document.getElementById('placeName').textContent = 'Heydar Aliyev Airport';
+            });
+        </script>
+
+        <!--MumbaiAirport button flyout-->
+        <button id="MumbaiAirport" class="flyoutBtn">Mumbai Airport</button>
+        <script>
+            document.getElementById('MumbaiAirport').addEventListener('click', () => {
+                document.getElementById('MumbaiAirportMarker').click();
+                document.getElementById('placeName').textContent = 'Mumbai Airport';
+            });
+        </script>
+
+        <!--CuatroTorres button flyout-->
+        <button id="CuatroTorres" class="flyoutBtn">Cuatro Torres</button>
+        <script>
+            document.getElementById('CuatroTorres').addEventListener('click', () => {
+                document.getElementById('CuatroTorresMarker').click();
+                document.getElementById('placeName').textContent = 'Cuatro Torres';
+            });
+        </script>
+
+        <!--Alumbrera button flyout-->
+        <button id="Alumbrera" class="flyoutBtn">Alumbrera</button>
+        <script>
+            document.getElementById('Alumbrera').addEventListener('click', () => {
+                document.getElementById('AlumbreraMarker').click();
+                document.getElementById('placeName').textContent = 'Alumbrera';
+            });
+        </script>
+
+        <!--Petronas button flyout-->
+        <button id="Petronas" class="flyoutBtn">Petronas</button>
+        <script>
+            document.getElementById('Petronas').addEventListener('click', () => {
+                document.getElementById('PetronasMarker').click();
+                document.getElementById('placeName').textContent = 'Petronas';
+            });
+        </script>
+
+        <!--VolcanPoruñita button flyout-->
+        <button id="VolcanPoruñita" class="flyoutBtn">Volcan Poruñita</button>
+        <script>
+            document.getElementById('VolcanPoruñita').addEventListener('click', () => {
+                document.getElementById('VolcanPoruñitaMarker').click();
+                document.getElementById('placeName').textContent = 'Volcan Poruñita';
+            });
+        </script>
+
+        <!--SantaCruzdeIslote button flyout-->
+        <button id="SantaCruzdeIslote" class="flyoutBtn">Santa Cruzde Islote</button>
+        <script>
+            document.getElementById('SantaCruzdeIslote').addEventListener('click', () => {
+                document.getElementById('SantaCruzdeIsloteMarker').click();
+                document.getElementById('placeName').textContent = 'Santa Cruzde Islote';
+            });
+        </script>
+
+        <!--HuntsvilleAlabama button flyout-->
+        <button id="HuntsvilleAlabama" class="flyoutBtn">Huntsville, Alabama</button>
+        <script>
+            document.getElementById('HuntsvilleAlabama').addEventListener('click', () => {
+                document.getElementById('HuntsvilleAlabamaMarker').click();
+                document.getElementById('placeName').textContent = 'Huntsville, Alabama';
+            });
+        </script>
+
+        <!--DongdaemunDesignPlaza button flyout-->
+        <button id="DongdaemunDesignPlaza" class="flyoutBtn">Dongdaemun Design Plaza</button>
+        <script>
+            document.getElementById('DongdaemunDesignPlaza').addEventListener('click', () => {
+                document.getElementById('DongdaemunDesignPlazaMarker').click();
+                document.getElementById('placeName').textContent = 'Dongdaemun Design Plaza';
+            });
+        </script>
+
+        <!--CostaConcordia20130917 button flyout-->
+        <button id="CostaConcordia20130917" class="flyoutBtn">Costa Concordia Ship</button>
+        <script>
+            document.getElementById('CostaConcordia20130917').addEventListener('click', () => {
+                document.getElementById('CostaConcordia20130917Marker').click();
+                document.getElementById('placeName').textContent = 'Costa Concordia Ship';
+            });
+        </script>
+
+
+        <!--GreatBlueHole button flyout-->
+        <button id="GreatBlueHole" class="flyoutBtn">Great Blue Hole</button>
+        <script>
+            document.getElementById('GreatBlueHole').addEventListener('click', () => {
+                document.getElementById('GreatBlueHoleMarker').click();
+                document.getElementById('placeName').textContent = 'Great Blue Hole';
+            });
+        </script>
+
+        <!--Goma button flyout-->
+        <button id="Goma" class="flyoutBtn">Goma</button>
+        <script>
+            document.getElementById('Goma').addEventListener('click', () => {
+                document.getElementById('GomaMarker').click();
+                document.getElementById('placeName').textContent = 'Goma';
+            });
+        </script>
+
+        <!--DowntownDubai button flyout-->
+        <button id="DowntownDubai" class="flyoutBtn">Downtown Dubai</button>
+        <script>
+            document.getElementById('DowntownDubai').addEventListener('click', () => {
+                document.getElementById('DowntownDubaiMarker').click();
+                document.getElementById('placeName').textContent = 'Downtown Dubai';
+            });
+        </script>
+
+        <!--HotelRyugyongPyongyang button flyout-->
+        <button id="HotelRyugyongPyongyang" class="flyoutBtn">Hotel Ryugyong Pyongyang</button>
+        <script>
+            document.getElementById('HotelRyugyongPyongyang').addEventListener('click', () => {
+                document.getElementById('HotelRyugyongPyongyangMarker').click();
+                document.getElementById('placeName').textContent = 'Hotel Ryugyong Pyongyang';
+            });
+        </script>
+
+        <!--JudgeHarryPregersonInterchange button flyout-->
+        <button id="JudgeHarryPregersonInterchange" class="flyoutBtn">Judge Harry Pregerson Interchange</button>
+        <script>
+            document.getElementById('JudgeHarryPregersonInterchange').addEventListener('click', () => {
+                document.getElementById('JudgeHarryPregersonInterchangeMarker').click();
+                document.getElementById('placeName').textContent = 'Judge Harry Pregerson Interchange';
+            });
+        </script>
+
+        <!--BarringerCrater button flyout-->
+        <button id="BarringerCrater" class="flyoutBtn">Barringer Crater</button>
+        <script>
+            document.getElementById('BarringerCrater').addEventListener('click', () => {
+                document.getElementById('BarringerCraterMarker').click();
+                document.getElementById('placeName').textContent = 'Barringer Crater';
+            });
+        </script>
+
+        <!--EritreaHalaba button flyout-->
+        <button id="EritreaHalaba" class="flyoutBtn">Eritrea Halaba</button>
+        <script>
+            document.getElementById('EritreaHalaba').addEventListener('click', () => {
+                document.getElementById('EritreaHalabaMarker').click();
+                document.getElementById('placeName').textContent = 'Eritrea Halaba';
+            });
+        </script>
+
+        <!--MalborkCastle button flyout-->
+        <button id="MalborkCastle" class="flyoutBtn">Malbork Castle</button>
+        <script>
+            document.getElementById('MalborkCastle').addEventListener('click', () => {
+                document.getElementById('MalborkCastleMarker').click();
+                document.getElementById('placeName').textContent = 'Malbork Castle';
+            });
+        </script>
+
+        <!--LuboszówPoland button flyout-->
+        <button id="LuboszówPoland" class="flyoutBtn">Luboszów, Poland</button>
+        <script>
+            document.getElementById('LuboszówPoland').addEventListener('click', () => {
+                document.getElementById('LuboszówPolandMarker').click();
+                document.getElementById('placeName').textContent = 'Luboszów, Poland';
+            });
+        </script>
+
+        <!--KuwaitAirport button flyout-->
+        <button id="KuwaitAirport" class="flyoutBtn">Kuwait Airport</button>
+        <script>
+            document.getElementById('KuwaitAirport').addEventListener('click', () => {
+                document.getElementById('KuwaitAirportMarker').click();
+                document.getElementById('placeName').textContent = 'Kuwait Airport';
+            });
+        </script>
+
+    </div>
 </div>
 </div>
 </div>
