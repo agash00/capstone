@@ -65,7 +65,7 @@ function addMap() {
         viewNum = 0;
         switchLayerNum = 0;
         toggleViewBtn.style.backgroundImage = 'url("images/view.png")';
-        if (layerName1 != ''){
+        if (layerName1 != '' && layerName1 != 'none'){
             viewLayer(layerName1.replace("-layer", "").concat("Marker"), 1);
         }
     });
@@ -95,6 +95,7 @@ function addMap() {
             viewNum = 0;
             toggleViewBtn.style.backgroundImage = 'url("images/view.png")';
         }
+        console.log(trueName);
     });
     switchBtn.addEventListener('click', () => {
         if (switchLayerNum == 0) {
@@ -851,7 +852,11 @@ function switchBtnPower(switchNum){
     }
 }
 function switchLayer(layer1, layer2){
-    if (layer1 != 'on' && layer1 != 'off'){
+    if (layer1 == 'none') {
+        layerName1 = layer1;
+        layerName2 = layer2;
+    }
+    else if (layer1 != 'on' && layer1 != 'off'){
         layerName1 = layer1;
         layerName2 = layer2;
         viewLayerName1 = layerName1.replace("-layer", "").concat("Marker");
@@ -874,11 +879,12 @@ function switchLayer(layer1, layer2){
 function addMarkers(map) {
     const ArctowskiDiv = document.createElement('div');
     ArctowskiDiv.className = "marker";
-    ArctowskiDiv.id = 'ArctowskiMarker';
+    ArctowskiDiv.id = 'ArctowskiStationMarker';
     const ArctowskiMarker = new mapboxgl.Marker(ArctowskiDiv)
         .setLngLat([-58.4778433, -62.1571386])
         .addTo(map);
     ArctowskiDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
             center: [-58.4705175, -62.1592260],
@@ -895,6 +901,7 @@ function addMarkers(map) {
         .setLngLat([92.2098629, 11.5957307])
         .addTo(map);
     NorthSentinelDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
             center: [92.2124113, 11.5938552],
@@ -911,6 +918,7 @@ function addMarkers(map) {
         .setLngLat([-122.4830624, 37.8276392])
         .addTo(map);
     GoldenGateDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
             center: [-122.4789436, 37.8183215],
@@ -927,6 +935,7 @@ function addMarkers(map) {
         .setLngLat([40.2925530, 14.2456428])
         .addTo(map);
     DallolEthiopiaDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
             center: [40.2986674, 14.2399987],
@@ -943,6 +952,7 @@ function addMarkers(map) {
         .setLngLat([19.5439031, 50.1047289])
         .addTo(map);
     AlverniaMarkerDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
             center: [19.5475044, 50.1026258],
@@ -959,6 +969,7 @@ function addMarkers(map) {
         .setLngLat([ 50.0460162,  40.4684786])
         .addTo(map);
     HeydarAliyevAirportDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
             center: [ 50.0525381,  40.4657394],
@@ -975,6 +986,7 @@ function addMarkers(map) {
         .setLngLat([ 72.8689918,  19.1004393])
         .addTo(map);
     MumbaiAirportDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
             center: [ 72.8741491,  19.0964905],
@@ -991,6 +1003,7 @@ function addMarkers(map) {
         .setLngLat([ -3.6939235,  40.4842540])
         .addTo(map);
     CuatroTorresDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
             center: [ -3.6882077,  40.4797432],
@@ -1007,6 +1020,7 @@ function addMarkers(map) {
         .setLngLat([-67.3785227, -26.2072537])
         .addTo(map);
     AlumbreraDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
             center: [-67.3714800, -26.2135743],
@@ -1023,6 +1037,7 @@ function addMarkers(map) {
         .setLngLat([101.7080049,   3.1611789])
         .addTo(map);
     PetronasDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(1);
         map.flyTo({
             center: [101.7130903,   3.1565901],
@@ -1039,6 +1054,7 @@ function addMarkers(map) {
         .setLngLat([-68.3014837, -21.3113368])
         .addTo(map);
     VolcanPoruñitaDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
             center: [-68.2934697, -21.3179863],
@@ -1055,6 +1071,7 @@ function addMarkers(map) {
         .setLngLat([2.1516329, 41.3890737])
         .addTo(map);
     EixampleDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
             center: [2.1540143, 41.3821744],
@@ -1071,6 +1088,7 @@ function addMarkers(map) {
         .setLngLat([-175.4003680,-20.5354617])
         .addTo(map);
     HungaTongaDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
             center: [-175.391831,-20.543253],
@@ -1087,6 +1105,7 @@ function addMarkers(map) {
         .setLngLat([116.4018903, 39.5170206])
         .addTo(map);
     BeijingDaxingDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
             center: [116.4110812, 39.5099919],
@@ -1103,6 +1122,7 @@ function addMarkers(map) {
         .setLngLat([-67.3390564, -26.2892999])
         .addTo(map);
     VolcanJoteDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
             center: [-67.3292962, -26.2955358],
@@ -1119,6 +1139,7 @@ function addMarkers(map) {
         .setLngLat([-75.8611806,   9.7877409])
         .addTo(map);
     SantaCruzdeIsloteDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
             center: [-75.8590859,   9.7858433],
@@ -1135,6 +1156,7 @@ function addMarkers(map) {
         .setLngLat([-86.6578632,  34.7129592])
         .addTo(map);
     HuntsvilleAlabamaDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
             center: [-86.6558048,  34.7111980],
@@ -1151,6 +1173,7 @@ function addMarkers(map) {
         .setLngLat([127.0069694,  37.5695652])
         .addTo(map);
     DongdaemunDesignPlazaDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
             center: [127.0103303,  37.5669884],
@@ -1199,6 +1222,7 @@ function addMarkers(map) {
         .setLngLat([-87.5392281,  17.3202921])
         .addTo(map);
     GreatBlueHoleDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
             center: [-87.5345375,  17.3158507],
@@ -1246,6 +1270,7 @@ function addMarkers(map) {
         .setLngLat([ 55.2652644,  25.2052848])
         .addTo(map);
     DowntownDubaiDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
             center: [ 55.2744506,  25.1969560],
@@ -1262,6 +1287,7 @@ function addMarkers(map) {
         .setLngLat([125.7243704,  39.0426505])
         .addTo(map);
     HotelRyugyongPyongyangDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
             center: [125.7311787,  39.0363540],
@@ -1278,6 +1304,7 @@ function addMarkers(map) {
         .setLngLat([-118.2849491,  33.9317151])
         .addTo(map);
     JudgeHarryPregersonInterchangeDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
             center: [-118.2806319,  33.9285273],
@@ -1294,6 +1321,7 @@ function addMarkers(map) {
         .setLngLat([-111.0319917,  35.0347428])
         .addTo(map);
     BarringerCraterDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
             center: [-111.0227980,  35.0272428],
@@ -1310,6 +1338,7 @@ function addMarkers(map) {
         .setLngLat([ 41.7936167,  13.9189114])
         .addTo(map);
     EritreaHalabaDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
             center: [ 41.7996784,  13.9120866],
@@ -1326,6 +1355,7 @@ function addMarkers(map) {
         .setLngLat([ 19.0248672,  54.0436092])
         .addTo(map);
     MalborkCastleDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
             center: [ 19.0293384,  54.0407455],
@@ -1342,6 +1372,7 @@ function addMarkers(map) {
         .setLngLat([ 15.3913811,  51.4283021])
         .addTo(map);
     LuboszówPolandDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
             center: [ 15.3952125,  51.4262891],
@@ -1358,6 +1389,7 @@ function addMarkers(map) {
         .setLngLat([ 47.9809110,  29.2203451])
         .addTo(map);
     KuwaitAirportDiv.addEventListener('click', (e) => {
+        switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
             center: [ 47.9875710,  29.2142234],
