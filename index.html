@@ -26,6 +26,10 @@
     <button id="stand" class="mapBtns" style="display: none;"></button>
     <span id ="standTip">Standard basemap</span>
 </div>
+<div id = "switchBtn">
+    <button id="switch" class="mapBtns"></button>
+    <span id ="switchTip">No alternate image</span>
+</div>
 <div class="dropdown">
 <button id="dropbtn" class="mapBtns"></button>
 <div id="dropdown-content">
@@ -34,11 +38,8 @@
 <button id="Alvernia" class="flyoutBtn">Alvernia Planet</button>
 <script>
     document.getElementById('Alvernia').addEventListener('click', () => {
-        map.flyTo({
-            center: [19.5475044, 50.1026258],
-            zoom: 15,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('AlverniaMarker').click();
+        document.getElementById('placeName').textContent = 'Alvernia Planet';
     });
 </script>
 
@@ -46,11 +47,8 @@
 <button id="Eixample" class="flyoutBtn">Eixample</button>
 <script>
     document.getElementById('Eixample').addEventListener('click', () => {
-        map.flyTo({
-            center: [2.154456,41.382745],
-            zoom: 14,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('EixampleMarker').click();
+        document.getElementById('placeName').textContent = 'Eixample';
     });
 </script>
 
@@ -58,11 +56,8 @@
 <button id="Hunga" class="flyoutBtn">Hunga Tonga</button>
 <script>
     document.getElementById('Hunga').addEventListener('click', () => {
-        map.flyTo({
-            center: [-175.391831,-20.543253],
-            zoom: 15,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('HungaTongaMarker').click();
+        document.getElementById('placeName').textContent = 'Hunga Tonga';
     });
 </script>
 
@@ -70,23 +65,17 @@
 <button id="DallolEthiopia" class="flyoutBtn">Dallol, Ethiopia</button>
 <script>
     document.getElementById('DallolEthiopia').addEventListener('click', () => {
-        map.flyTo({
-            center: [40.2986674, 14.2399987],
-            zoom: 14,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('DallolEthiopiaMarker').click();
+        document.getElementById('placeName').textContent = 'Dallol, Ethiopia';
     });
 </script>
 
 <!--Golden Gate button flyout-->
-<button id="GoldenGate" class="flyoutBtn">Golden Gate</button>
+<button id="GoldenGate" class="flyoutBtn">Golden Gate Bridge</button>
 <script>
     document.getElementById('GoldenGate').addEventListener('click', () => {
-        map.flyTo({
-            center: [-122.4789436, 37.8183215],
-            zoom: 14,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('GoldenGateMarker').click();
+        document.getElementById('placeName').textContent = 'Golden Gate Bridge';
     });
 </script>
 
@@ -94,11 +83,8 @@
 <button id="NorthSentinel" class="flyoutBtn">North Sentinel</button>
 <script>
     document.getElementById('NorthSentinel').addEventListener('click', () => {
-        map.flyTo({
-            center: [92.2124113, 11.5938552],
-            zoom: 16,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('NorthSentinelMarker').click();
+        document.getElementById('placeName').textContent = 'North Sentinel';
     });
 </script>
 
@@ -106,23 +92,17 @@
 <button id="ArctowskiStation" class="flyoutBtn">Arctowski Station</button>
 <script>
     document.getElementById('ArctowskiStation').addEventListener('click', () => {
-        map.flyTo({
-            center: [-58.4705175, -62.1592260],
-            zoom: 16,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('ArctowskiMarker').click();
+        document.getElementById('placeName').textContent = 'Arctowski Station';
     });
 </script>
 
 <!--Beijing Daxing button flyout-->
-<button id="BeijingDaxing" class="flyoutBtn">Beijing Daxing</button>
+<button id="BeijingDaxing" class="flyoutBtn">Beijing Daxing Airport</button>
 <script>
     document.getElementById('BeijingDaxing').addEventListener('click', () => {
-        map.flyTo({
-            center: [116.4110812, 39.5099919],
-            zoom: 15,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('BeijingDaxingMarker').click();
+        document.getElementById('placeName').textContent = 'Beijing Daxing Airport';
     });
 </script>
 
@@ -130,47 +110,35 @@
 <button id="VolcanJote" class="flyoutBtn">Volcan Jote</button>
 <script>
     document.getElementById('VolcanJote').addEventListener('click', () => {
-        map.flyTo({
-            center: [-67.3292962, -26.2955358],
-            zoom: 15,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('VolcanJoteMarker').click();
+        document.getElementById('placeName').textContent = 'Volcan Jote';
     });
 </script>
 
 <!--HeydarAliyevAirport button flyout-->
-<button id="HeydarAliyevAirport" class="flyoutBtn">HeydarAliyevAirport</button>
+<button id="HeydarAliyevAirport" class="flyoutBtn">Heydar Aliyev Airport</button>
 <script>
     document.getElementById('HeydarAliyevAirport').addEventListener('click', () => {
-        map.flyTo({
-            center: [ 50.0525381,  40.4657394],
-            zoom: 15,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('HeydarAliyevAirportMarker').click();
+        document.getElementById('placeName').textContent = 'Heydar Aliyev Airport';
     });
 </script>
 
 <!--MumbaiAirport button flyout-->
-<button id="MumbaiAirport" class="flyoutBtn">MumbaiAirport</button>
+<button id="MumbaiAirport" class="flyoutBtn">Mumbai Airport</button>
 <script>
     document.getElementById('MumbaiAirport').addEventListener('click', () => {
-        map.flyTo({
-            center: [ 72.8741491,  19.0964905],
-            zoom: 15,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('MumbaiAirportMarker').click();
+        document.getElementById('placeName').textContent = 'Mumbai Airport';
     });
 </script>
 
 <!--CuatroTorres button flyout-->
-<button id="CuatroTorres" class="flyoutBtn">CuatroTorres</button>
+<button id="CuatroTorres" class="flyoutBtn">Cuatro Torres</button>
 <script>
     document.getElementById('CuatroTorres').addEventListener('click', () => {
-        map.flyTo({
-            center: [ -3.6882077,  40.4797432],
-            zoom: 15,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('CuatroTorresMarker').click();
+        document.getElementById('placeName').textContent = 'Cuatro Torres';
     });
 </script>
 
@@ -178,11 +146,8 @@
 <button id="Alumbrera" class="flyoutBtn">Alumbrera</button>
 <script>
     document.getElementById('Alumbrera').addEventListener('click', () => {
-        map.flyTo({
-            center: [-67.3714800, -26.2135743],
-            zoom: 15,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('AlumbreraMarker').click();
+        document.getElementById('placeName').textContent = 'Alumbrera';
     });
 </script>
 
@@ -190,84 +155,63 @@
 <button id="Petronas" class="flyoutBtn">Petronas</button>
 <script>
     document.getElementById('Petronas').addEventListener('click', () => {
-        map.flyTo({
-            center: [101.7130903,   3.1565901],
-            zoom: 15,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('PetronasMarker').click();
+        document.getElementById('placeName').textContent = 'Petronas';
     });
 </script>
 
 <!--VolcanPoruñita button flyout-->
-<button id="VolcanPoruñita" class="flyoutBtn">VolcanPoruñita</button>
+<button id="VolcanPoruñita" class="flyoutBtn">Volcan Poruñita</button>
 <script>
     document.getElementById('VolcanPoruñita').addEventListener('click', () => {
-        map.flyTo({
-            center: [-68.2934697, -21.3179863],
-            zoom: 15,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('VolcanPoruñitaMarker').click();
+        document.getElementById('placeName').textContent = 'Volcan Poruñita';
     });
 </script>
 
 <!--SantaCruzdeIslote button flyout-->
-<button id="SantaCruzdeIslote" class="flyoutBtn">SantaCruzdeIslote</button>
+<button id="SantaCruzdeIslote" class="flyoutBtn">Santa Cruzde Islote</button>
 <script>
     document.getElementById('SantaCruzdeIslote').addEventListener('click', () => {
-        map.flyTo({
-            center: [-75.8590859,   9.7858433],
-            zoom: 15,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('SantaCruzdeIsloteMarker').click();
+        document.getElementById('placeName').textContent = 'Santa Cruzde Islote';
     });
 </script>
 
 <!--HuntsvilleAlabama button flyout-->
-<button id="HuntsvilleAlabama" class="flyoutBtn">HuntsvilleAlabama</button>
+<button id="HuntsvilleAlabama" class="flyoutBtn">Huntsville, Alabama</button>
 <script>
     document.getElementById('HuntsvilleAlabama').addEventListener('click', () => {
-        map.flyTo({
-            center: [-86.6558048,  34.7111980],
-            zoom: 15,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('HuntsvilleAlabamaMarker').click();
+        document.getElementById('placeName').textContent = 'Huntsville, Alabama';
     });
 </script>
 
 <!--DongdaemunDesignPlaza button flyout-->
-<button id="DongdaemunDesignPlaza" class="flyoutBtn">DongdaemunDesignPlaza</button>
+<button id="DongdaemunDesignPlaza" class="flyoutBtn">Dongdaemun Design Plaza</button>
 <script>
     document.getElementById('DongdaemunDesignPlaza').addEventListener('click', () => {
-        map.flyTo({
-            center: [127.0103303,  37.5669884],
-            zoom: 15,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('DongdaemunDesignPlazaMarker').click();
+        document.getElementById('placeName').textContent = 'Dongdaemun Design Plaza';
     });
 </script>
 
 <!--CostaConcordia20130917 button flyout-->
-<button id="CostaConcordia20130917" class="flyoutBtn">CostaConcordia</button>
+<button id="CostaConcordia20130917" class="flyoutBtn">Costa Concordia Ship</button>
 <script>
     document.getElementById('CostaConcordia20130917').addEventListener('click', () => {
-        map.flyTo({
-            center: [ 10.9214388,  42.3658301],
-            zoom: 15,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('costaMarker').click();
+        document.getElementById('placeName').textContent = 'Costa Concordia Ship';
     });
 </script>
 
 
 <!--GreatBlueHole button flyout-->
-<button id="GreatBlueHole" class="flyoutBtn">GreatBlueHole</button>
+<button id="GreatBlueHole" class="flyoutBtn">Great Blue Hole</button>
 <script>
     document.getElementById('GreatBlueHole').addEventListener('click', () => {
-        map.flyTo({
-            center: [-87.5345375,  17.3158507],
-            zoom: 15,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('GreatBlueHoleMarker').click();
+        document.getElementById('placeName').textContent = 'Great Blue Hole';
     });
 </script>
 
@@ -275,107 +219,80 @@
 <button id="Goma" class="flyoutBtn">Goma</button>
 <script>
     document.getElementById('Goma').addEventListener('click', () => {
-        map.flyTo({
-            center: [ 29.2397031,  -1.6408191],
-            zoom: 15,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('GomaMarker').click();
+        document.getElementById('placeName').textContent = 'Goma';
     });
 </script>
 
 <!--DowntownDubai button flyout-->
-<button id="DowntownDubai" class="flyoutBtn">DowntownDubai</button>
+<button id="DowntownDubai" class="flyoutBtn">Downtown Dubai</button>
 <script>
     document.getElementById('DowntownDubai').addEventListener('click', () => {
-        map.flyTo({
-            center: [ 55.2744506,  25.1969560],
-            zoom: 15,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('DowntownDubaiMarker').click();
+        document.getElementById('placeName').textContent = 'Downtown Dubai';
     });
 </script>
 
 <!--HotelRyugyongPyongyang button flyout-->
-<button id="HotelRyugyongPyongyang" class="flyoutBtn">HotelRyugyongPyongyang</button>
+<button id="HotelRyugyongPyongyang" class="flyoutBtn">Hotel Ryugyong Pyongyang</button>
 <script>
     document.getElementById('HotelRyugyongPyongyang').addEventListener('click', () => {
-        map.flyTo({
-            center: [125.7311787,  39.0363540],
-            zoom: 15,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('HotelRyugyongPyongyangMarker').click();
+        document.getElementById('placeName').textContent = 'Hotel Ryugyong Pyongyang';
     });
 </script>
 
 <!--JudgeHarryPregersonInterchange button flyout-->
-<button id="JudgeHarryPregersonInterchange" class="flyoutBtn">JudgeHarryPregersonInterchange</button>
+<button id="JudgeHarryPregersonInterchange" class="flyoutBtn">Judge Harry Pregerson Interchange</button>
 <script>
     document.getElementById('JudgeHarryPregersonInterchange').addEventListener('click', () => {
-        map.flyTo({
-            center: [-118.2806319,  33.9285273],
-            zoom: 15,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('JudgeHarryPregersonInterchangeMarker').click();
+        document.getElementById('placeName').textContent = 'Judge Harry Pregerson Interchange';
     });
 </script>
 
 <!--BarringerCrater button flyout-->
-<button id="BarringerCrater" class="flyoutBtn">BarringerCrater</button>
+<button id="BarringerCrater" class="flyoutBtn">Barringer Crater</button>
 <script>
     document.getElementById('BarringerCrater').addEventListener('click', () => {
-        map.flyTo({
-            center: [-111.0227980,  35.0272428],
-            zoom: 15,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('BarringerCraterMarker').click();
+        document.getElementById('placeName').textContent = 'Barringer Crater';
     });
 </script>
 
 <!--EritreaHalaba button flyout-->
-<button id="EritreaHalaba" class="flyoutBtn">EritreaHalaba</button>
+<button id="EritreaHalaba" class="flyoutBtn">Eritrea Halaba</button>
 <script>
     document.getElementById('EritreaHalaba').addEventListener('click', () => {
-        map.flyTo({
-            center: [ 41.7996784,  13.9120866],
-            zoom: 15,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('EritreaHalabaMarker').click();
+        document.getElementById('placeName').textContent = 'Eritrea Halaba';
     });
 </script>
 
 <!--MalborkCastle button flyout-->
-<button id="MalborkCastle" class="flyoutBtn">MalborkCastle</button>
+<button id="MalborkCastle" class="flyoutBtn">Malbork Castle</button>
 <script>
     document.getElementById('MalborkCastle').addEventListener('click', () => {
-        map.flyTo({
-            center: [ 19.0293384,  54.0407455],
-            zoom: 15,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('MalborkCastleMarker').click();
+        document.getElementById('placeName').textContent = 'Malbork Castle';
     });
 </script>
 
 <!--LuboszówPoland button flyout-->
-<button id="LuboszówPoland" class="flyoutBtn">LuboszówPoland</button>
+<button id="LuboszówPoland" class="flyoutBtn">Luboszów, Poland</button>
 <script>
     document.getElementById('LuboszówPoland').addEventListener('click', () => {
-        map.flyTo({
-            center: [ 15.3952125,  51.4262891],
-            zoom: 15,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('LuboszówPolandMarker').click();
+        document.getElementById('placeName').textContent = 'Luboszów, Poland';
     });
 </script>
 
 <!--KuwaitAirport button flyout-->
-<button id="KuwaitAirport" class="flyoutBtn">KuwaitAirport</button>
+<button id="KuwaitAirport" class="flyoutBtn">Kuwait Airport</button>
 <script>
     document.getElementById('KuwaitAirport').addEventListener('click', () => {
-        map.flyTo({
-            center: [ 47.9875710,  29.2142234],
-            zoom: 15,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
+        document.getElementById('KuwaitAirportMarker').click();
+        document.getElementById('placeName').textContent = 'Kuwait Airport';
     });
 </script>
 
