@@ -838,6 +838,9 @@ function addAdditionalSourceAndLayer(map) {
 
 }
 function viewLayer(layerName, num){
+    if (toggleViewBtn.style.backgroundImage == 'url("images/hide.png")'){
+        toggleViewBtn.style.backgroundImage = 'url("images/view.png")'
+    }
     if (layerName != 'get'){
         trueName = layerName.replace("Marker", "-layer");
         if (trueName != oldLayerName && oldLayerName != '' && num != 1){
