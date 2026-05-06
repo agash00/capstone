@@ -67,6 +67,8 @@ function addMap() {
         toggleViewBtn.style.backgroundImage = 'url("images/view.png")';
         if (layerName1 != '' && layerName1 != 'none'){
             viewLayer(layerName1.replace("-layer", "").concat("Marker"), 1);
+            switchBtn.disabled = false;
+            switchBtnPower(1);
         }
     });
 
@@ -89,11 +91,19 @@ function addMap() {
             map.setLayoutProperty(viewLayer('get'), 'visibility', 'none');
             viewNum = 1;
             toggleViewBtn.style.backgroundImage = 'url("images/hide.png")';
+            if (layerName1 != '' && layerName1 != 'none'){
+                switchBtn.disabled = true;
+                switchBtnPower(0);
+            }
         }
         else {
             map.setLayoutProperty(viewLayer('get'), 'visibility', 'visible');
             viewNum = 0;
             toggleViewBtn.style.backgroundImage = 'url("images/view.png")';
+            if (layerName1 != '' && layerName1 != 'none'){
+                switchBtn.disabled = false;
+                switchBtnPower(1);
+            }
         }
         console.log(trueName);
     });
@@ -866,6 +876,7 @@ function switchLayer(layer1, layer2){
         viewLayerName1 = layerName1.replace("-layer", "").concat("Marker");
         viewLayerName2 = layerName2.replace("-layer", "").concat("Marker");
         viewLayer(viewLayerName1);
+        map.setLayoutProperty(layerName2, 'visibility', 'none');
     }
     if (layer1 == 'off') {
         viewLayer(viewLayerName2);
