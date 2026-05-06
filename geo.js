@@ -126,10 +126,14 @@ function addAdditionalSourceAndLayer(map) {
         'type': 'image',
         'url': 'https://photos.agash.ca/Hunga+Tonga+2021-04-10+50cm2.jpg',
         'coordinates': [
-            [-175.4003680,-20.5354617],
-            [-175.38133144,-20.53723930],
-            [-175.38284828,-20.55136838],
-            [-175.40189848,-20.54957904]
+            [-175.4007692, -20.5378731],
+            [-175.3833379, -20.5378731],
+            [-175.3833379, -20.5515900],
+            [-175.4007692, -20.5515900]
+            // [-175.4003680,-20.5354617],
+            // [-175.38133144,-20.53723930],
+            // [-175.38284828,-20.55136838],
+            // [-175.40189848,-20.54957904]
         ]
     });
 
@@ -1085,14 +1089,15 @@ function addMarkers(map) {
     HungaTongaDiv.className = "marker";
     HungaTongaDiv.id = 'HungaTongaMarker';
     const HungaTongaMarker = new mapboxgl.Marker(HungaTongaDiv)
-        .setLngLat([-175.4003680,-20.5354617])
+        .setLngLat([-175.4007692, -20.5378731])
+        //.setLngLat([-175.4003680,-20.5354617])
         .addTo(map);
     HungaTongaDiv.addEventListener('click', (e) => {
         switchLayer('none');
         switchBtnPower(0);
         map.flyTo({
-            center: [-175.391831,-20.543253],
-            zoom: 16,
+            center: [-175.3920535, -20.5447315],
+            zoom: 15,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         viewLayer(e.srcElement.id);
