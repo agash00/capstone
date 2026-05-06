@@ -836,6 +836,196 @@ function addAdditionalSourceAndLayer(map) {
         }
     });
 
+    
+    //Add NewYauMaTeishelterHongkong image
+
+    map.addSource('NewYauMaTeishelterHongkong', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/NewYauMaTeishelterHongkong.png',
+        'coordinates': [
+            [114.1460610,  22.3170465],
+            [114.1617069,  22.3170465],
+            [114.1617069,  22.3043527],
+            [114.1460610,  22.3043527]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'NewYauMaTeishelterHongkong-layer',
+        'source': 'NewYauMaTeishelterHongkong',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+    
+    //Add PortCamilleRayonGolfeJuan image
+
+    map.addSource('PortCamilleRayonGolfeJuan', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/PortCamilleRayonGolfeJuan.png',
+        'coordinates': [
+            [ 7.0699998,  43.5707001],
+            [ 7.0852935,  43.5707001],
+            [ 7.0852935,  43.5617766],
+            [ 7.0699998,  43.5617766]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'PortCamilleRayonGolfeJuan-layer',
+        'source': 'PortCamilleRayonGolfeJuan',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+    
+    //Add PyramidsOfGiza image
+
+    map.addSource('PyramidsOfGiza', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/PyramidsOfGiza.png',
+        'coordinates': [
+            [ 31.1257876,  29.9813191],
+            [ 31.1402810,  29.9813191],
+            [ 31.1402810,  29.9709339],
+            [ 31.1257876,  29.9709339]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'PyramidsOfGiza-layer',
+        'source': 'PyramidsOfGiza',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+    
+    //Add Sealand image
+
+    map.addSource('Sealand', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/Sealand.png',
+        'coordinates': [
+            [ 1.4797713,  51.8998809],
+            [ 1.4864099,  51.8998809],
+            [ 1.4864099,  51.8929971],
+            [ 1.4797713,  51.8929971]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'Sealand-layer',
+        'source': 'Sealand',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+    
+    //Add ShenzhenBao'anInternationalAirport image
+
+    map.addSource('ShenzhenBaoanInternationalAirport', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/ShenzhenBaoanInternationalAirport.png',
+        'coordinates': [
+            [113.7976525,  22.6376172],
+            [113.8158766,  22.6376172],
+            [113.8158766,  22.6234194],
+            [113.7976525,  22.6234194]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'ShenzhenBaoanInternationalAirport-layer',
+        'source': 'ShenzhenBaoanInternationalAirport',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+    
+    //Add SiedlcePoland image
+
+    map.addSource('SiedlcePoland', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/SiedlcePoland.png',
+        'coordinates': [
+            [ 22.2635107,  52.1679498],
+            [ 22.2788980,  52.1679498],
+            [ 22.2788980,  52.1579486],
+            [ 22.2635107,  52.1579486]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'SiedlcePoland-layer',
+        'source': 'SiedlcePoland',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+    
+    //Add SiedlcePolandZoom image
+
+    map.addSource('SiedlcePolandZoom', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/SiedlcePolandZoom.png',
+        'coordinates': [
+            [ 22.2652131,  52.1633222],
+            [ 22.2755428,  52.1633222],
+            [ 22.2755428,  52.1602001],
+            [ 22.2652131,  52.1602001]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'SiedlcePolandZoom-layer',
+        'source': 'SiedlcePolandZoom',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        },
+        'layout': {
+            'visibility': 'none'
+        }
+    });
+    
+    //Add PetronasNIR2 image
+    map.addSource('PetronasNIR2', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/PetronasNIR2.png',
+        'coordinates': [
+            [101.7081938,   3.1611142],
+            [101.7177900,   3.1611142],
+            [101.7177900,   3.1522316],
+            [101.7081938,   3.1522316]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'PetronasNIR2-layer',
+        'source': 'PetronasNIR2',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        },
+        'layout': {
+            'visibility': 'none'
+        }
+    });
+
 }
 function viewLayer(layerName, num){
     if (toggleViewBtn.style.backgroundImage == 'url("images/hide.png")'){
@@ -1058,14 +1248,13 @@ function addMarkers(map) {
         .setLngLat([101.7080049,   3.1611789])
         .addTo(map);
     PetronasDiv.addEventListener('click', (e) => {
-        switchLayer('none');
+        switchLayer('Petronas-layer', 'PetronasNIR2-layer');
         switchBtnPower(1);
         map.flyTo({
             center: [101.7130903,   3.1565901],
             zoom: 16,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
-        viewLayer(e.srcElement.id);
     });
 
     const VolcanPoruñitaDiv = document.createElement('div');
@@ -1420,159 +1609,260 @@ function addMarkers(map) {
         });
         viewLayer(e.srcElement.id);
     });
+        const NewYauMaTeishelterHongkongDiv = document.createElement('div');
+    NewYauMaTeishelterHongkongDiv.className = "marker";
+    NewYauMaTeishelterHongkongDiv.id = 'NewYauMaTeishelterHongkongMarker';
+    const NewYauMaTeishelterHongkongMarker = new mapboxgl.Marker(NewYauMaTeishelterHongkongDiv)
+        .setLngLat([114.1460610,  22.3170465])
+        .addTo(map);
+    NewYauMaTeishelterHongkongDiv.addEventListener('click', (e) => {
+        switchLayer('none');
+        switchBtnPower(0);
+        viewLayer(e.srcElement.id);
+        map.flyTo({
+            center: [114.1538840,  22.3106996],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
 
+    const PortCamilleRayonGolfeJuanDiv = document.createElement('div');
+    PortCamilleRayonGolfeJuanDiv.className = "marker";
+    PortCamilleRayonGolfeJuanDiv.id = 'PortCamilleRayonGolfeJuanMarker';
+    const PortCamilleRayonGolfeJuanMarker = new mapboxgl.Marker(PortCamilleRayonGolfeJuanDiv)
+        .setLngLat([ 7.0699998,  43.5707001])
+        .addTo(map);
+    PortCamilleRayonGolfeJuanDiv.addEventListener('click', (e) => {
+        switchLayer('none');
+        switchBtnPower(0);
+        viewLayer(e.srcElement.id);
+        map.flyTo({
+            center: [ 7.0776466,  43.5662384],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+
+    const PyramidsOfGizaDiv = document.createElement('div');
+    PyramidsOfGizaDiv.className = "marker";
+    PyramidsOfGizaDiv.id = 'PyramidsOfGizaMarker';
+    const PyramidsOfGizaMarker = new mapboxgl.Marker(PyramidsOfGizaDiv)
+        .setLngLat([ 31.1257876,  29.9813191])
+        .addTo(map);
+    PyramidsOfGizaDiv.addEventListener('click', (e) => {
+        switchLayer('none');
+        switchBtnPower(0);
+        viewLayer(e.srcElement.id);
+        map.flyTo({
+            center: [ 31.1330343,  29.9761265],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+
+    const SealandDiv = document.createElement('div');
+    SealandDiv.className = "marker";
+    SealandDiv.id = 'SealandMarker';
+    const SealandMarker = new mapboxgl.Marker(SealandDiv)
+        .setLngLat([ 1.4797713,  51.8998809])
+        .addTo(map);
+    SealandDiv.addEventListener('click', (e) => {
+        switchLayer('none');
+        switchBtnPower(0);
+        viewLayer(e.srcElement.id);
+        map.flyTo({
+            center: [ 1.4830906,  51.8964390],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+
+    const ShenzhenBaoanInternationalAirportDiv = document.createElement('div');
+    ShenzhenBaoanInternationalAirportDiv.className = "marker";
+    ShenzhenBaoanInternationalAirportDiv.id = 'ShenzhenBaoanInternationalAirportMarker';
+    const ShenzhenBaoanInternationalAirportMarker = new mapboxgl.Marker(ShenzhenBaoanInternationalAirportDiv)
+        .setLngLat([113.7976525,  22.6376172])
+        .addTo(map);
+    ShenzhenBaoanInternationalAirportDiv.addEventListener('click', (e) => {
+        switchLayer('none');
+        switchBtnPower(0);
+        viewLayer(e.srcElement.id);
+        map.flyTo({
+            center: [113.8067645,  22.6305183],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+
+    const SiedlcePolandDiv = document.createElement('div');
+    SiedlcePolandDiv.className = "marker";
+    SiedlcePolandDiv.id = 'SiedlcePolandMarker';
+    const SiedlcePolandMarker = new mapboxgl.Marker(SiedlcePolandDiv)
+        .setLngLat([ 22.2635107,  52.1679498])
+        .addTo(map);
+    SiedlcePolandDiv.addEventListener('click', (e) => {
+        switchLayer('SiedlcePoland-layer','SiedlcePolandZoom-layer');
+        switchBtnPower(1);
+        map.flyTo({
+            center: [ 22.2712044,  52.1629492],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
 
     //hover pin place text
-    const ArctowskiName = document.getElementById('placeName');
+    const placeNameText = document.getElementById('placeName');
+
     ArctowskiDiv.addEventListener('mouseover', () => {
-        ArctowskiName.textContent = 'Arctowski';
+        placeNameText.textContent = 'Arctowski';
     });
         
-    const NorthSentinelName = document.getElementById('placeName');
     NorthSentinelDiv.addEventListener('mouseover', () => {
-        NorthSentinelName.textContent = 'North Sentinel';
+        placeNameText.textContent = 'North Sentinel';
     });
         
-    const GoldenGateName = document.getElementById('placeName');
     GoldenGateDiv.addEventListener('mouseover', () => {
-        GoldenGateName.textContent = 'Golden Gate';
+        placeNameText.textContent = 'Golden Gate';
     });
         
-    const DallolEthiopiaName = document.getElementById('placeName');
     DallolEthiopiaDiv.addEventListener('mouseover', () => {
-        DallolEthiopiaName.textContent = 'Dallol Ethiopia';
+        placeNameText.textContent = 'Dallol Ethiopia';
     });
         
-    const HeydarAliyevAirportName = document.getElementById('placeName');
     HeydarAliyevAirportDiv.addEventListener('mouseover', () => {
-        HeydarAliyevAirportName.textContent = 'Heydar Aliyev Airport';
+        placeNameText.textContent = 'Heydar Aliyev Airport';
     });
         
-    const MumbaiAirportName = document.getElementById('placeName');
     MumbaiAirportDiv.addEventListener('mouseover', () => {
-        MumbaiAirportName.textContent = 'Mumbai Airport';
+        placeNameText.textContent = 'Mumbai Airport';
     });
         
-    const CuatroTorresName = document.getElementById('placeName');
     CuatroTorresDiv.addEventListener('mouseover', () => {
-        CuatroTorresName.textContent = 'Cuatro Torres';
+        placeNameText.textContent = 'Cuatro Torres';
     });
         
-    const AlumbreraName = document.getElementById('placeName');
     AlumbreraDiv.addEventListener('mouseover', () => {
-        AlumbreraName.textContent = 'Alumbrera';
+        placeNameText.textContent = 'Alumbrera';
     });
         
-    const PetronasName = document.getElementById('placeName');
     PetronasDiv.addEventListener('mouseover', () => {
-        PetronasName.textContent = 'Petronas';
+        placeNameText.textContent = 'Petronas';
     });
         
-    const VolcanPoruñitaName = document.getElementById('placeName');
     VolcanPoruñitaDiv.addEventListener('mouseover', () => {
-        VolcanPoruñitaName.textContent = 'Volcan Poru ñita';
+        placeNameText.textContent = 'Volcan Poru ñita';
     });
         
-    const EixampleName = document.getElementById('placeName');
     EixampleDiv.addEventListener('mouseover', () => {
-        EixampleName.textContent = 'Eixample';
+        placeNameText.textContent = 'Eixample';
     });
         
-    const HungaTongaName = document.getElementById('placeName');
     HungaTongaDiv.addEventListener('mouseover', () => {
-        HungaTongaName.textContent = 'Hunga Tonga';
+        placeNameText.textContent = 'Hunga Tonga';
     });
-        
-    const BeijingDaxingName = document.getElementById('placeName');
+    
     BeijingDaxingDiv.addEventListener('mouseover', () => {
-        BeijingDaxingName.textContent = 'Beijing Daxing';
+        placeNameText.textContent = 'Beijing Daxing';
     });
         
-    const VolcanJoteName = document.getElementById('placeName');
     VolcanJoteDiv.addEventListener('mouseover', () => {
-        VolcanJoteName.textContent = 'Volcan Jote';
+        placeNameText.textContent = 'Volcan Jote';
     });
         
-    const SantaCruzdeIsloteName = document.getElementById('placeName');
     SantaCruzdeIsloteDiv.addEventListener('mouseover', () => {
-        SantaCruzdeIsloteName.textContent = 'Santa Cruzde Islote';
+        placeNameText.textContent = 'Santa Cruzde Islote';
     });
         
-    const HuntsvilleAlabamaName = document.getElementById('placeName');
     HuntsvilleAlabamaDiv.addEventListener('mouseover', () => {
-        HuntsvilleAlabamaName.textContent = 'Huntsville Alabama';
+        placeNameText.textContent = 'Huntsville Alabama';
     });
         
-    const DongdaemunDesignPlazaName = document.getElementById('placeName');
     DongdaemunDesignPlazaDiv.addEventListener('mouseover', () => {
-        DongdaemunDesignPlazaName.textContent = 'Dongdaemun Design Plaza';
+        placeNameText.textContent = 'Dongdaemun Design Plaza';
     });
         
-    const CostaConcordia20130712Name = document.getElementById('placeName');
     // const CostaConcordiaSwitchText = document.createElement('p');
     // CostaConcordiaSwitchText.className = 'switchText';
     // CostaConcordiaSwitchText.textContent = "Click this pin to toggle between 2013-07-12 and 2013-09-17 (testing)";
     CostaConcordia20130917Div.addEventListener('mouseover', () => {
-        CostaConcordia20130712Name.textContent = 'Costa Concordia';
+        placeNameText.textContent = 'Costa Concordia';
         //CostaConcordia20130712Name.appendChild(CostaConcordiaSwitchText);
     });
         
-    const GreatBlueHoleName = document.getElementById('placeName');
     GreatBlueHoleDiv.addEventListener('mouseover', () => {
-        GreatBlueHoleName.textContent = 'Great Blue Hole';
+        placeNameText.textContent = 'Great Blue Hole';
     });
         
-    const GomaName = document.getElementById('placeName');
     // const GomaSwitchText = document.createElement('p');
     // GomaSwitchText.className = 'switchText';
     // GomaSwitchText.textContent = "Click this pin to toggle between natural colour and NIR (testing)";
     GomaDiv.addEventListener('mouseover', () => {
-        GomaName.textContent = 'Goma';
+        placeNameText.textContent = 'Goma';
         //GomaName.appendChild(GomaSwitchText);
     });
         
-    const DowntownDubaiName = document.getElementById('placeName');
     DowntownDubaiDiv.addEventListener('mouseover', () => {
-        DowntownDubaiName.textContent = 'Downtown Dubai';
+        placeNameText.textContent = 'Downtown Dubai';
     });
         
-    const HotelRyugyongPyongyangName = document.getElementById('placeName');
     HotelRyugyongPyongyangDiv.addEventListener('mouseover', () => {
-        HotelRyugyongPyongyangName.textContent = 'Hotel Ryugyong Pyongyang';
+        placeNameText.textContent = 'Hotel Ryugyong Pyongyang';
     });
         
-    const JudgeHarryPregersonInterchangeName = document.getElementById('placeName');
     JudgeHarryPregersonInterchangeDiv.addEventListener('mouseover', () => {
-        JudgeHarryPregersonInterchangeName.textContent = 'Judge Harry Pregerson Interchange';
+        placeNameText.textContent = 'Judge Harry Pregerson Interchange';
     });
         
-    const BarringerCraterName = document.getElementById('placeName');
     BarringerCraterDiv.addEventListener('mouseover', () => {
-        BarringerCraterName.textContent = 'Barringer Crater';
+        placeNameText.textContent = 'Barringer Crater';
     });
         
-    const EritreaHalabaName = document.getElementById('placeName');
     EritreaHalabaDiv.addEventListener('mouseover', () => {
-        EritreaHalabaName.textContent = 'Eritrea Halaba';
+        placeNameText.textContent = 'Eritrea Halaba';
     });
         
-    const MalborkCastleName = document.getElementById('placeName');
     MalborkCastleDiv.addEventListener('mouseover', () => {
-        MalborkCastleName.textContent = 'Malbork Castle';
+        placeNameText.textContent = 'Malbork Castle';
     });
         
-    const LuboszówPolandName = document.getElementById('placeName');
     LuboszówPolandDiv.addEventListener('mouseover', () => {
-        LuboszówPolandName.textContent = 'Luboszów Poland';
+        placeNameText.textContent = 'Luboszów Poland';
     });
         
-    const KuwaitAirportName = document.getElementById('placeName');
     KuwaitAirportDiv.addEventListener('mouseover', () => {
-        KuwaitAirportName.textContent = 'Kuwait Airport';
+        placeNameText.textContent = 'Kuwait Airport';
     });
 
-    const AlverniaMarkerName = document.getElementById('placeName');
     AlverniaMarkerDiv.addEventListener('mouseover', () => {
-        AlverniaMarkerName.textContent = 'Alvernia';
+        placeNameText.textContent = 'Alvernia';
     });
+
+    NewYauMaTeishelterHongkongDiv.addEventListener('mouseover', () => {
+        placeNameText.textContent = 'New Yau Ma Teishelter Hongkong';
+    });
+
+    PortCamilleRayonGolfeJuanDiv.addEventListener('mouseover', () => {
+        placeNameText.textContent = 'Port Camille Rayon Golfe-Juan';
+    });
+
+    PyramidsOfGizaDiv.addEventListener('mouseover', () => {
+        placeNameText.textContent = 'Pyramids Of Giza';
+    });
+
+    SealandDiv.addEventListener('mouseover', () => {
+        placeNameText.textContent = 'Sealand';
+    });
+
+    ShenzhenBaoanInternationalAirportDiv.addEventListener('mouseover', () => {
+        placeNameText.textContent = 'Shenzhen Bao\'an International Airport';
+    });
+
+    SiedlcePolandDiv.addEventListener('mouseover', () => {
+        placeNameText.textContent = 'Siedlce Poland';
+    });
+
+    SiedlcePolandZoomDiv.addEventListener('mouseover', () => {
+        placeNameText.textContent = 'Siedlce Poland Zoom';
+    });
+
 }
