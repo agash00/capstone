@@ -877,6 +877,9 @@ function switchLayer(layer1, layer2){
         viewLayerName2 = layerName2.replace("-layer", "").concat("Marker");
         viewLayer(viewLayerName1);
         map.setLayoutProperty(layerName2, 'visibility', 'none');
+        if (toggleViewBtn.style.backgroundImage == 'url("images/hide.png")'){
+            toggleViewBtn.click();
+        }
     }
     if (layer1 == 'off') {
         viewLayer(viewLayerName2);
