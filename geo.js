@@ -10,7 +10,7 @@ let oldLayerName = '';
 let dropdown = document.getElementById('dropdown-content');
 let dropdownBtns = Array.from(dropdown.children);
 let newDropdownBtns = [];
-const imageDateList = 'ArctowskiStation2021-09-07, NorthSentinel2021-02-06, GoldenGate2020-09-20, DallolEthiopia2019-02-26, AlverniaPlanet2021-10-25, HeydarAliyevAirport2021-12-01, MumbaiAirport2021-11-26, CuatroTorres2021-11-16, Alumbrera2016-04-10, Petronas2020-02-13, VolcanPoruñita2016-03-19, EixampleNoDateFound, HungaTonga2021-04-10, BeijingDaxing2021-10-26, VolcanJote2018-12-02, SantaCruzdeIsloteNoDateFound, HuntsvilleAlabama2018-12-24, DongdaemunDesignPlaza2021-12-04, CostaConcordia201309172013-09-17, CostaConcordia201307122013-07-12, Goma2021-08-01, GomaNIR2021-08-01, HotelRyugyongPyongyang2021-10-17, JudgeHarryPregersonInterchange2021-07-21, BarringerCrater2019-11-14, EritreaHalaba2018-01-19, MalborkCastle2019-08-03, LuboszówPoland2018-08-07, KuwaitAirport2019-04-02, NewYauMaTeishelterHongkong2021-11-10, PortCamilleRayonGolfeJuan2020-11-17, PyramidsOfGiza2021-11-03, Sealand2020-04-05, ShenzhenBaoanInternationalAirport2021-05-16, SiedlcePoland2017-01-11, GreatBlueHole2021-05-30, DowntownDubai2019-10-31'
+const imageDateList = 'ArctowskiStation2021-09-07, NorthSentinel2021-02-06, GoldenGate2020-09-20, DallolEthiopia2019-02-26, AlverniaPlanet2021-10-25, HeydarAliyevAirport2021-12-01, MumbaiAirport2021-11-26, CuatroTorres2021-11-16, Alumbrera2016-04-10, Petronas2020-02-13, VolcanPoruñita2016-03-19, EixampleNoDateFound, HungaTonga2021-04-10, BeijingDaxing2021-10-26, VolcanJote2018-12-02, SantaCruzdeIsloteNoDateFound, HuntsvilleAlabama2018-12-24, DongdaemunDesignPlaza2021-12-04, CostaConcordia201309172013-09-17, CostaConcordia201307122013-07-12, Goma2021-08-01, GomaNIR2021-08-01, HotelRyugyongPyongyang2021-10-17, JudgeHarryPregersonInterchange2021-07-21, BarringerCrater2019-11-14, EritreaHalaba2018-01-19, MalborkCastle2019-08-03, LuboszówPoland2018-08-07, KuwaitAirport2019-04-02, NewYauMaTeishelterHongkong2021-11-10, PortCamilleRayonGolfeJuan2020-11-17, PyramidsOfGiza2021-11-03, Sealand2020-04-05, ShenzhenBaoanInternationalAirport2021-05-16, SiedlcePoland2017-01-11, GreatBlueHole2021-05-30, DowntownDubai2019-10-31, VolcanNegroArgentina2018-12-15, TokaimachiTokai2020-04-27, TianfuIntlAirport2021-05-17, ThridrangarLighthouseNoDateFound, SymphonyOfTheSeas2016-05-04, SuloszowaNoDateFound, BahamaDunes2021-06-23'
 const switchBtn = document.getElementById('switch');
 const toggleViewBtn = document.getElementById('toggleViewBtn');
 for (i = 0; i < dropdownBtns.length; i++){
@@ -1037,6 +1037,166 @@ function addAdditionalSourceAndLayer(map) {
         }
     });
 
+    //Add VolcanNegroArgentina image
+
+    map.addSource('VolcanNegroArgentina', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/VolcanNegroArgentina2018-12-15.png',
+        'coordinates': [
+            [-68.3878686, -27.0935421],
+            [-68.3734976, -27.0935421],
+            [-68.3734976, -27.1056759],
+            [-68.3878686, -27.1056759]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'VolcanNegroArgentina-layer',
+        'source': 'VolcanNegroArgentina',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+    
+    //Add TokaimachiTokai image
+
+    map.addSource('TokaimachiTokai', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/TokaimachiTokai2020-04-27.png',
+        'coordinates': [
+            [136.8642456,  35.0359244],
+            [136.8808648,  35.0359244],
+            [136.8808648,  35.0228234],
+            [136.8642456,  35.0228234]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'TokaimachiTokai-layer',
+        'source': 'TokaimachiTokai',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+    
+    //Add TianfuIntlAirport image
+
+    map.addSource('TianfuIntlAirport', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/TianfuIntlAirport2021-05-17.png',
+        'coordinates': [
+            [104.4338811,  30.3218315],
+            [104.4506464,  30.3218315],
+            [104.4506464,  30.3068772],
+            [104.4338811,  30.3068772]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'TianfuIntlAirport-layer',
+        'source': 'TianfuIntlAirport',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+    
+    //Add ThridrangarLighthouse image
+
+    map.addSource('ThridrangarLighthouse', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/ThridrangarLighthouse.png',
+        'coordinates': [
+            [-20.3254558,  63.3917799],
+            [-20.3147765,  63.3917799],
+            [-20.3147765,  63.3860927],
+            [-20.3254558,  63.3860927]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'ThridrangarLighthouse-layer',
+        'source': 'ThridrangarLighthouse',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+    
+    //Add SymphonyOfTheSeas image
+
+    map.addSource('SymphonyOfTheSeas', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/SymphonyOfTheSeas2016-05-04.png',
+        'coordinates': [
+            [ -2.1907679,  47.2851343],
+            [ -2.1854617,  47.2851343],
+            [ -2.1854617,  47.2809112],
+            [ -2.1907679,  47.2809112]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'SymphonyOfTheSeas-layer',
+        'source': 'SymphonyOfTheSeas',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+    
+    //Add Suloszowa image
+
+    map.addSource('Suloszowa', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/Suloszowa.png',
+        'coordinates': [
+            [ 19.6870535,  50.2827341],
+            [ 19.7335579,  50.2827341],
+            [ 19.7335579,  50.2619479],
+            [ 19.6870535,  50.2619479]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'Suloszowa-layer',
+        'source': 'Suloszowa',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
+    
+    //Add BahamaDunes image
+
+    map.addSource('BahamaDunes', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/BahamaDunes2021-06-23.png',
+        'coordinates': [
+            [-78.6063309,  25.4888037],
+            [-78.5465979,  25.4888037],
+            [-78.5465979,  25.4453043],
+            [-78.6063309,  25.4453043]
+        ]
+    });
+
+    map.addLayer({
+        'id': 'BahamaDunes-layer',
+        'source': 'BahamaDunes',
+        'type': 'raster',
+        'paint': {
+            'raster-fade-duration': 0,
+            'raster-emissive-strength': 1
+        }
+    });
 }
 function viewLayer(layerName, num){
     if (toggleViewBtn.style.backgroundImage == 'url("images/hide.png")'){
@@ -1770,6 +1930,132 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
     });
 
+        const VolcanNegroArgentinaDiv = document.createElement('div');
+    VolcanNegroArgentinaDiv.className = "marker";
+    VolcanNegroArgentinaDiv.id = 'VolcanNegroArgentinaMarker';
+    const VolcanNegroArgentinaMarker = new mapboxgl.Marker(VolcanNegroArgentinaDiv)
+        .setLngLat([-68.3878686, -27.0935421])
+        .addTo(map);
+    VolcanNegroArgentinaDiv.addEventListener('click', (e) => {
+        switchLayer('none');
+        switchBtnPower(0);
+        viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
+        map.flyTo({
+            center: [-68.3806831, -27.0996090],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+
+    const TokaimachiTokaiDiv = document.createElement('div');
+    TokaimachiTokaiDiv.className = "marker";
+    TokaimachiTokaiDiv.id = 'TokaimachiTokaiMarker';
+    const TokaimachiTokaiMarker = new mapboxgl.Marker(TokaimachiTokaiDiv)
+        .setLngLat([136.8642456,  35.0359244])
+        .addTo(map);
+    TokaimachiTokaiDiv.addEventListener('click', (e) => {
+        switchLayer('none');
+        switchBtnPower(0);
+        viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
+        map.flyTo({
+            center: [136.8725552,  35.0293739],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+
+    const TianfuIntlAirportDiv = document.createElement('div');
+    TianfuIntlAirportDiv.className = "marker";
+    TianfuIntlAirportDiv.id = 'TianfuIntlAirportMarker';
+    const TianfuIntlAirportMarker = new mapboxgl.Marker(TianfuIntlAirportDiv)
+        .setLngLat([104.4338811,  30.3218315])
+        .addTo(map);
+    TianfuIntlAirportDiv.addEventListener('click', (e) => {
+        switchLayer('none');
+        switchBtnPower(0);
+        viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
+        map.flyTo({
+            center: [104.4422638,  30.3143543],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+
+    const ThridrangarLighthouseDiv = document.createElement('div');
+    ThridrangarLighthouseDiv.className = "marker";
+    ThridrangarLighthouseDiv.id = 'ThridrangarLighthouseMarker';
+    const ThridrangarLighthouseMarker = new mapboxgl.Marker(ThridrangarLighthouseDiv)
+        .setLngLat([-20.3254558,  63.3917799])
+        .addTo(map);
+    ThridrangarLighthouseDiv.addEventListener('click', (e) => {
+        switchLayer('none');
+        switchBtnPower(0);
+        viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
+        map.flyTo({
+            center: [-20.3201161,  63.3889363],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+
+    const SymphonyOfTheSeasDiv = document.createElement('div');
+    SymphonyOfTheSeasDiv.className = "marker";
+    SymphonyOfTheSeasDiv.id = 'SymphonyOfTheSeasMarker';
+    const SymphonyOfTheSeasMarker = new mapboxgl.Marker(SymphonyOfTheSeasDiv)
+        .setLngLat([ -2.1907679,  47.2851343])
+        .addTo(map);
+    SymphonyOfTheSeasDiv.addEventListener('click', (e) => {
+        switchLayer('none');
+        switchBtnPower(0);
+        viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
+        map.flyTo({
+            center: [ -2.1881148,  47.2830228],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+
+    const SuloszowaDiv = document.createElement('div');
+    SuloszowaDiv.className = "marker";
+    SuloszowaDiv.id = 'SuloszowaMarker';
+    const SuloszowaMarker = new mapboxgl.Marker(SuloszowaDiv)
+        .setLngLat([ 19.6870535,  50.2827341])
+        .addTo(map);
+    SuloszowaDiv.addEventListener('click', (e) => {
+        switchLayer('none');
+        switchBtnPower(0);
+        viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
+        map.flyTo({
+            center: [ 19.7103057,  50.2723410],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+
+    const BahamaDunesDiv = document.createElement('div');
+    BahamaDunesDiv.className = "marker";
+    BahamaDunesDiv.id = 'BahamaDunesMarker';
+    const BahamaDunesMarker = new mapboxgl.Marker(BahamaDunesDiv)
+        .setLngLat([-78.6063309,  25.4888037])
+        .addTo(map);
+    BahamaDunesDiv.addEventListener('click', (e) => {
+        switchLayer('none');
+        switchBtnPower(0);
+        viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
+        map.flyTo({
+            center: [-78.5764644,  25.4670540],
+            zoom: 15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+    });
+
     //hover pin place text
     const placeNameText = document.getElementById('placeName');
 
@@ -1921,8 +2207,37 @@ function addMarkers(map) {
         placeNameText.textContent = 'Siedlce Poland';
     });
 
-    SiedlcePolandZoomDiv.addEventListener('mouseover', () => {
-        placeNameText.textContent = 'Siedlce Poland Zoom';
+        VolcanNegroArgentinaDiv.addEventListener('mouseover', () => {
+        placeNameText.textContent = 'Volcan Negro Argentina';
+    });
+
+    TokaimachiTokaiDiv.addEventListener('mouseover', () => {
+        placeNameText.textContent = 'Tokaimachi Tokai';
+    });
+
+
+    TianfuIntlAirportDiv.addEventListener('mouseover', () => {
+        placeNameText.textContent = 'Tianfu Intl Airport';
+    });
+
+
+    ThridrangarLighthouseDiv.addEventListener('mouseover', () => {
+        placeNameText.textContent = 'Thridrangar Lighthouse';
+    });
+
+
+    SymphonyOfTheSeasDiv.addEventListener('mouseover', () => {
+        placeNameText.textContent = 'Symphony Of The Seas';
+    });
+
+
+    SuloszowaDiv.addEventListener('mouseover', () => {
+        placeNameText.textContent = 'Suloszowa';
+    });
+
+
+    BahamaDunesDiv.addEventListener('mouseover', () => {
+        placeNameText.textContent = 'Bahama Dunes';
     });
 
 }
