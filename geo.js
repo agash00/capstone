@@ -10,6 +10,7 @@ let oldLayerName = '';
 let dropdown = document.getElementById('dropdown-content');
 let dropdownBtns = Array.from(dropdown.children);
 let newDropdownBtns = [];
+const imageDateList = 'ArctowskiStation2021-09-07, NorthSentinel2021-02-06, GoldenGate2020-09-20, DallolEthiopia2019-02-26, AlverniaPlanet2021-10-25, HeydarAliyevAirport2021-12-01, MumbaiAirport2021-11-26, CuatroTorres2021-11-16, Alumbrera2016-04-10, Petronas2020-02-13, VolcanPoruñita2016-03-19, EixampleNoDateFound, HungaTonga2021-04-10, BeijingDaxing2021-10-26, VolcanJote2018-12-02, SantaCruzdeIsloteNoDateFound, HuntsvilleAlabama2018-12-24, DongdaemunDesignPlaza2021-12-04, CostaConcordia201309172013-09-17, CostaConcordia201307122013-07-12, Goma2021-08-01, GomaNIR2021-08-01, HotelRyugyongPyongyang2021-10-17, JudgeHarryPregersonInterchange2021-07-21, BarringerCrater2019-11-14, EritreaHalaba2018-01-19, MalborkCastle2019-08-03, LuboszówPoland2018-08-07, KuwaitAirport2019-04-02, NewYauMaTeishelterHongkong2021-11-10, PortCamilleRayonGolfeJuan2020-11-17, PyramidsOfGiza2021-11-03, Sealand2020-04-05, ShenzhenBaoanInternationalAirport2021-05-16, SiedlcePoland2017-01-11, GreatBlueHole2021-05-30, DowntownDubai2019-10-31'
 const switchBtn = document.getElementById('switch');
 const toggleViewBtn = document.getElementById('toggleViewBtn');
 for (i = 0; i < dropdownBtns.length; i++){
@@ -64,12 +65,6 @@ function addMap() {
         addMarkers(map);
         viewNum = 0;
         switchLayerNum = 0;
-        toggleViewBtn.style.backgroundImage = 'url("images/view.png")';
-        if (layerName1 != '' && layerName1 != 'none'){
-            viewLayer(layerName1.replace("-layer", "").concat("Marker"), 1);
-            switchBtn.disabled = false;
-            switchBtnPower(1);
-        }
     });
 
     satBtn = document.getElementById('sat')
@@ -78,6 +73,11 @@ function addMap() {
         map.setStyle('mapbox://styles/agash28/cmoaiha48000001s9808i2sl9');
         satBtn.style.display = 'inline-block';
         standBtn.style.display = 'none';
+        if (layerName1 != '' && layerName1 != 'none'){
+            viewLayer(layerName1.replace("-layer", "").concat("Marker"), 1);
+            switchBtn.disabled = false;
+            switchBtnPower(1);
+        }
     });
 
     satBtn = document.getElementById('sat')
@@ -85,6 +85,12 @@ function addMap() {
         map.setStyle('mapbox://styles/agash28/cmoj53vb5002l01s45wgy4s2s');
         satBtn.style.display = 'none';
         standBtn.style.display = 'inline-block';
+        toggleViewBtn.style.backgroundImage = 'url("images/view.png")';
+        if (layerName1 != '' && layerName1 != 'none'){
+            viewLayer(layerName1.replace("-layer", "").concat("Marker"), 1);
+            switchBtn.disabled = false;
+            switchBtnPower(1);
+        }
     });
     toggleViewBtn.addEventListener('click', () => {
         if (viewNum == 0){
@@ -1078,12 +1084,25 @@ function switchLayer(layer1, layer2){
         viewLayer(viewLayerName2);
         map.setLayoutProperty(layerName1, 'visibility', 'none');
         map.setLayoutProperty(layerName2, 'visibility', 'visible');
+        addImageDate(viewLayerName2);
     }
     else if (layer1 == 'on') {
         viewLayer(viewLayerName1);
         map.setLayoutProperty(layerName1, 'visibility', 'visible');
         map.setLayoutProperty(layerName2, 'visibility', 'none');
+        addImageDate(viewLayerName1);
     }
+}
+
+function addImageDate(divName) {
+    const imageDateText = document.getElementById('imageDate');
+    divName = divName.replace("Marker", "");
+    let imageDateValue = imageDateList.search(divName);
+    let imageDate = imageDateList.substring(imageDateValue+divName.length, imageDateValue+divName.length+10);
+    if (imageDate == 'NoDateFoun'){
+        imageDate = 'Date Unavailable';
+    }
+    imageDateText.textContent = ("Image Date: ").concat(imageDate);
 }
 
 //add markers
@@ -1103,6 +1122,7 @@ function addMarkers(map) {
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
     });
 	
 	const NorthSentinelDiv = document.createElement('div');
@@ -1120,6 +1140,7 @@ function addMarkers(map) {
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
     });
 	
 	const GoldenGateDiv = document.createElement('div');
@@ -1137,6 +1158,7 @@ function addMarkers(map) {
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
     });
 	
 	const DallolEthiopiaDiv = document.createElement('div');
@@ -1154,6 +1176,7 @@ function addMarkers(map) {
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
     });
 	
     const AlverniaMarkerDiv = document.createElement('div');
@@ -1170,7 +1193,8 @@ function addMarkers(map) {
             zoom: 15,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
-        viewLayer(e.srcElement.id); 
+        viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id); 
     });
 
     const HeydarAliyevAirportDiv = document.createElement('div');
@@ -1188,6 +1212,7 @@ function addMarkers(map) {
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
     });
 
     const MumbaiAirportDiv = document.createElement('div');
@@ -1205,6 +1230,7 @@ function addMarkers(map) {
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
     });
 
     const CuatroTorresDiv = document.createElement('div');
@@ -1222,6 +1248,7 @@ function addMarkers(map) {
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
     });
 
     const AlumbreraDiv = document.createElement('div');
@@ -1239,6 +1266,7 @@ function addMarkers(map) {
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
     });
 
     const PetronasDiv = document.createElement('div');
@@ -1255,6 +1283,7 @@ function addMarkers(map) {
             zoom: 16,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        addImageDate(e.srcElement.id);
     });
 
     const VolcanPoruñitaDiv = document.createElement('div');
@@ -1272,6 +1301,7 @@ function addMarkers(map) {
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
     });
 
     const EixampleDiv = document.createElement('div');
@@ -1289,6 +1319,7 @@ function addMarkers(map) {
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
     });
 
     const HungaTongaDiv = document.createElement('div');
@@ -1307,6 +1338,7 @@ function addMarkers(map) {
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
     });
 
     const BeijingDaxingDiv = document.createElement('div');
@@ -1324,6 +1356,7 @@ function addMarkers(map) {
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
     });
 
     const VolcanJoteDiv = document.createElement('div');
@@ -1341,6 +1374,7 @@ function addMarkers(map) {
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
     });
 
     const SantaCruzdeIsloteDiv = document.createElement('div');
@@ -1358,6 +1392,7 @@ function addMarkers(map) {
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
     });
 
     const HuntsvilleAlabamaDiv = document.createElement('div');
@@ -1375,6 +1410,7 @@ function addMarkers(map) {
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
     });
 
     const DongdaemunDesignPlazaDiv = document.createElement('div');
@@ -1392,6 +1428,7 @@ function addMarkers(map) {
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
     });
     
     let costaSwitch = 0;
@@ -1411,6 +1448,7 @@ function addMarkers(map) {
         map.setLayoutProperty('CostaConcordia20130917-layer', 'visibility', 'none');
         map.setLayoutProperty('CostaConcordia20130712-layer', 'visibility', 'visible');
         switchLayer('CostaConcordia20130712-layer', 'CostaConcordia20130917-layer');
+        addImageDate('CostaConcordia20130712Marker');
     });
 
     // const CostaConcordia20130712Div = document.createElement('div');
@@ -1441,6 +1479,7 @@ function addMarkers(map) {
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
     });
 
     const GomaDiv = document.createElement('div');
@@ -1459,6 +1498,7 @@ function addMarkers(map) {
         map.setLayoutProperty('Goma-layer', 'visibility', 'visible');
         map.setLayoutProperty('GomaNIR-layer', 'visibility', 'none');
         switchLayer('Goma-layer', 'GomaNIR-layer');
+        addImageDate(e.srcElement.id);
     });
 
     // const GomaNIRDiv = document.createElement('div');
@@ -1489,6 +1529,7 @@ function addMarkers(map) {
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
     });
 
     const HotelRyugyongPyongyangDiv = document.createElement('div');
@@ -1506,6 +1547,7 @@ function addMarkers(map) {
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
     });
 
     const JudgeHarryPregersonInterchangeDiv = document.createElement('div');
@@ -1523,6 +1565,7 @@ function addMarkers(map) {
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
     });
 
     const BarringerCraterDiv = document.createElement('div');
@@ -1540,6 +1583,7 @@ function addMarkers(map) {
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
     });
 
     const EritreaHalabaDiv = document.createElement('div');
@@ -1557,6 +1601,7 @@ function addMarkers(map) {
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
     });
 
     const MalborkCastleDiv = document.createElement('div');
@@ -1574,6 +1619,7 @@ function addMarkers(map) {
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
     });
 
     const LuboszówPolandDiv = document.createElement('div');
@@ -1591,6 +1637,7 @@ function addMarkers(map) {
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
     });
 
     const KuwaitAirportDiv = document.createElement('div');
@@ -1608,6 +1655,7 @@ function addMarkers(map) {
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
     });
         const NewYauMaTeishelterHongkongDiv = document.createElement('div');
     NewYauMaTeishelterHongkongDiv.className = "marker";
@@ -1619,6 +1667,7 @@ function addMarkers(map) {
         switchLayer('none');
         switchBtnPower(0);
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
         map.flyTo({
             center: [114.1538840,  22.3106996],
             zoom: 15,
@@ -1636,6 +1685,7 @@ function addMarkers(map) {
         switchLayer('none');
         switchBtnPower(0);
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
         map.flyTo({
             center: [ 7.0776466,  43.5662384],
             zoom: 15,
@@ -1653,6 +1703,7 @@ function addMarkers(map) {
         switchLayer('none');
         switchBtnPower(0);
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
         map.flyTo({
             center: [ 31.1330343,  29.9761265],
             zoom: 15,
@@ -1670,6 +1721,7 @@ function addMarkers(map) {
         switchLayer('none');
         switchBtnPower(0);
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
         map.flyTo({
             center: [ 1.4830906,  51.8964390],
             zoom: 15,
@@ -1687,6 +1739,7 @@ function addMarkers(map) {
         switchLayer('none');
         switchBtnPower(0);
         viewLayer(e.srcElement.id);
+        addImageDate(e.srcElement.id);
         map.flyTo({
             center: [113.8067645,  22.6305183],
             zoom: 15,
@@ -1708,6 +1761,7 @@ function addMarkers(map) {
             zoom: 15,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
+        addImageDate(e.srcElement.id);
     });
 
     //hover pin place text
@@ -1750,7 +1804,7 @@ function addMarkers(map) {
     });
         
     VolcanPoruñitaDiv.addEventListener('mouseover', () => {
-        placeNameText.textContent = 'Volcan Poru ñita';
+        placeNameText.textContent = 'Volcan Poruñita';
     });
         
     EixampleDiv.addEventListener('mouseover', () => {
@@ -1834,7 +1888,7 @@ function addMarkers(map) {
     });
 
     AlverniaMarkerDiv.addEventListener('mouseover', () => {
-        placeNameText.textContent = 'Alvernia';
+        placeNameText.textContent = 'Alvernia Planet';
     });
 
     NewYauMaTeishelterHongkongDiv.addEventListener('mouseover', () => {
