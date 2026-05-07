@@ -73,6 +73,8 @@ function addMap() {
         map.setStyle('mapbox://styles/agash28/cmoaiha48000001s9808i2sl9');
         satBtn.style.display = 'inline-block';
         standBtn.style.display = 'none';
+        switchLayerNum = 0;
+        viewNum = 0;
         if (layerName1 != '' && layerName1 != 'none'){
             viewLayer(layerName1.replace("-layer", "").concat("Marker"), 1);
             switchBtn.disabled = false;
@@ -91,6 +93,8 @@ function addMap() {
             switchBtn.disabled = false;
             switchBtnPower(1);
         }
+        switchLayerNum = 0;
+        viewNum = 0;
     });
     toggleViewBtn.addEventListener('click', () => {
         if (viewNum == 0){
@@ -122,6 +126,7 @@ function addMap() {
             switchLayer('on', 'off');
             switchLayerNum = 0;
         }
+        console.log("I'm doing something");
     });
     return map;
 }
@@ -1079,6 +1084,7 @@ function switchLayer(layer1, layer2){
         if (toggleViewBtn.style.backgroundImage == 'url("images/hide.png")'){
             toggleViewBtn.click();
         }
+        switchBtn.disabled = false;
     }
     if (layer1 == 'off') {
         viewLayer(viewLayerName2);
