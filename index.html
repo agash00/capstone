@@ -14,8 +14,15 @@
 <div id="content">
 <!--style="display: none;"-->
 
-<h1 id="placeName">Hover or click a pin on the map</h1>
-<h4 id="imageDate">Image Date: Click a pin</h1>
+<div id ="contentText">
+    <h1 id="placeName">Hover or click a pin on the map</h1>
+    <h4 id="imageDate" class="imageText">Image Date: <span id="imageDate1" class="imgTextStyle">Click a pin</span></h4>
+    <h4 id="imageCoor" class="imageText">Image Coordinates: 
+        <span id="imageCoor1" class="imgTextStyle">Revealed once zoomed into an image</span>
+        <span id ="coorInfo">Center coordinates; WGS84</span>
+    </h4>
+    <h4 id="imageDesc" class="imageText">About Place: <span id="imageDesc1" class="imgTextStyle">Click a pin</span></h4>
+</div>
     
 <div id="mapBtnsOutline">
 
@@ -180,7 +187,7 @@
         <script>
             document.getElementById('SantaCruzdeIslote').addEventListener('click', () => {
                 document.getElementById('SantaCruzdeIsloteMarker').click();
-                document.getElementById('placeName').textContent = 'Santa Cruzde Islote';
+                document.getElementById('placeName').textContent = 'Santa Cruz del Islote';
             });
         </script>
 
