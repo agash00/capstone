@@ -79,9 +79,6 @@ html {
     background-color: black;
     color: white;
     font-size: 1.5vw;
-}
-
-#updatebg {
     display: none;
 }
 
@@ -100,10 +97,10 @@ html {
 
 #updatebg {
     position: absolute;
-    background-color: black;
     width: 100%;
     height: 100%;
     z-index: -1;
+    display: none;
 }
 
 #startbg {

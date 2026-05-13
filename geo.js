@@ -26,6 +26,8 @@ const intro = document.getElementById('intro');
 const start = document.getElementById('start');
 const update = document.getElementById('update');
 const startBtn = document.getElementById('startBtn');
+const updatebg = document.getElementById('updatebg');
+const updateText = document.getElementById('updateText');
 for (i = 0; i < dropdownBtns.length; i++){
     if (i % 2 == 0){
         newDropdownBtns.push(dropdownBtns[i]);
@@ -189,6 +191,8 @@ setReady(map);
 function setReady(map){
     if (startBtn.style.display == 'none'){
         update.style.display = 'block';
+        updatebg.style.display = 'block';
+        updateText.style.display = 'block';
     }
     else {
         start.style.display = 'block';
@@ -199,6 +203,8 @@ function setReady(map){
             console.log("Ready");
             if (start.style.display == 'none'){
                 update.style.display = 'none';
+                updatebg.style.display = 'none';
+                updateText.style.display = 'none';
                 //document.getElementById(viewLayer('get').replace('-layer', 'Marker')).click();
                 if (layerName1 != '' && layerName1 != 'none'){
                     addLayers(layerName1.replace('-layer', 'Marker'), 0);
@@ -2297,11 +2303,12 @@ function getPlaceDesc(placeDescName){
 }
 
 function wait(){
+    updateText.style.display = 'none';
     update.style.display = 'block';
-    update.style.opacity = '0';
+    updatebg.style.display = 'block';
     map.on('moveend', () => {
         update.style.display = 'none';
-        update.style.opacity = '0.5';
+        updatebg.style.display = 'none';
     });
 }
 
