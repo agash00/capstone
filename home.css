@@ -2,6 +2,9 @@ html {
     background-color: black;
 }
 
+.mapboxgl-marker.hidden {
+    display: none;
+}
 
 #content {
     display: block;
@@ -62,6 +65,29 @@ html {
     background-color: black;
     color: white;
     font-size: 5vh;
+    pointer-events: none;
+}
+
+#update {
+    display: none;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: black;
+    color: white;
+    font-size: 5vh;
+}
+
+#start {
+    position: fixed;
+    bottom: 0;
+    border-top: 2px solid white;
+    width: 99vw; 
+    height: 80vh;
+    z-index: -1;
 }
 
 #map {
@@ -70,7 +96,7 @@ html {
     border-top: 2px solid white;
     width: 99vw; 
     height: 80vh;
-    z-index: -1;
+    z-index: -2;
 }
 
 
@@ -87,10 +113,15 @@ html {
     width: 2vw;
     height: 2vw;
     background-color: black;
+    border-color: white;
     margin-right: 5px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+
+.mapBtns:hover {
+    border-color: #3380cc;
 }
 
 .tooltip {
@@ -152,24 +183,50 @@ html {
 
 #toggleViewBtn {
     background-image: url("images/view.png");
-    background-color: white;
 }
 
 #toggleView:hover .tooltip {
     visibility: visible;
 }
 
+#toggleHow {
+    position: relative;
+}
+
+#toggleHowBtn {
+    background-image: url("images/howHide.png");
+}
+
+#toggleHow:hover .tooltip {
+    visibility: visible;
+    width: 8vw;
+}
+
+#toggleSpeed {
+    position: relative;
+}
+
+#toggleSpeedBtn {
+    background-image: url("images/superhero1x.png");
+}
+
+#toggleSpeed:hover .tooltip {
+    visibility: visible;
+}
+
 .flyoutBtn {
-    font-size: 0.8vw;
+    font-size: 0.7vw;
     color: white;
     background-color: black;
     text-align: center;
     width: auto;
-    margin-top: 5px;
+    margin-top: 0.5vh;
     margin-right: 5px;
+    border-color: white;
 }
 
 #dropdown {
+    width: 95vw;
     position: relative;
 }
 
@@ -185,7 +242,7 @@ html {
 
 #dropdown-content {
     height: 2vw;
-    width: 85vw;
+    width: 100%;
     display: none;
     position: absolute;
     overflow-x: scroll;
@@ -209,6 +266,155 @@ html {
 .marker:hover {
     background-image: url("images/markerHover.png");
 }
+
+.station-marker, .ship-marker, .bridge-marker, .volcano-marker,
+.exhibition-marker, .airport-marker, .city-marker, .island-marker, .hole-marker,
+.highway-marker, .castle-marker, .village-marker, .pyramids-marker,.industrial,
+.lighthouse-marker {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.station-marker{
+    background-color: white;
+    background-image: url("images/arctic-station.png");
+}
+
+.station-marker:hover {
+    background-color: rgb(202, 243, 255);
+}
+
+.ship-marker{
+    background-color: #cb34ad;
+    background-image: url("images/cargo-ship.png");
+}
+
+.ship-marker:hover {
+    background-image: url("images/cargo-ship.gif");
+}
+
+.bridge-marker{
+    background-color: rgb(239, 164, 184);
+    background-image: url("images/bridge.png");
+}
+
+.bridge-marker:hover {
+    background-image: url("images/bridge.gif");
+}
+
+.volcano-marker{
+    background-color: #abf8ff;
+    background-image: url("images/volcano.png");
+}
+
+.volcano-marker:hover {
+    background-image: url("images/volcano.gif");
+}
+
+.exhibition-marker{
+    background-color: rgb(166, 196, 205);
+    background-image: url("images/exhibition.png");
+}
+
+.exhibition-marker:hover {
+    background-image: url("images/exhibition.gif");
+}
+
+.airport-marker{
+    background-color: #3380cc;
+    background-image: url("images/runway.png");
+}
+
+.airport-marker:hover {
+    background-image: url("images/runway.gif");
+}
+
+.city-marker{
+    background-color: #d6cfe8;
+    background-image: url("images/city-park.png");
+}
+
+.city-marker:hover {
+    background-image: url("images/city-park.gif");
+}
+
+.island-marker{
+    background-color: rgb(128, 207, 249);
+    background-image: url("images/island.png");
+}
+
+.island-marker:hover {
+    background-image: url("images/island.gif");
+}
+
+
+.hole-marker{
+    background-color: black;
+}
+
+.hole-marker:hover{
+    background-color: white;
+    background-image: url('images/hole.png');
+}
+
+.highway-marker{
+    background-color: #3380cc;
+    background-image: url("images/roadway.png");
+}
+
+.highway-marker:hover {
+    background-image: url("images/roadway.gif");
+}
+
+.castle-marker{
+    background-color: rgb(220, 132, 202);
+    background-image: url("images/castle.png");
+}
+
+.castle-marker:hover {
+    background-image: url("images/castle.gif");
+}
+
+.village-marker{
+    background-color: rgb(120, 202, 245);
+    background-image: url("images/village.png");
+}
+
+.village-marker:hover {
+    background-image: url("images/village.gif");
+}
+
+.pyramids-marker{
+    background-color: rgb(199, 252, 231);
+    background-image: url("images/pyramids.png");
+}
+
+.pyramids-marker:hover {
+    background-image: url("images/pyramids.gif");
+}
+
+.industrial-marker{
+    background-color: rgb(68, 220, 167);
+    background-image: url("images/factory.png");
+}
+
+.industrial-marker:hover {
+    background-image: url("images/factory.gif");
+}
+
+.lighthouse-marker{
+    background-color: rgb(197, 246, 255);
+    background-image: url("images/lighthouse.png");
+}
+
+.lighthouse-marker:hover {
+    background-image: url("images/lighthouse.gif");
+}
+
 
 .switchText {
     font-size: 1vh;

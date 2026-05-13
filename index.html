@@ -42,6 +42,14 @@
     <button id="toggleViewBtn" class="mapBtns"></button>
     <span id ="toggleViewTip" class="tooltip">Toggle image view</span>
 </div>
+<div id = "toggleSpeed">
+    <button id="toggleSpeedBtn" class="mapBtns"></button>
+    <span id ="toggleSpeedTip" class="tooltip">Toggle fly speed</span>
+</div>
+<div id = "toggleHow">
+    <button id="toggleHowBtn" class="mapBtns"></button>
+    <span id ="toggleHowTip" class="tooltip">How it was Georeferenced</span>
+</div>
 <div id="dropdown">
     <button id="dropbtn" class="mapBtns"></button>
     <span id ="placesBtnTip" class="tooltip">Places</span>
@@ -183,7 +191,7 @@
         </script>
 
         <!--SantaCruzdeIslote button flyout-->
-        <button id="SantaCruzdeIslote" class="flyoutBtn">Santa Cruzde Islote</button>
+        <button id="SantaCruzdeIslote" class="flyoutBtn">Santa Cruz del Islote</button>
         <script>
             document.getElementById('SantaCruzdeIslote').addEventListener('click', () => {
                 document.getElementById('SantaCruzdeIsloteMarker').click();
@@ -430,9 +438,10 @@
 </div>
 </div>
 </div>
+<div id="start"></div>
 <div id="map"></div>
-<button id="startBtn">Start Map</button>
-</script>
+<button id="startBtn">Loading...</button>
+<span id="update">Updating...</span>
 <script src="geo.js"></script>
 
 </body>
