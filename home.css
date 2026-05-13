@@ -59,7 +59,7 @@ html {
 #startBtn {
     margin: 0;
     position: absolute;
-    top: 50%;
+    top: 85%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -69,8 +69,7 @@ html {
     pointer-events: none;
 }
 
-#update {
-    display: none;
+#updateText {
     margin: 0;
     position: absolute;
     top: 50%;
@@ -79,16 +78,61 @@ html {
     transform: translate(-50%, -50%);
     background-color: black;
     color: white;
-    font-size: 5vh;
+    font-size: 1.5vw;
 }
 
-#start {
+#updatebg {
+    display: none;
+}
+
+#start, #update {
     position: fixed;
     bottom: 0;
     border-top: 2px solid white;
     width: 99vw; 
     height: 80vh;
     z-index: -1;
+}
+
+#update {
+    display: none;
+}
+
+#updatebg {
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#startbg {
+    position: absolute;
+    background-color: black;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#intro {
+    background-color: black;
+    border: 2px solid white;
+    width: 20vw;
+    height: 70vh;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 12%;
+    position: absolute;
+}
+
+#introText {
+    color: white;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 20%;
+    font-size: 1vw;
 }
 
 #map {

@@ -13,7 +13,7 @@ let oldLayerName = '';
 let dropdown = document.getElementById('dropdown-content');
 let dropdownBtns = Array.from(dropdown.children);
 let newDropdownBtns = [];
-const startDiv = document.getElementById('start');
+let addedLayers = {};
 const imageDateList = 'ArctowskiStation2021-09-07, NorthSentinel2021-02-06, GoldenGate2020-09-20, DallolEthiopia2019-02-26, AlverniaPlanet2021-10-25, HeydarAliyevAirport2021-12-01, MumbaiAirport2021-11-26, CuatroTorres2021-11-16, Alumbrera2016-04-10, Petronas2020-02-13, VolcanPoruñita2016-03-19, EixampleNoDateFound, HungaTonga2021-04-10, BeijingDaxing2021-10-26, VolcanJote2018-12-02, SantaCruzdeIsloteNoDateFound, HuntsvilleAlabama2018-12-24, DongdaemunDesignPlaza2021-12-04, CostaConcordia201309172013-09-17, CostaConcordia201307122013-07-12, Goma2021-08-01, GomaNIR2021-08-01, HotelRyugyongPyongyang2021-10-17, JudgeHarryPregersonInterchange2021-07-21, BarringerCrater2019-11-14, EritreaHalaba2018-01-19, MalborkCastle2019-08-03, LuboszówPoland2018-08-07, KuwaitAirport2019-04-02, NewYauMaTeishelterHongkong2021-11-10, PortCamilleRayonGolfeJuan2020-11-17, PyramidsOfGiza2021-11-03, Sealand2020-04-05, ShenzhenBaoanInternationalAirport2021-05-16, SiedlcePoland2017-01-11, GreatBlueHole2021-05-30, DowntownDubai2019-10-31, VolcanNegroArgentina2018-12-15, TokaimachiTokai2020-04-27, TianfuIntlAirport2021-05-17, ThridrangarLighthouseNoDateFound, SymphonyOfTheSeas2016-05-04, SuloszowaNoDateFound, BahamaDunes2021-06-23';
 //const placesList = ['ArctowskiStation', 'NorthSentinel', 'GoldenGate', 'DallolEthiopia', 'AlverniaMarker', 'HeydarAliyevAirport', 'MumbaiAirport', 'CuatroTorres', 'Alumbrera', 'Petronas', 'VolcanPoruÃ±ita', 'Eixample', 'HungaTonga', 'BeijingDaxing', 'VolcanJote', 'SantaCruzdeIslote', 'HuntsvilleAlabama', 'DongdaemunDesignPlaza', 'CostaConcordia20130917', 'CostaConcordia20130712', 'GreatBlueHole', 'Goma', 'GomaNIR', 'DowntownDubai', 'HotelRyugyongPyongyang', 'JudgeHarryPregersonInterchange', 'BarringerCrater', 'EritreaHalaba', 'MalborkCastle', 'LuboszÃ³wPoland', 'KuwaitAirport', 'NewYauMaTeishelterHongkong', 'PortCamilleRayonGolfeJuan', 'PyramidsOfGiza', 'Sealand', 'ShenzhenBaoanInternationalAirport', 'SiedlcePoland', 'VolcanNegroArgentina', 'TokaimachiTokai', 'TianfuIntlAirport', 'ThridrangarLighthouse', 'SymphonyOfTheSeas', 'Suloszowa', 'BahamaDunes'];
 const placesList = ['ArctowskiStation', 'NorthSentinel', 'GoldenGate', 'DallolEthiopia', 'AlverniaPlanet', 'HeydarAliyevAirport', 'MumbaiAirport', 'CuatroTorres', 'Alumbrera', 'Petronas', 'VolcanPoruñita', 'Eixample', 'HungaTonga', 'BeijingDaxing', 'VolcanJote', 'SantaCruzdeIslote', 'HuntsvilleAlabama', 'DongdaemunDesignPlaza', 'CostaConcordia20130917', 'GreatBlueHole', 'Goma', 'DowntownDubai', 'HotelRyugyongPyongyang', 'JudgeHarryPregersonInterchange', 'BarringerCrater', 'EritreaHalaba', 'MalborkCastle', 'LuboszówPoland', 'KuwaitAirport', 'NewYauMaTeishelterHongkong', 'PortCamilleRayonGolfeJuan', 'PyramidsOfGiza', 'Sealand', 'ShenzhenBaoanInternationalAirport', 'SiedlcePoland', 'VolcanNegroArgentina', 'TokaimachiTokai', 'TianfuIntlAirport', 'ThridrangarLighthouse', 'SymphonyOfTheSeas', 'Suloszowa', 'BahamaDunes'];
@@ -22,8 +22,10 @@ const switchBtn = document.getElementById('switch');
 const toggleViewBtn = document.getElementById('toggleViewBtn');
 const toggleHowBtn = document.getElementById('toggleHowBtn');
 const flySpeedBtn = document.getElementById('toggleSpeedBtn');
-const startBtn = document.getElementById('startBtn');
+const intro = document.getElementById('intro');
+const start = document.getElementById('start');
 const update = document.getElementById('update');
+const startBtn = document.getElementById('startBtn');
 for (i = 0; i < dropdownBtns.length; i++){
     if (i % 2 == 0){
         newDropdownBtns.push(dropdownBtns[i]);
@@ -188,24 +190,36 @@ function setReady(map){
     if (startBtn.style.display == 'none'){
         update.style.display = 'block';
     }
-    startDiv.style.display = 'block';
+    else {
+        start.style.display = 'block';
+    }
     let readyInterval = setInterval(isReady, 500, map);
     function isReady(map) {
         if (map.loaded()){
             console.log("Ready");
-            if (startBtn.style.display == 'none'){
-                startDiv.style.display = 'none';
+            if (start.style.display == 'none'){
                 update.style.display = 'none';
-                document.getElementById(viewLayer('get').replace('-layer', 'Marker')).click();
+                //document.getElementById(viewLayer('get').replace('-layer', 'Marker')).click();
+                if (layerName1 != '' && layerName1 != 'none'){
+                    addLayers(layerName1.replace('-layer', 'Marker'), 0);
+                    addLayers(layerName2.replace('-layer', 'Marker'), 0);
+                    switchLayer(layerName1, layerName2);
+                }
+                else{
+                    addLayers(viewLayer('get').replace('-layer', 'Marker'), 0);
+                }
             }
             //added button to start the map instead of auto load at each refresh
+            else {
             startBtn.style.pointerEvents = 'auto';
             startBtn.addEventListener('click', () => {
-                startDiv.style.display = 'none';
+                start.style.display = 'none';
                 startBtn.style.display = 'none';
+                start.style.display = 'none';
             });
-            clearInterval(readyInterval);
             startBtn.textContent = 'Explore Map';
+            }
+            clearInterval(readyInterval);
         }
         else{
             console.log("Not Ready");
@@ -708,7 +722,7 @@ function addAdditionalSourceAndLayer(map) {
     });
 
     //Add PetronasNIR2 image
-    map.addSource('PetronasNIR2', {
+    map.addSource('PetronasNIR', {
         'type': 'image',
         'url': 'https://photos.agash.ca/PetronasNIR2.png',
         'coordinates': [
@@ -1215,6 +1229,15 @@ function addLayers(divID, howNum) {
             }
         },
 
+        PetronasNIR: {
+            'id': 'PetronasNIR-layer',
+            'source': 'PetronasNIR',
+            'type': 'raster',
+            'paint': {
+                'raster-fade-duration': 0,
+                'raster-emissive-strength': 1
+            }
+        },
         VolcanPoruñita: {
             'id': 'VolcanPoruñita-layer',
             'source': 'VolcanPoruñita',
@@ -1706,6 +1729,19 @@ function addLayers(divID, howNum) {
             }
         },
 
+        PetronasNIRHOW: {
+            'id': 'PetronasNIR-layerHOW',
+            'source': 'PetronasHOW',
+            'type': 'raster',
+            'paint': {
+                'raster-fade-duration': 0,
+                'raster-emissive-strength': 1
+            },
+            'layout': {
+                'visibility': 'none'
+            }
+        },
+
         VolcanPoruñitaHOW: {
             'id': 'VolcanPoruñita-layerHOW',
             'source': 'VolcanPoruñitaHOW',
@@ -2152,6 +2188,7 @@ function addLayers(divID, howNum) {
     if (howNum == 0){
         let layerID = divID.replace('Marker', '');
         map.addLayer(layers[layerID]);
+        //Object.assign(addedLayers, layers[layerID]);
     }
     else {
         let layerHOWID = divID.replace('Marker', 'HOW');
@@ -2169,7 +2206,9 @@ function viewLayer(layerName, num){
         trueName = layerName.replace("Marker", "-layer");
         if (trueName != oldLayerName && oldLayerName != '' && num != 1){
             map.setLayoutProperty(oldLayerName, 'visibility', 'visible');
-            map.setLayoutProperty(oldLayerName.replace('-layer', '-layerHOW'), 'visibility', 'none');
+            if (typeof map.getLayer(oldLayerName.replace('-layer', '-layerHOW')) != 'undefined'){
+                map.setLayoutProperty(oldLayerName.replace('-layer', '-layerHOW'), 'visibility', 'none');
+            }
             viewNum = 0;
             switchLayerNum = 0;
             viewHowNum = 0;
@@ -2258,9 +2297,11 @@ function getPlaceDesc(placeDescName){
 }
 
 function wait(){
-    startDiv.style.display = 'block';
+    update.style.display = 'block';
+    update.style.opacity = '0';
     map.on('moveend', () => {
-        startDiv.style.display = 'none';
+        update.style.display = 'none';
+        update.style.opacity = '0.5';
     });
 }
 
@@ -2481,7 +2522,9 @@ function addMarkers(map) {
         .setLngLat([101.7080049,   3.1611789])
         .addTo(map);
     PetronasDiv.addEventListener('click', (e) => {
-        switchLayer('Petronas-layer', 'PetronasNIR2-layer');
+        addLayers(e.srcElement.id, 0);
+        addLayers('PetronasNIRMarker', 0);
+        switchLayer('Petronas-layer', 'PetronasNIR-layer');
         switchBtnPower(1);
         map.flyTo({
             center: [101.7130903,   3.1565901],
@@ -2489,8 +2532,6 @@ function addMarkers(map) {
             essential: true,
             duration: flySpeed
         });
-        addLayers(e.srcElement.id, 0);
-        viewLayer(e.srcElement.id);
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
