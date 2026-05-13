@@ -966,7 +966,7 @@ function addHowLayer(map){
     
     //Add HuntsvilleAlabama1 HOW image
     
-    map.addSource('HuntsvilleAlabama1HOW', {
+    map.addSource('HuntsvilleAlabamaHOW', {
         'type': 'image',
         'url': 'https://photos.agash.ca/HuntsvilleAlabamaHOW.png',
         'coordinates': [
