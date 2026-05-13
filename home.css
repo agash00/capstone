@@ -311,7 +311,7 @@ html {
 
 .station-marker, .ship-marker, .bridge-marker, .volcano-marker,
 .exhibition-marker, .airport-marker, .city-marker, .island-marker, .hole-marker,
-.highway-marker, .castle-marker, .village-marker, .pyramids-marker,.industrial,
+.highway-marker, .castle-marker, .village-marker, .pyramids-marker,.industrial-marker,
 .lighthouse-marker {
     width: 25px;
     height: 25px;
