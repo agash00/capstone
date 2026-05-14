@@ -217,13 +217,13 @@ function setReady(map){
             }
             //added button to start the map instead of auto load at each refresh
             else {
-            startBtn.style.pointerEvents = 'auto';
-            startBtn.addEventListener('click', () => {
-                start.style.display = 'none';
-                startBtn.style.display = 'none';
-                start.style.display = 'none';
-            });
-            startBtn.textContent = 'Explore Map';
+                startBtn.style.pointerEvents = 'auto';
+                startBtn.addEventListener('click', () => {
+                    start.style.display = 'none';
+                    startBtn.style.display = 'none';
+                    start.style.display = 'none';
+                });
+                startBtn.textContent = 'Explore Map';
             }
             clearInterval(readyInterval);
         }

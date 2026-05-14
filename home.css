@@ -47,7 +47,7 @@ html {
 
 #coorInfo {
     visibility: hidden;
-    background-color: blue;
+    background-color: darkblue;
     font-weight: none;
     font-size: 1.2vh;
 }
@@ -59,14 +59,31 @@ html {
 #startBtn {
     margin: 0;
     position: absolute;
-    top: 85%;
+    top: 90%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     background-color: black;
     color: white;
-    font-size: 5vh;
+    font-size: 1vw;
     pointer-events: none;
+    padding-left: 5%;
+    padding-right: 5%;
+    border: 5px solid white;
+}
+
+@keyframes startBtnAnim {
+  from {background-color: black;
+    color: white;}
+  to {background-color: white;
+    color: black;}
+}
+
+#startBtn:hover {
+    background-color: white;
+    color: black;
+    animation-name: startBtnAnim;
+    animation-duration: 1s;
 }
 
 #updateText {
@@ -115,20 +132,35 @@ html {
 #intro {
     background-color: black;
     border: 2px solid white;
-    width: 20vw;
+    width: 25vw;
     height: 70vh;
     transform: translate(-50%, -50%);
     top: 50%;
-    left: 12%;
+    left: 15%;
     position: absolute;
 }
 
-#introText {
-    color: white;
+#introHeading {
+    top: 10%;
+    font-size: 1.5vw;
+}
+
+.introText {
     left: 50%;
+    color: white;
+    width: 90%;
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 20%;
+    text-align: center;
+}
+
+#introExplain {
+    top: 40%;
+    font-size: 1.2vw;
+}
+
+#introAttribute {
+    top: 70%;
     font-size: 1vw;
 }
 
@@ -253,18 +285,41 @@ html {
 }
 
 .flyoutBtn {
+    height: 95%;
     font-size: 0.7vw;
     color: white;
     background-color: black;
     text-align: center;
     width: auto;
-    margin-top: 0.5vh;
-    margin-right: 5px;
-    border-color: white;
+    border: 1px solid white;
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 0;
 }
 
-.flyoutBtn:hover, .mapBtns:hover {
-    border-color: #3380cc;
+@keyframes mapBtnsHoverAnim {
+  from {background-size: 100%;}
+  to {background-size: 80%;}
+}
+
+.mapBtns:hover {
+    background-size: 80%;
+    animation-name: mapBtnsHoverAnim;
+    animation-duration: 0.5s;
+}
+
+@keyframes flyOutBtnHoverAnim {
+  from {text-decoration: none;
+    background-color: black;}
+  to {text-decoration: underline;
+    background-color: #230b4e;}
+}
+
+.flyoutBtn:hover{
+    text-decoration: underline;
+    background-color: #230b4e;
+    animation-name: flyOutBtnHoverAnim;
+    animation-duration: 0.5s;
 }
 
 #dropdown {
@@ -284,7 +339,7 @@ html {
 
 #dropdown-content {
     height: 2vw;
-    width: 100%;
+    width: 97%;
     display: none;
     position: absolute;
     overflow-x: scroll;
