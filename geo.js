@@ -862,30 +862,17 @@ function addHowLayer(map){
     
     //Add BahamaDunes2021-06-23 HOW image
     
-    // map.addSource('BahamaDunes2021-06-23HOW', {
-    //     'type': 'image',
-    //     'url': 'https://photos.agash.ca/BahamaDunes2021-06-23HOW.png',
-    //     'coordinates': [
-    //         [-78.6063309,  25.4888037],
-    //         [-78.5465979,  25.4888037],
-    //         [-78.5465979,  25.4453043],
-    //         [-78.6063309,  25.4453043]
-    //     ]
-    // });
+    map.addSource('BahamaDunesHOW', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/BahamaDunesHOW.png',
+        'coordinates': [
+            [-78.6063309,  25.4888037],
+            [-78.5465979,  25.4888037],
+            [-78.5465979,  25.4453043],
+            [-78.6063309,  25.4453043]
+        ]
+    });
 
-    // map.addLayer({
-    //     'id': 'BahamaDunes2021-06-23-layerHOW',
-    //     'source': 'BahamaDunes2021-06-23HOW',
-    //     'type': 'raster',
-    //     'paint': {
-    //         'raster-fade-duration': 0,
-    //         'raster-emissive-strength': 1
-    //     },
-    //     'layout': {
-    //         'visibility': 'none'
-    //     }
-    // });
-    
     //Add BeijingDaxing HOW image
     
     map.addSource('BeijingDaxingHOW', {
@@ -1119,6 +1106,240 @@ function addHowLayer(map){
             [ -3.6824920,  40.4842540],
             [ -3.6824920,  40.4752324],
             [ -3.6939235,  40.4752324]
+        ]
+    });
+
+    //Add NewYauMaTeishelterHongkong HOW image
+    
+    map.addSource('NewYauMaTeishelterHongkongHOW', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/NewYauMaTeishelterHongkongHOW.png',
+        'coordinates': [
+            [114.1460610,  22.3170465],
+            [114.1617069,  22.3170465],
+            [114.1617069,  22.3043527],
+            [114.1460610,  22.3043527]
+        ]
+    });
+    
+    //Add BarringerCrater HOW image
+    
+    map.addSource('BarringerCraterHOW', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/BarringerCraterHOW.png',
+        'coordinates': [
+            [-111.0319917,  35.0347428],
+            [-111.0136043,  35.0347428],
+            [-111.0136043,  35.0197428],
+            [-111.0319917,  35.0197428]
+        ]
+    });
+    
+    //Add DowntownDubai HOW image
+    
+    map.addSource('DowntownDubaiHOW', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/DowntownDubaiHOW.png',
+        'coordinates': [
+            [ 55.2652644,  25.2052848],
+            [ 55.2836368,  25.2052848],
+            [ 55.2836368,  25.1886272],
+            [ 55.2652644,  25.1886272]
+        ]
+    });
+    
+    //Add EritreaHalaba HOW image
+    
+    map.addSource('EritreaHalabaHOW', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/EritreaHalabaHOW.png',
+        'coordinates': [
+            [ 41.7936167,  13.9189114],
+            [ 41.8057402,  13.9189114],
+            [ 41.8057402,  13.9052619],
+            [ 41.7936167,  13.9052619]
+        ]
+    });
+    
+    //Add HotelRyugyongPyongyang HOW image
+    
+    map.addSource('HotelRyugyongPyongyangHOW', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/HotelRyugyongPyongyangHOW.png',
+        'coordinates': [
+            [125.7243704,  39.0426505],
+            [125.7379870,  39.0426505],
+            [125.7379870,  39.0300574],
+            [125.7243704,  39.0300574]
+        ]
+    });
+    
+    //Add JudgeHarryPregersonInterchange HOW image
+    
+    map.addSource('JudgeHarryPregersonInterchangeHOW', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/JudgeHarryPregersonInterchangeHOW.png',
+        'coordinates': [
+            [-118.2849491,  33.9317151],
+            [-118.2763147,  33.9317151],
+            [-118.2763147,  33.9253396],
+            [-118.2849491,  33.9253396]
+        ]
+    });
+    
+    //Add KuwaitAirport HOW image
+    
+    map.addSource('KuwaitAirportHOW', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/KuwaitAirportHOW.png',
+        'coordinates': [
+            [ 47.9809110,  29.2203451],
+            [ 47.9942310,  29.2203451],
+            [ 47.9942310,  29.2081018],
+            [ 47.9809110,  29.2081018]
+        ]
+    });
+    
+    //Add LuboszówPoland HOW image
+    
+    map.addSource('LuboszówPolandHOW', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/LuboszówPolandHOW.png',
+        'coordinates': [
+            [ 15.3913811,  51.4283021],
+            [ 15.3990438,  51.4283021],
+            [ 15.3990438,  51.4242761],
+            [ 15.3913811,  51.4242761]
+        ]
+    });
+    
+    //Add MalborkCastle HOW image
+    
+    map.addSource('MalborkCastleHOW', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/MalborkCastleHOW.png',
+        'coordinates': [
+            [ 19.0248672,  54.0436092],
+            [ 19.0338096,  54.0436092],
+            [ 19.0338096,  54.0378817],
+            [ 19.0248672,  54.0378817]
+        ]
+    });
+    
+    //Add NewYauMaTeishelterHongkong HOW image
+    
+    map.addSource('NewYauMaTeishelterHongkongHOW', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/NewYauMaTeishelterHongkongHOW.png',
+        'coordinates': [
+            [114.1460610,  22.3170465],
+            [114.1617069,  22.3170465],
+            [114.1617069,  22.3043527],
+            [114.1460610,  22.3043527]
+        ]
+    });
+    
+    //Add BarringerCrater HOW image
+    
+    map.addSource('BarringerCraterHOW', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/BarringerCraterHOW.png',
+        'coordinates': [
+            [-111.0319917,  35.0347428],
+            [-111.0136043,  35.0347428],
+            [-111.0136043,  35.0197428],
+            [-111.0319917,  35.0197428]
+        ]
+    });
+    
+    //Add DowntownDubai HOW image
+    
+    map.addSource('DowntownDubaiHOW', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/DowntownDubaiHOW.png',
+        'coordinates': [
+            [ 55.2652644,  25.2052848],
+            [ 55.2836368,  25.2052848],
+            [ 55.2836368,  25.1886272],
+            [ 55.2652644,  25.1886272]
+        ]
+    });
+    
+    //Add EritreaHalaba HOW image
+    
+    map.addSource('EritreaHalabaHOW', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/EritreaHalabaHOW.png',
+        'coordinates': [
+            [ 41.7936167,  13.9189114],
+            [ 41.8057402,  13.9189114],
+            [ 41.8057402,  13.9052619],
+            [ 41.7936167,  13.9052619]
+        ]
+    });
+    
+    //Add HotelRyugyongPyongyang HOW image
+    
+    map.addSource('HotelRyugyongPyongyangHOW', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/HotelRyugyongPyongyangHOW.png',
+        'coordinates': [
+            [125.7243704,  39.0426505],
+            [125.7379870,  39.0426505],
+            [125.7379870,  39.0300574],
+            [125.7243704,  39.0300574]
+        ]
+    });
+    
+    //Add JudgeHarryPregersonInterchange HOW image
+    
+    map.addSource('JudgeHarryPregersonInterchangeHOW', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/JudgeHarryPregersonInterchangeHOW.png',
+        'coordinates': [
+            [-118.2849491,  33.9317151],
+            [-118.2763147,  33.9317151],
+            [-118.2763147,  33.9253396],
+            [-118.2849491,  33.9253396]
+        ]
+    });
+    
+    //Add KuwaitAirport HOW image
+    
+    map.addSource('KuwaitAirportHOW', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/KuwaitAirportHOW.png',
+        'coordinates': [
+            [ 47.9809110,  29.2203451],
+            [ 47.9942310,  29.2203451],
+            [ 47.9942310,  29.2081018],
+            [ 47.9809110,  29.2081018]
+        ]
+    });
+    
+    //Add LuboszówPoland HOW image
+    
+    map.addSource('LuboszówPolandHOW', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/LuboszówPolandHOW.png',
+        'coordinates': [
+            [ 15.3913811,  51.4283021],
+            [ 15.3990438,  51.4283021],
+            [ 15.3990438,  51.4242761],
+            [ 15.3913811,  51.4242761]
+        ]
+    });
+    
+    //Add MalborkCastle HOW image
+    
+    map.addSource('MalborkCastleHOW', {
+        'type': 'image',
+        'url': 'https://photos.agash.ca/MalborkCastleHOW.png',
+        'coordinates': [
+            [ 19.0248672,  54.0436092],
+            [ 19.0338096,  54.0436092],
+            [ 19.0338096,  54.0378817],
+            [ 19.0248672,  54.0378817]
         ]
     });
 
