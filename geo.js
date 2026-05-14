@@ -2509,7 +2509,7 @@ function getImgCoor() {
     imageCoor.textContent = 'Coming in hot';
     map.on('moveend', () => {
         if (temp == 0){
-            imageCoor.textContent = JSON.stringify(map.getCenter().lat) + ', ' + JSON.stringify(map.getCenter().lng);
+            imageCoor.textContent = JSON.stringify(parseFloat(map.getCenter().lat.toFixed(5))) + ', ' + JSON.stringify(parseFloat(map.getCenter().lng.toFixed(5)));
             temp = 1;
         }
     });
