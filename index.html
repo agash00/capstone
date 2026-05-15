@@ -21,12 +21,23 @@
 
 <div id ="contentText">
     <h1 id="placeName">Hover or click a pin on the map</h1>
-    <h4 id="imageDate" class="imageText">Image Date: <span id="imageDate1" class="imgTextStyle">Click a pin</span></h4>
-    <h4 id="imageCoor" class="imageText">Image Coordinates: 
-        <span id="imageCoor1" class="imgTextStyle">Revealed once zoomed into an image</span>
-        <span id ="coorInfo">Center coordinates; WGS84</span>
-    </h4>
-    <h4 id="imageDesc" class="imageText">About Place: <span id="imageDesc1" class="imgTextStyle">Click a pin</span></h4>
+    <div id="underPlaceName">
+        <div id="leftContent">
+            <h4 class="imageText">Image Address: <span id="imageAddy" class="imgTextStyle">Click a pin</span></h4>
+            <h4 id="imageCoor" class="imageText">Image Coordinates: 
+                <span id="imageCoor1" class="imgTextStyle">Revealed once zoomed into an image</span>
+                <span id ="coorInfo">Center coordinates; WGS84</span>
+            </h4>
+            <h4 id="imageDate" class="imageText">Image Date: <span id="imageDate1" class="imgTextStyle">Click a pin</span></h4>
+        </div>
+        <h4 id="imageDesc" class="imageText">About Place: 
+            <span id="imageDesc1" class="imgTextStyle">Click a pin</span>
+            <a id="sourceLink" target="_blank">
+                <button id="sourceBtn">i</button>
+                <span class ="sourceTip">Link to source.</span>
+            </a>
+        </h4>
+    </div>
 </div>
     
 <div id="mapBtnsOutline">

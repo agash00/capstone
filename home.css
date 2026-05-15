@@ -20,6 +20,11 @@ html {
     margin-top: 0;
 }
 
+#leftContent {
+    display: flex;
+    flex-direction: column;
+}
+
 .imgTextStyle {
     font-weight: normal;
     font-size: 1.3vh;
@@ -28,9 +33,13 @@ html {
 #placeName {
     font-size: 3vh;
     margin-top: 0;
-    margin-bottom: 2vh;
-    height: 2vh;
     text-decoration: underline;
+    margin-bottom: 0;
+}
+
+#underPlaceName {
+    display: flex;
+    flex-direction: row;
 }
 
 .imageText {
@@ -205,6 +214,38 @@ html {
     font-size: 0.7vw;
     bottom: -2vh;
     left: -0.5vw;
+}
+
+#sourceLink {
+    position: relative;
+}
+
+#sourceBtn {
+    color: white;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+
+#sourceBtn:hover {
+    border-color: #3380cc;
+}
+
+.sourceTip {
+    position: absolute;
+    visibility: hidden;
+    background-color: darkblue;
+    font-size: 1vh;
+    width: 3vw;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    top: 10%;
+}
+
+#sourceLink:hover .sourceTip {
+    visibility: visible;
 }
 
 #satBtn {
