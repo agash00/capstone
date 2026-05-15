@@ -19,7 +19,7 @@ sourceBtn.style.display = 'none';
 const imageDateList = 'ArctowskiStation2021-09-07, NorthSentinel2021-02-06, GoldenGate2020-09-20, DallolEthiopia2019-02-26, AlverniaPlanet2021-10-25, HeydarAliyevAirport2021-12-01, MumbaiAirport2021-11-26, CuatroTorres2021-11-16, Alumbrera2016-04-10, Petronas2020-02-13, VolcanPoruñita2016-03-19, EixampleNoDateFound, HungaTonga2021-04-10, BeijingDaxing2021-10-26, VolcanJote2018-12-02, SantaCruzdeIsloteNoDateFound, HuntsvilleAlabama2018-12-24, DongdaemunDesignPlaza2021-12-04, CostaConcordia201309172013-09-17, CostaConcordia201307122013-07-12, Goma2021-08-01, GomaNIR2021-08-01, HotelRyugyongPyongyang2021-10-17, JudgeHarryPregersonInterchange2021-07-21, BarringerCrater2019-11-14, EritreaHalaba2018-01-19, MalborkCastle2019-08-03, LuboszówPoland2018-08-07, KuwaitAirport2019-04-02, NewYauMaTeishelterHongkong2021-11-10, PortCamilleRayonGolfeJuan2020-11-17, PyramidsOfGiza2021-11-03, Sealand2020-04-05, ShenzhenBaoanInternationalAirport2021-05-16, SiedlcePoland2017-01-11, GreatBlueHole2021-05-30, DowntownDubai2019-10-31, VolcanNegroArgentina2018-12-15, TokaimachiTokai2020-04-27, TianfuIntlAirport2021-05-17, ThridrangarLighthouseNoDateFound, SymphonyOfTheSeas2016-05-04, SuloszowaNoDateFound, BahamaDunes2021-06-23';
 //const placesList = ['ArctowskiStation', 'NorthSentinel', 'GoldenGate', 'DallolEthiopia', 'AlverniaMarker', 'HeydarAliyevAirport', 'MumbaiAirport', 'CuatroTorres', 'Alumbrera', 'Petronas', 'VolcanPoruÃ±ita', 'Eixample', 'HungaTonga', 'BeijingDaxing', 'VolcanJote', 'SantaCruzdeIslote', 'HuntsvilleAlabama', 'DongdaemunDesignPlaza', 'CostaConcordia20130917', 'CostaConcordia20130712', 'GreatBlueHole', 'Goma', 'GomaNIR', 'DowntownDubai', 'HotelRyugyongPyongyang', 'JudgeHarryPregersonInterchange', 'BarringerCrater', 'EritreaHalaba', 'MalborkCastle', 'LuboszÃ³wPoland', 'KuwaitAirport', 'NewYauMaTeishelterHongkong', 'PortCamilleRayonGolfeJuan', 'PyramidsOfGiza', 'Sealand', 'ShenzhenBaoanInternationalAirport', 'SiedlcePoland', 'VolcanNegroArgentina', 'TokaimachiTokai', 'TianfuIntlAirport', 'ThridrangarLighthouse', 'SymphonyOfTheSeas', 'Suloszowa', 'BahamaDunes'];
 const placesList = ['ArctowskiStation', 'NorthSentinel', 'GoldenGate', 'DallolEthiopia', 'AlverniaPlanet', 'HeydarAliyevAirport', 'MumbaiAirport', 'CuatroTorres', 'Alumbrera', 'Petronas', 'VolcanPoruñita', 'Eixample', 'HungaTonga', 'BeijingDaxing', 'VolcanJote', 'SantaCruzdeIslote', 'HuntsvilleAlabama', 'DongdaemunDesignPlaza', 'CostaConcordia20130917', 'GreatBlueHole', 'Goma', 'DowntownDubai', 'HotelRyugyongPyongyang', 'JudgeHarryPregersonInterchange', 'BarringerCrater', 'EritreaHalaba', 'MalborkCastle', 'LuboszówPoland', 'KuwaitAirport', 'NewYauMaTeishelterHongkong', 'PortCamilleRayonGolfeJuan', 'PyramidsOfGiza', 'Sealand', 'ShenzhenBaoanInternationalAirport', 'SiedlcePoland', 'VolcanNegroArgentina', 'TokaimachiTokai', 'TianfuIntlAirport', 'ThridrangarLighthouse', 'SymphonyOfTheSeas', 'Suloszowa', 'BahamaDunes'];
-const placesDesc = ['Henryk Arctowski Polish Antarctic Station (Polish: Polska Stacja Antarktyczna im. Henryka Arctowskiego) is a Polish research station on King George Island, off the coast of Antarctica. The station is named for Henryk Arctowski (1871–1958), who as meteorologist had accompanied the Belgian explorer Baron Adrien de Gerlache on the Belgian Antarctic expedition "Belgica", 1897–1899.', 'North Sentinel Island is one of the Andaman Islands, an Indian archipelago in the Bay of Bengal that also includes South Sentinel Island. A protected area of India, it is home to the Sentinelese, an indigenous tribe in voluntary isolation who have defended—often with force—their protected isolation from the outside world.', 'The Golden Gate Bridge is a suspension bridge spanning the Golden Gate, the one-mile-wide (1.6 km) strait connecting San Francisco Bay and the Pacific Ocean in California, United States. The structure links San Francisco—the northern tip of the San Francisco Peninsula—to Marin County, carrying both U.S. Route 101 and California State Route 1 across the strait.', '"Dallol is a cinder cone volcano in the Danakil Depression, although its unique geology means it lacks any of the archetypal volcanic looks." (brilliant-ethiopia.com) Dallol currently holds the official record for record high average temperature for an inhabited location on Earth, and an average annual temperature of 35 °C (95 °F) was recorded between 1960 and 1966.', "Alvernia Planet is a prominent edutainment park and multi-functional architectural complex located in Nieporaz, Poland, approximately 30 km (18.6 mi) west of Kraków. Originally established as one of Europe's most technologically advanced film production hubs, the facility was repurposed in 2017 following its acquisition by the Gremi International group, led by Polish entrepreneur Greg (Grzegorz) Hajdarowicz.", "Heydar Aliyev International Airport (Azerbaijani: Heydər Əliyev adına Beynəlxalq Hava Limanı; IATA: GYD, ICAO: UBBB) is an airport serving Azerbaijan's capital, Baku, and one of the seven international airports of Azerbaijan. It is the busiest airport both in Azerbaijan and in the South Caucasus as well as one of the busiest in the post-Soviet countries.", 'Chhatrapati Shivaji Maharaj International Airport (IATA: BOM, ICAO: VABB) is the international airport serving Mumbai, the capital of the Indian state of Maharashtra, and one of two airports serving the Mumbai Metropolitan Region, the other being the Navi Mumbai International Airport. It is the second-busiest airport in India in terms of total and international passenger traffic after Delhi, the 14th-busiest airport in Asia, and the 31st-busiest airport in the world by passenger traffic in 2024.', 'The Cuatro Torres Business Area (CTBA), also known as the Área de Negocios de las Cuatro Torres (Spanish for "Four Towers Business Area"), is a business district located in the Paseo de la Castellana in Madrid, Spain, on the former Ciudad Deportiva of Real Madrid. The area contains the four tallest skyscrapers in Spain, and four of the ten tallest in the European Union: the Torre Emperador, Torre de Cristal, Torre PwC and Torre Cepsa.', 'Antofagasta de la Sierra is a volcanic field in Argentina. The main type of volcanic edifice in the area are scoria cones, formed by the La Laguna, Jote and Alumbrera volcanoes. The first and last of these form a sub-group which is better researched. Various dating methods have yielded ages from several million to several hundred thousand years ago, but some vents appear to be of Holocene age. ', 'The Petronas Towers (Malay: Menara Berkembar Petronas), also known as the Petronas Twin Towers and colloquially the KLCC Twin Towers, are an interlinked pair of 88-storey supertall skyscrapers in Kuala Lumpur, Malaysia, standing at 451.9 m (1,483 ft). From 1996 to 2004, they were the tallest buildings in the world until they were surpassed by the Taipei 101 building.', 'Porunita is an inactive volcano in Chile.\nIt is a cinder cone which rises 90 metres (300 ft) above the surrounding plain and has a diameter of 800 metres (2,600 ft).', "The Eixample (Catalan: [əˈʃamplə] 'Expansion'; Spanish: Ensanche [enˈsantʃe]) is a district of Barcelona between the old city (Ciutat Vella) and what were once surrounding small towns (Sants, Gràcia, Sant Andreu, etc.), constructed in the 19th and early 20th centuries. Its population was 262,000 at the last census (2005).", "Hunga Tonga–Hunga Haʻapai () is a submarine volcano in the South Pacific located about 30 km (19 mi) south of the submarine volcano of Fonuafoʻou and 65 km (40 mi) north of Tongatapu, Tonga's main island. It is part of the highly active Kermadec-Tonga subduction zone and its associated volcanic arc, which extends from New Zealand north-northeast to Fiji, and is formed by the subduction of the Pacific Plate under the Indo-Australian Plate.", 'Beijing Daxing International Airport (IATA: PKX, ICAO: ZBAD) is one of two international airports serving Beijing, the capital of China (the other being the busier Beijing Capital International Airport).\nThe airport is located on the border of Beijing and Langfang, Hebei.', 'Antofagasta de la Sierra is a volcanic field in Argentina. The main type of volcanic edifice in the area are scoria cones, formed by the La Laguna, Jote and Alumbrera volcanoes.', "Santa Cruz del Islote (Spanish for 'Holy Cross of the Islet') is an artificial island located off the coast of Bolívar Department in Colombia, close to Tolú and Coveñas. It is a part of the Archipelago of San Bernardo.", 'The U.S. Space & Rocket Center in Huntsville, Alabama is a museum operated by the government of Alabama, showcasing rockets, achievements, and artifacts of the U.S. space program. Sometimes billed as "Earth\'s largest space museum", astronaut Owen Garriott described the place as, "a great way to learn about space in a town that has embraced the space program from the very beginning."  The city is nicknamed "The Rocket City" for its close association with U.S. space missions.', 'Dongdaemun Design Plaza (DDP; Korean: 동대문 디자인 플라자) is a major urban development landmark in Seoul, South Korea, designed by Zaha Hadid and Samoo, with a distinctively neofuturistic design characterized by the "powerful, curving forms of elongated structures." The landmark is the centerpiece of South Korea\'s fashion hub and popular tourist destination, Dongdaemun, featuring a walkable park on its roofs, large global exhibition spaces, futuristic retail stores, and restored parts of the Seoul fortress.\nThe DDP has been one of the main reasons for Seoul\'s designation as the World Design Capital in 2010.', 'On 13 January 2012, the seven-year-old Costa Cruises vessel Costa Concordia was on the first leg of a cruise around the Mediterranean Sea when the cruise ship deviated from her planned route at Isola del Giglio, Italy in order to perform a sail-by salute and struck a rock formation on the sea floor. This caused the ship to list and then to partially sink, landing unevenly on an underwater ledge. On 16 September 2013, the parbuckle salvage of the ship began, and by the early hours of 17 September, the ship was set upright on her underwater cradle.', 'The Great Blue Hole is a large marine sinkhole off the coast of Belize. It lies near the center of Lighthouse Reef, a small atoll 70 km (43 mi) from the mainland and Belize City.', 'Goma is a city in the eastern Democratic  Republic of the Congo. It is the capital and largest city of the North Kivu Province; it is located on the northern shore of Lake Kivu and shares borders with the Bukumu Chiefdom to the north, Rwanda to the east and the Masisi Territory to the west.', 'Downtown Dubai or The Dubai Downtown is a large-scale, mixed-use complex in Dubai, United Arab Emirates. It was developed by the Emaar real estate development company.', 'The Ryugyong Hotel (Korean: 류경호텔; sometimes spelled as Ryu-Gyong Hotel), or Yu-Kyung Hotel, is a 330 m (1,080 ft) tall unfinished pyramid-shaped skyscraper in Pyongyang, North Korea. Its name (lit. "capital of willows") is also one of the historical names for Pyongyang.', 'The Judge Harry Pregerson Interchange is a five-level stack interchange near the Athens and Watts communities of Los Angeles, California. It is the interchange of the following routes:\n\n I-105 (Glenn M. Anderson Freeway) – El Segundo, LAX Airport, Norwalk\n I-110 (Harbor Freeway) – San Pedro, Los Angeles\nThe interchange permits traffic entering the interchange in all directions to exit in all directions (unlike, for example, the Hollywood Split and East Los Angeles Interchange).', 'Meteor Crater, or Barringer Crater, is an impact crater about 37 mi (60 km)  east of Flagstaff and 18 mi (29 km) west of Winslow in the desert of northern Arizona,  United States. The site had several earlier names, and fragments of the meteorite are officially called the Canyon Diablo Meteorite, after the adjacent Canyon Diablo.', 'Eritrea, officially the State of Eritrea, is a country in the Horn of Africa region of East Africa. Its capital and largest city is Asmara. The image shows the edge of a lava field.', 'The Castle of the Teutonic Order in Malbork, commonly known as Malbork Castle (Polish: Zamek w Malborku; German: Ordensburg Marienburg), is a Brick Gothic castle complex located in the town of Malbork, Poland, built in the 13th and significantly expanded in the 14th century. It is the largest castle in the world measured by land area and a UNESCO World Heritage Site.', 'Luboszów [luˈbɔʂuf] is a village in the administrative district of Gmina Osiecznica, within Bolesławiec County, Lower Silesian Voivodeship, in south-western Poland.\nIt is one of the smallest villages in Poland with only one household and two people registered.', 'Kuwait International Airport (Arabic: مطار الكويت الدولي, IATA: KWI, ICAO: OKKK) is an international airport located in the Farwaniya Governorate, Kuwait, 15.5 kilometers (9.6 mi) south of the centre of Kuwait City, spread over an area of 37.7 square kilometres (14.6 sq mi). As of 2025 it is the 12th busiest airport in the Middle East.', 'Yau Ma Tei Typhoon Shelter (Chinese: 油麻地避風塘) is a typhoon shelter located near Yau Ma Tei, Kowloon, Hong Kong.\n\n\n== History ==\nThe Government of Hong Kong planned for the construction of a second typhoon shelter after (the old) Causeway Bay Typhoon Shelter in late 1906.', 'Golfe-Juan (French pronunciation: [ɡɔlf ʒɥɑ̃]; Occitan: Lo Gorg Joan, Lo Golfe Joan) is a seaside resort on France\'s Côte d\'Azur. The distinct local character of Golfe-Juan is indicated by the existence of a demonym, "Golfe-Juanais", which is applied to its inhabitants.', 'The Great Pyramid of Giza is the largest of the Egyptian pyramids and the most famous landmark of the Giza pyramid complex in Giza, Egypt. It is the oldest of the Seven Wonders of the Ancient World, and the only wonder that has remained largely intact.', 'The Principality of Sealand () is an unrecognised micronation on HM Fort Roughs (also known as Roughs Tower), an offshore platform in the North Sea. It is situated on Rough Sands, a sandbar located approximately 11 kilometres (6 nmi) from the coast of Suffolk and 13 kilometres (7 nmi) from the coast of Essex.', "Shenzhen Bao'an International Airport (IATA: SZX, ICAO: ZGSZ) — formerly Shenzhen Huangtian Airport (until 2001) — is an international airport serving the city of Shenzhen in South Central China's Guangdong province. It is on the east bank of the Pearl River in Bao'an District, 32 km (20 mi) northwest of the city centre.", "Siedlce (Polish pronunciation: ['ɕɛdlt͡sɛ] ) (Yiddish: שעדליץ Shedlits) is a city in the Masovian Voivodeship in eastern Poland with 74,780 inhabitants (as of 2024).\nThe city is situated between two small rivers, the Muchawka and the Helenka, around 90 kilometres (56 mi) east of Warsaw.", 'The Negro is a small volcano currently active, which is located in the Argentine province of Catamarca (Department of Tinogasta). It is 5 373 meters high.', 'Tōkai (東海市, Tōkai-shi) is a city located in Aichi Prefecture, Japan. As of 1 October 2019, the city had an estimated population of 113,698 in 51,035 households, and a population density of 2,618 persons per km2.', 'Chengdu Tianfu International Airport (IATA: TFU, ICAO: ZUTF; also known as Tianfu Airport) is one of two international airports serving Chengdu, the capital of Sichuan province in Southwestern China. It was planned in 2013 and opened in 2021, after Chengdu Shuangliu Airport had been exceeding its designed maximum passenger capacity for years.', 'Þrídrangaviti Lighthouse (transliterated as Thrídrangaviti) is an active lighthouse 7.2 kilometres (4.5 miles) off the southwest coast of Iceland, in the archipelago of Vestmannaeyjar. It is often described as one of the most isolated lighthouses in the world.', "Symphony of the Seas is an Oasis-class cruise ship owned and operated by Royal Caribbean International. She was built in 2018 in the Chantiers de l'Atlantique shipyard in Saint-Nazaire, France, the fourth in Royal Caribbean's Oasis class of cruise ships.", 'Sułoszowa [suwɔˈʂɔva] is a village in Kraków County, Lesser Poland Voivodeship, in southern Poland. It serves as the seat of an administrative district called Gmina Sułoszowa.', 'The Bahamas are a group of about 700 islands and cays in the western Atlantic Ocean, of which only between 30 and 40 are inhabited. The largest of the islands is Andros Island, located north of Cuba and 200 kilometres (120 miles) southeast of Florida.'];
+const placesDesc = ['Henryk Arctowski Polish Antarctic Station (Polish: Polska Stacja Antarktyczna im. Henryka Arctowskiego) is a Polish research station on King George Island, off the coast of Antarctica. The station is named for Henryk Arctowski (1871–1958), who as meteorologist had accompanied the Belgian explorer Baron Adrien de Gerlache on the Belgian Antarctic expedition "Belgica", 1897–1899.', 'North Sentinel Island is one of the Andaman Islands, an Indian archipelago in the Bay of Bengal that also includes South Sentinel Island. A protected area of India, it is home to the Sentinelese, an indigenous tribe in voluntary isolation who have defended—often with force—their protected isolation from the outside world.', 'The Golden Gate Bridge is a suspension bridge spanning the Golden Gate, the one-mile-wide (1.6 km) strait connecting San Francisco Bay and the Pacific Ocean in California, United States. The structure links San Francisco—the northern tip of the San Francisco Peninsula—to Marin County, carrying both U.S. Route 101 and California State Route 1 across the strait.', '"Dallol is a cinder cone volcano in the Danakil Depression, although its unique geology means it lacks any of the archetypal volcanic looks." (brilliant-ethiopia.com) Dallol currently holds the official record for record high average temperature for an inhabited location on Earth, and an average annual temperature of 35 °C (95 °F) was recorded between 1960 and 1966.', "Alvernia Planet is a prominent edutainment park and multi-functional architectural complex located in Nieporaz, Poland, approximately 30 km (18.6 mi) west of Kraków. Originally established as one of Europe's most technologically advanced film production hubs, the facility was repurposed in 2017 following its acquisition by the Gremi International group, led by Polish entrepreneur Greg (Grzegorz) Hajdarowicz.", "Heydar Aliyev International Airport (Azerbaijani: Heydər Əliyev adına Beynəlxalq Hava Limanı; IATA: GYD, ICAO: UBBB) is an airport serving Azerbaijan's capital, Baku, and one of the seven international airports of Azerbaijan. It is the busiest airport both in Azerbaijan and in the South Caucasus as well as one of the busiest in the post-Soviet countries.", 'Chhatrapati Shivaji Maharaj International Airport (IATA: BOM, ICAO: VABB) is the international airport serving Mumbai, the capital of the Indian state of Maharashtra, and one of two airports serving the Mumbai Metropolitan Region, the other being the Navi Mumbai International Airport. It is the second-busiest airport in India in terms of total and international passenger traffic after Delhi, the 14th-busiest airport in Asia, and the 31st-busiest airport in the world by passenger traffic in 2024.', 'The Cuatro Torres Business Area (CTBA), also known as the Área de Negocios de las Cuatro Torres (Spanish for "Four Towers Business Area"), is a business district located in the Paseo de la Castellana in Madrid, Spain, on the former Ciudad Deportiva of Real Madrid. The area contains the four tallest skyscrapers in Spain, and four of the ten tallest in the European Union: the Torre Emperador, Torre de Cristal, Torre PwC and Torre Cepsa.', 'Antofagasta de la Sierra is a volcanic field in Argentina. The main type of volcanic edifice in the area are scoria cones, formed by the La Laguna, Jote and Alumbrera volcanoes. The first and last of these form a sub-group which is better researched. Various dating methods have yielded ages from several million to several hundred thousand years ago, but some vents appear to be of Holocene age. ', 'The Petronas Towers (Malay: Menara Berkembar Petronas), also known as the Petronas Twin Towers and colloquially the KLCC Twin Towers, are an interlinked pair of 88-storey supertall skyscrapers in Kuala Lumpur, Malaysia, standing at 451.9 m (1,483 ft). From 1996 to 2004, they were the tallest buildings in the world until they were surpassed by the Taipei 101 building.', 'Porunita is an inactive volcano in Chile.\nIt is a cinder cone which rises 90 metres (300 ft) above the surrounding plain and has a diameter of 800 metres (2,600 ft).', "The Eixample (Catalan: [əˈʃamplə] 'Expansion'; Spanish: Ensanche [enˈsantʃe]) is a district of Barcelona between the old city (Ciutat Vella) and what were once surrounding small towns (Sants, Gràcia, Sant Andreu, etc.), constructed in the 19th and early 20th centuries. Its population was 262,000 at the last census (2005).", "Hunga Tonga–Hunga Haʻapai () is a submarine volcano in the South Pacific located about 30 km (19 mi) south of the submarine volcano of Fonuafoʻou and 65 km (40 mi) north of Tongatapu, Tonga's main island. It is part of the highly active Kermadec-Tonga subduction zone and its associated volcanic arc, which extends from New Zealand north-northeast to Fiji, and is formed by the subduction of the Pacific Plate under the Indo-Australian Plate.", 'Beijing Daxing International Airport (IATA: PKX, ICAO: ZBAD) is one of two international airports serving Beijing, the capital of China (the other being the busier Beijing Capital International Airport).\nThe airport is located on the border of Beijing and Langfang, Hebei.', 'Antofagasta de la Sierra is a volcanic field in Argentina. The main type of volcanic edifice in the area are scoria cones, formed by the La Laguna, Jote and Alumbrera volcanoes.', "Santa Cruz del Islote (Spanish for 'Holy Cross of the Islet') is an artificial island located off the coast of Bolívar Department in Colombia, close to Tolú and Coveñas. It is a part of the Archipelago of San Bernardo.", 'The U.S. Space & Rocket Center in Huntsville, Alabama is a museum operated by the government of Alabama, showcasing rockets, achievements, and artifacts of the U.S. space program. Sometimes billed as "Earth\'s largest space museum", astronaut Owen Garriott described the place as, "a great way to learn about space in a town that has embraced the space program from the very beginning."  The city is nicknamed "The Rocket City" for its close association with U.S. space missions.', 'Dongdaemun Design Plaza (DDP; Korean: 동대문 디자인 플라자) is a major urban development landmark in Seoul, South Korea, designed by Zaha Hadid and Samoo, with a distinctively neofuturistic design characterized by the "powerful, curving forms of elongated structures." The landmark is the centerpiece of South Korea\'s fashion hub and popular tourist destination, Dongdaemun, featuring a walkable park on its roofs, large global exhibition spaces, futuristic retail stores, and restored parts of the Seoul fortress.\nThe DDP has been one of the main reasons for Seoul\'s designation as the World Design Capital in 2010.', 'On 13 January 2012, the seven-year-old Costa Cruises vessel Costa Concordia was on the first leg of a cruise around the Mediterranean Sea when the cruise ship deviated from her planned route at Isola del Giglio, Italy in order to perform a sail-by salute and struck a rock formation on the sea floor. This caused the ship to list and then to partially sink, landing unevenly on an underwater ledge. On 16 September 2013, the parbuckle salvage of the ship began, and by the early hours of 17 September, the ship was set upright on her underwater cradle.', 'The Great Blue Hole is a large marine sinkhole off the coast of Belize. It lies near the center of Lighthouse Reef, a small atoll 70 km (43 mi) from the mainland and Belize City.', 'Goma is a city in the eastern Democratic  Republic of the Congo. It is the capital and largest city of the North Kivu Province; it is located on the northern shore of Lake Kivu and shares borders with the Bukumu Chiefdom to the north, Rwanda to the east and the Masisi Territory to the west.', 'Downtown Dubai or The Dubai Downtown is a large-scale, mixed-use complex in Dubai, United Arab Emirates. It was developed by the Emaar real estate development company.', 'The Ryugyong Hotel (Korean: 류경호텔; sometimes spelled as Ryu-Gyong Hotel), or Yu-Kyung Hotel, is a 330 m (1,080 ft) tall unfinished pyramid-shaped skyscraper in Pyongyang, North Korea. Its name (lit. "capital of willows") is also one of the historical names for Pyongyang.', 'The Judge Harry Pregerson Interchange is a five-level stack interchange near the Athens and Watts communities of Los Angeles, California. It is the interchange of the following routes:\n\n I-105 (Glenn M. Anderson Freeway) – El Segundo, LAX Airport, Norwalk\n I-110 (Harbor Freeway) – San Pedro, Los Angeles\nThe interchange permits traffic entering the interchange in all directions to exit in all directions (unlike, for example, the Hollywood Split and East Los Angeles Interchange).', 'Meteor Crater, or Barringer Crater, is an impact crater about 37 mi (60 km)  east of Flagstaff and 18 mi (29 km) west of Winslow in the desert of northern Arizona,  United States. The site had several earlier names, and fragments of the meteorite are officially called the Canyon Diablo Meteorite, after the adjacent Canyon Diablo.', 'Eritrea, officially the State of Eritrea, is a country in the Horn of Africa region of East Africa. Its capital and largest city is Asmara.', 'The Castle of the Teutonic Order in Malbork, commonly known as Malbork Castle (Polish: Zamek w Malborku; German: Ordensburg Marienburg), is a Brick Gothic castle complex located in the town of Malbork, Poland, built in the 13th and significantly expanded in the 14th century. It is the largest castle in the world measured by land area and a UNESCO World Heritage Site.', 'Luboszów [luˈbɔʂuf] is a village in the administrative district of Gmina Osiecznica, within Bolesławiec County, Lower Silesian Voivodeship, in south-western Poland.\nIt is one of the smallest villages in Poland with only one household and two people registered.', 'Kuwait International Airport (Arabic: مطار الكويت الدولي, IATA: KWI, ICAO: OKKK) is an international airport located in the Farwaniya Governorate, Kuwait, 15.5 kilometers (9.6 mi) south of the centre of Kuwait City, spread over an area of 37.7 square kilometres (14.6 sq mi). As of 2025 it is the 12th busiest airport in the Middle East.', 'Yau Ma Tei Typhoon Shelter (Chinese: 油麻地避風塘) is a typhoon shelter located near Yau Ma Tei, Kowloon, Hong Kong.\n\n\n== History ==\nThe Government of Hong Kong planned for the construction of a second typhoon shelter after (the old) Causeway Bay Typhoon Shelter in late 1906.', 'Golfe-Juan (French pronunciation: [ɡɔlf ʒɥɑ̃]; Occitan: Lo Gorg Joan, Lo Golfe Joan) is a seaside resort on France\'s Côte d\'Azur. The distinct local character of Golfe-Juan is indicated by the existence of a demonym, "Golfe-Juanais", which is applied to its inhabitants.', 'The Great Pyramid of Giza is the largest of the Egyptian pyramids and the most famous landmark of the Giza pyramid complex in Giza, Egypt. It is the oldest of the Seven Wonders of the Ancient World, and the only wonder that has remained largely intact.', 'The Principality of Sealand () is an unrecognised micronation on HM Fort Roughs (also known as Roughs Tower), an offshore platform in the North Sea. It is situated on Rough Sands, a sandbar located approximately 11 kilometres (6 nmi) from the coast of Suffolk and 13 kilometres (7 nmi) from the coast of Essex.', "Shenzhen Bao'an International Airport (IATA: SZX, ICAO: ZGSZ) — formerly Shenzhen Huangtian Airport (until 2001) — is an international airport serving the city of Shenzhen in South Central China's Guangdong province. It is on the east bank of the Pearl River in Bao'an District, 32 km (20 mi) northwest of the city centre.", "Siedlce (Polish pronunciation: ['ɕɛdlt͡sɛ] ) (Yiddish: שעדליץ Shedlits) is a city in the Masovian Voivodeship in eastern Poland with 74,780 inhabitants (as of 2024).\nThe city is situated between two small rivers, the Muchawka and the Helenka, around 90 kilometres (56 mi) east of Warsaw.", 'The Negro is a small volcano currently active, which is located in the Argentine province of Catamarca (Department of Tinogasta). It is 5 373 meters high.', 'Tōkai (東海市, Tōkai-shi) is a city located in Aichi Prefecture, Japan. As of 1 October 2019, the city had an estimated population of 113,698 in 51,035 households, and a population density of 2,618 persons per km2.', 'Chengdu Tianfu International Airport (IATA: TFU, ICAO: ZUTF; also known as Tianfu Airport) is one of two international airports serving Chengdu, the capital of Sichuan province in Southwestern China. It was planned in 2013 and opened in 2021, after Chengdu Shuangliu Airport had been exceeding its designed maximum passenger capacity for years.', 'Þrídrangaviti Lighthouse (transliterated as Thrídrangaviti) is an active lighthouse 7.2 kilometres (4.5 miles) off the southwest coast of Iceland, in the archipelago of Vestmannaeyjar. It is often described as one of the most isolated lighthouses in the world.', "Symphony of the Seas is an Oasis-class cruise ship owned and operated by Royal Caribbean International. She was built in 2018 in the Chantiers de l'Atlantique shipyard in Saint-Nazaire, France, the fourth in Royal Caribbean's Oasis class of cruise ships.", 'Sułoszowa [suwɔˈʂɔva] is a village in Kraków County, Lesser Poland Voivodeship, in southern Poland. It serves as the seat of an administrative district called Gmina Sułoszowa.', 'The Bahamas are a group of about 700 islands and cays in the western Atlantic Ocean, of which only between 30 and 40 are inhabited. The largest of the islands is Andros Island, located north of Cuba and 200 kilometres (120 miles) southeast of Florida.'];
 const placesDescLinks = ['Henryk_Arctowski_Polish_Antarctic_Station', 'North_Sentinel_Island', 'Golden_Gate_Bridge', 'Dallol_(ghost_town)', 'Alvernia_Planet', 'Heydar_Aliyev_International_Airport', 'Chhatrapati_Shivaji_Maharaj_International_Airport', 'Cuatro_Torres_Business_Area', 'Minera_Alumbrera', 'Petronas_Towers', 'Porunita', 'Eixample', 'Hunga_Tonga–Hunga_Haʻapai', 'Beijing_Daxing_International_Airport', 'Antofagasta_de_la_Sierra', 'Santa_Cruz_del_Islote', 'Huntsville,_Alabama', 'Dongdaemun_Design_Plaza', 'Costa_Concordia_disaster', 'Great_Blue_Hole', 'Goma', 'Downtown_Dubai', 'Ryugyong_Hotel', 'Judge_Harry_Pregerson_Interchange', 'Meteor_Crater', 'Eritrea', 'Malbork_Castle', 'Luboszów', 'Kuwait_International_Airport', 'Yau_Ma_Tei_Typhoon_Shelter', 'Golfe-Juan', 'Great_Pyramid_of_Giza', 'Principality_of_Sealand', "Shenzhen_Bao'an_International_Airport", 'Siedlce', 'Negro_(volcano)', 'Tōkai,_Aichi', 'Chengdu_Tianfu_International_Airport', 'Thridrangaviti_Lighthouse', 'Symphony_of_the_Seas', 'Sułoszowa', 'Geography_of_the_Bahamas'];
 const placesLocations = ['King George Island, Antarctica', 'Port Blair, Andaman and Nicobar Islands, India', '5702 Conzelman Road, Sausalito, California 94965, United States', 'Dallol, Afar, Ethiopia', 'Ferdynanda Wspaniałego 1, 32-566 Nieporaz, Poland', 'Baku, Azerbaijan', 'I A Project Road 02، 400099 Mumbai، India', 'Calle De Julio Palacios 57, 28029 Madrid, Madrid, Spain', 'Antofagasta de la Sierra, Catamarca, K4705, Argentina', '50300, Kuala Lumpur, Malaysia', 'VolcanPoruñita', 'Carrer De Viladomat 304, 08029 Barcelona, Barcelona, Spain', 'Haʻapai, Tonga', '065000, Guangyang Qu, Langfang Shi, Hebei, China', 'Antofagasta de la Sierra, Catamarca, K4705, Argentina', 'Calle Secreto Del Mar, Cartagena, Bolívar, Colombia', '6100 Old Madison Pike Northwest, Huntsville, Alabama 35806, United States', '261 청계천로 Jung-gu, Seoul, South Korea', 'CostaConcordia20130917', 'GreatBlueHole', 'Nyiragongo, North Kivu, Democratic Republic of the Congo', '4a شارع المدينة, Al Wasl, Dubai, Dubai, United Arab Emirates', 'Pyongyang, Pyongyang, North Korea', '600 West 113th Street, Los Angeles, California 90044, United States', 'Meteor Crater Road, Flagstaff, Arizona 86004, United States', 'Southern Red Sea, Eritrea', 'Główna 19a, 82-200 Malbork, Pomeranian Voivodeship, Poland', 'LuboszówPoland', '61, Farwaniya, Kuwait', '昂船路 Ngong Shung Road, Hong Kong', '313 Chemin Des Clos, 06220 Vallauris, France', 'طريق القاهرة الفيوم الصحراوى, 12, Al Ahram, Giza, Egypt', 'United Kingdom', "518128, Bao'an Qu, Shenzhen Shi, Guangdong, China", 'Szkolna 2, 08-110 Siedlce, Masovian Voivodeship, Poland', 'Tinogasta, Catamarca, K5340, Argentina', '日本, 〒455-0848 愛知県名古屋市港区金城ふ頭', '641400, Jianyang Shi, Chengdu Shi, Sichuan, China', 'Vestmannaeyjar, Southern Region, Iceland', '20 Avenue Antoine Bourdelle, 44600 Saint-Nazaire, France', 'Dworska 8, 32-045 Sułoszowa, Lesser Poland Voivodeship, Poland', 'Bahamas'];
 const switchBtn = document.getElementById('switch');
@@ -2535,6 +2535,19 @@ function getPlaceDesc(placeDescName){
     placeDescLink.href = "https://en.wikipedia.org/wiki/".concat(placesDescLinks[pos]);
 }
 
+function addComment(comment, who){
+    const myComment = document.getElementById('myComment');
+    if (who == 1){
+        myComment.textContent = "Kosmi's Image comment: ".concat(comment);
+    }
+    else if(who == 2){
+        myComment.textContent = "Agash's  Image comment: ".concat(comment);
+    }
+    else {
+        myComment.textContent = '';
+    }
+}
+
 function wait(){
     updateText.style.display = 'none';
     update.style.display = 'block';
@@ -2568,6 +2581,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('', 0);
         wait();
     });
 	
@@ -2582,7 +2596,7 @@ function addMarkers(map) {
         switchBtnPower(0);
         map.flyTo({
             center: [92.2124113, 11.5938552],
-            zoom: 16,
+            zoom: 15,
             essential: true,
             duration: flySpeed
         });
@@ -2591,6 +2605,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('', 0);
         wait();
     });
 	
@@ -2614,6 +2629,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('Fog flowing under the Golden Gate Bridge.', 1);
         wait();
     });
 	
@@ -2637,6 +2653,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('Dallol hydrothermal system in Ethiopia.', 1);
         wait();
     });
 	
@@ -2660,6 +2677,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('', 0);
         wait(); 
     });
 
@@ -2674,7 +2692,7 @@ function addMarkers(map) {
         switchBtnPower(0);
         map.flyTo({
             center: [ 50.0525381,  40.4657394],
-            zoom: 16,
+            zoom: 15,
             essential: true,
             duration: flySpeed
         });
@@ -2683,6 +2701,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('', 0);
         wait();
     });
 
@@ -2697,7 +2716,7 @@ function addMarkers(map) {
         switchBtnPower(0);
         map.flyTo({
             center: [ 72.8741491,  19.0964905],
-            zoom: 16,
+            zoom: 15,
             essential: true,
             duration: flySpeed
         });
@@ -2706,6 +2725,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('BOM Terminal 2 in Mumbai.', 1);
         wait();
     });
 
@@ -2720,7 +2740,7 @@ function addMarkers(map) {
         switchBtnPower(0);
         map.flyTo({
             center: [ -3.6882077,  40.4797432],
-            zoom: 16,
+            zoom: 15,
             essential: true,
             duration: flySpeed
         });
@@ -2729,6 +2749,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('', 0);
         wait();
     });
 
@@ -2752,6 +2773,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('The edge of Alumbrera lava flow.', 1);
         wait();
     });
 
@@ -2768,13 +2790,14 @@ function addMarkers(map) {
         switchBtnPower(1);
         map.flyTo({
             center: [101.7130903,   3.1565901],
-            zoom: 16,
+            zoom: 15,
             essential: true,
             duration: flySpeed
         });
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('', 0);
         wait();
     });
 
@@ -2789,7 +2812,7 @@ function addMarkers(map) {
         switchBtnPower(0);
         map.flyTo({
             center: [-68.2934697, -21.3179863],
-            zoom: 16,
+            zoom: 15,
             essential: true,
             duration: flySpeed
         });
@@ -2798,6 +2821,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('', 0);
         wait();
     });
 
@@ -2821,6 +2845,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('', 0);
         wait();
     });
 
@@ -2845,6 +2870,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('Hunga Tonga before huge 2022 eruption.', 1);
         wait();
     });
 
@@ -2859,7 +2885,7 @@ function addMarkers(map) {
         switchBtnPower(0);
         map.flyTo({
             center: [116.4110812, 39.5099919],
-            zoom: 16,
+            zoom: 15,
             essential: true,
             duration: flySpeed
         });
@@ -2868,6 +2894,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('', 0);
         wait();
     });
 
@@ -2882,7 +2909,7 @@ function addMarkers(map) {
         switchBtnPower(0);
         map.flyTo({
             center: [-67.3292962, -26.2955358],
-            zoom: 16,
+            zoom: 15,
             essential: true,
             duration: flySpeed
         });
@@ -2891,6 +2918,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('', 0);
         wait();
     });
 
@@ -2905,7 +2933,7 @@ function addMarkers(map) {
         switchBtnPower(0);
         map.flyTo({
             center: [-75.8590859,   9.7858433],
-            zoom: 16,
+            zoom: 15,
             essential: true,
             duration: flySpeed
         });
@@ -2914,6 +2942,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('One of the most densely populated islands in the world.', 1);
         wait();
     });
 
@@ -2937,6 +2966,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('', 0);
         wait();
     });
 
@@ -2951,7 +2981,7 @@ function addMarkers(map) {
         switchBtnPower(0);
         map.flyTo({
             center: [127.0103303,  37.5669884],
-            zoom: 16,
+            zoom: 15,
             essential: true,
             duration: flySpeed
         });
@@ -2960,6 +2990,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('', 0);
         wait();
     });
     
@@ -2974,7 +3005,7 @@ function addMarkers(map) {
         switchBtnPower(1);
         map.flyTo({
             center: [ 10.9214388,  42.3658301],
-            zoom: 16,
+            zoom: 15,
             essential: true,
             duration: flySpeed
         });
@@ -2986,6 +3017,7 @@ function addMarkers(map) {
         addImageDate('CostaConcordia20130712Marker');
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('20130712: The disaster of Costa Concordia. 20130917: Two months later shipwreck of Costa Concordia was already lifted.', 1);
         wait();
     });
 
@@ -3001,7 +3033,7 @@ function addMarkers(map) {
         switchBtnPower(0);
         map.flyTo({
             center: [-87.5345375,  17.3158507],
-            zoom: 16,
+            zoom: 15,
             essential: true,
             duration: flySpeed
         });
@@ -3010,6 +3042,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('', 0);
         wait();
     });
 
@@ -3035,6 +3068,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('Nyiragongo lava flow in Goma. Since then a lot of homes have been rebuilt on top of solidified lava 😊🏠', 1);
         wait();
     });
 
@@ -3049,7 +3083,7 @@ function addMarkers(map) {
         switchBtnPower(0);
         map.flyTo({
             center: [ 55.2744506,  25.1969560],
-            zoom: 16,
+            zoom: 15,
             essential: true,
             duration: flySpeed
         });
@@ -3058,6 +3092,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('', 0);
         wait();
     });
 
@@ -3072,7 +3107,7 @@ function addMarkers(map) {
         switchBtnPower(0);
         map.flyTo({
             center: [125.7311787,  39.0363540],
-            zoom: 16,
+            zoom: 15,
             essential: true,
             duration: flySpeed
         });
@@ -3081,6 +3116,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('', 0);
         wait();
     });
 
@@ -3095,7 +3131,7 @@ function addMarkers(map) {
         switchBtnPower(0);
         map.flyTo({
             center: [-118.2806319,  33.9285273],
-            zoom: 16,
+            zoom: 15,
             essential: true,
             duration: flySpeed
         });
@@ -3104,6 +3140,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('', 0);
         wait();
     });
 
@@ -3118,7 +3155,7 @@ function addMarkers(map) {
         switchBtnPower(0);
         map.flyTo({
             center: [-111.0227980,  35.0272428],
-            zoom: 16,
+            zoom: 15,
             essential: true,
             duration: flySpeed
         });
@@ -3127,6 +3164,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('', 0);
         wait();
     });
 
@@ -3141,7 +3179,7 @@ function addMarkers(map) {
         switchBtnPower(0);
         map.flyTo({
             center: [ 41.7996784,  13.9120866],
-            zoom: 16,
+            zoom: 15,
             essential: true,
             duration: flySpeed
         });
@@ -3150,6 +3188,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('The egde of lava field in Eritrea.', 1);
         wait();
     });
 
@@ -3164,7 +3203,7 @@ function addMarkers(map) {
         switchBtnPower(0);
         map.flyTo({
             center: [ 19.0293384,  54.0407455],
-            zoom: 16,
+            zoom: 15,
             essential: true,
             duration: flySpeed
         });
@@ -3173,6 +3212,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('', 0);
         wait();
     });
 
@@ -3187,7 +3227,7 @@ function addMarkers(map) {
         switchBtnPower(0);
         map.flyTo({
             center: [ 15.3952125,  51.4262891],
-            zoom: 16,
+            zoom: 15,
             essential: true,
             duration: flySpeed
         });
@@ -3196,6 +3236,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('Population: 2 😁😁', 1);
         wait();
     });
 
@@ -3210,7 +3251,7 @@ function addMarkers(map) {
         switchBtnPower(0);
         map.flyTo({
             center: [ 47.9875710,  29.2142234],
-            zoom: 16,
+            zoom: 15,
             essential: true,
             duration: flySpeed
         });
@@ -3219,6 +3260,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('Construction of Kuwait Airport T2 terminal.', 1);
         wait();
     });
 
@@ -3236,6 +3278,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('', 0);
         wait();
         map.flyTo({
             center: [114.1538840,  22.3106996],
@@ -3259,6 +3302,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('', 0);
         wait();
         map.flyTo({
             center: [ 7.0776466,  43.5662384],
@@ -3282,6 +3326,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('', 0);
         wait();
         map.flyTo({
             center: [ 31.1330343,  29.9761265],
@@ -3305,6 +3350,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment("In theory it's the smallest country in the world. Population: 1 😂", 1);
         wait();
         map.flyTo({
             center: [ 1.4830906,  51.8964390],
@@ -3328,6 +3374,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('', 0);
         wait();
         map.flyTo({
             center: [113.8067645,  22.6305183],
@@ -3357,6 +3404,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('Winter in my city.', 1);
         wait();
     });
 
@@ -3374,6 +3422,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('', 0);
         wait();
         map.flyTo({
             center: [-68.3806831, -27.0996090],
@@ -3397,6 +3446,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('Steel works in Tokai.', 1);
         wait();
         map.flyTo({
             center: [136.8725552,  35.0293739],
@@ -3420,6 +3470,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('', 0);
         wait();
         map.flyTo({
             center: [104.4422638,  30.3143543],
@@ -3443,6 +3494,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('Probably one of the least densely populated islands.', 1);
         wait();
         map.flyTo({
             center: [-20.3201161,  63.3889363],
@@ -3466,6 +3518,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('', 0);
         wait();
         map.flyTo({
             center: [ -2.1881148,  47.2830228],
@@ -3489,6 +3542,7 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('', 0);
         wait();
         map.flyTo({
             center: [ 19.7103057,  50.2723410],
@@ -3499,7 +3553,7 @@ function addMarkers(map) {
     });
 
     const BahamaDunesDiv = document.createElement('div');
-    BahamaDunesDiv.className = "marker";
+    BahamaDunesDiv.className = "underwater-marker";
     //
     BahamaDunesDiv.id = 'BahamaDunesMarker';
     const BahamaDunesMarker = new mapboxgl.Marker(BahamaDunesDiv)
@@ -3513,10 +3567,11 @@ function addMarkers(map) {
         addImageDate(e.srcElement.id);
         getImgCoor();
         getPlaceDesc(e.srcElement.id);
+        addComment('The underwater dunes in the Bahamas.', 1);
         wait();
         map.flyTo({
             center: [-78.5764644,  25.4670540],
-            zoom: 15,
+            zoom: 14,
             essential: true,
             duration: flySpeed
         });
@@ -3609,7 +3664,7 @@ function addMarkers(map) {
     // GomaSwitchText.className = 'switchText';
     // GomaSwitchText.textContent = "Click this pin to toggle between natural colour and NIR (testing)";
     GomaDiv.addEventListener('mouseover', () => {
-        placeNameText.textContent = 'Goma';
+        placeNameText.textContent = 'Goma (Natural/NIR colour)';
         //GomaName.appendChild(GomaSwitchText);
     });
         
